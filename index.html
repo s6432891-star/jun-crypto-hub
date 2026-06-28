@@ -13,13 +13,49 @@
 </head>
 <body>
 
-<div class="header">
-  <div class="avatar" id="site-emoji">🩺</div>
-  <div class="name" id="site-name">Jun 的幣圈活動整理 🌸</div>
-  <div class="tagline" id="site-tagline"></div>
-  <div class="disclaimer" id="site-disclaimer"></div>
-  <div class="header-links" id="site-links"></div>
-</div>
+<header class="header">
+  <!-- 背景層：漸層 / 光暈 / 點陣 / 區塊鏈節點 / 噪點 -->
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-blob b1" aria-hidden="true"></div>
+  <div class="hero-blob b2" aria-hidden="true"></div>
+  <div class="hero-blob b3" aria-hidden="true"></div>
+  <div class="hero-blob b4" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <svg class="hero-net" viewBox="0 0 560 230" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g stroke-linecap="round">
+      <line x1="60" y1="40" x2="150" y2="90"/>
+      <line x1="150" y1="90" x2="90" y2="170"/>
+      <line x1="150" y1="90" x2="280" y2="60"/>
+      <line x1="280" y1="60" x2="410" y2="100"/>
+      <line x1="410" y1="100" x2="500" y2="48"/>
+      <line x1="410" y1="100" x2="470" y2="180"/>
+      <line x1="280" y1="60" x2="300" y2="160"/>
+    </g>
+    <circle class="nd" cx="60"  cy="40"  r="3"   style="animation-delay:0s"/>
+    <circle class="nd" cx="150" cy="90"  r="3.6" style="animation-delay:.5s"/>
+    <circle class="nd" cx="90"  cy="170" r="2.6" style="animation-delay:1s"/>
+    <circle class="nd" cx="280" cy="60"  r="3.4" style="animation-delay:1.4s"/>
+    <circle class="nd" cx="410" cy="100" r="3.6" style="animation-delay:.8s"/>
+    <circle class="nd" cx="500" cy="48"  r="2.8" style="animation-delay:1.8s"/>
+    <circle class="nd" cx="470" cy="180" r="2.6" style="animation-delay:.3s"/>
+    <circle class="nd" cx="300" cy="160" r="2.8" style="animation-delay:1.2s"/>
+  </svg>
+  <div class="hero-grain" aria-hidden="true"></div>
+
+  <!-- 內容 -->
+  <div class="hero-inner">
+    <div class="hero-kicker">✦&nbsp; CRYPTO <b>·</b> AI <b>·</b> 自由生活 &nbsp;✦</div>
+    <div class="avatar-wrap">
+      <div class="avatar-ring" aria-hidden="true"></div>
+      <div class="avatar" id="site-emoji">🩺</div>
+      <span class="orbit-dot" aria-hidden="true"></span>
+    </div>
+    <h1 class="name" id="site-name">Jun 的幣圈活動整理 🌸</h1>
+    <p class="tagline" id="site-tagline"></p>
+    <div class="disclaimer" id="site-disclaimer"></div>
+    <nav class="header-links" id="site-links"></nav>
+  </div>
+</header>
 
 <div class="filter-wrap" id="filters"></div>
 
