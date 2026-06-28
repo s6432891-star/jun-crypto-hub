@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jun 的幣圈活動整理</title>
+<meta name="description" content="護理師下班後用 AI 整理的幣圈活動，我玩過的才分享。純個人分享，非投資建議。">
+<!-- 分享到 LINE / Threads / IG 時的預覽卡 -->
+<meta property="og:title" content="Jun 的幣圈活動整理 🌸">
+<meta property="og:description" content="護理師下班後用 AI 整理的幣圈活動，我玩過的才分享。純個人分享，非投資建議。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="header">
+  <div class="avatar" id="site-emoji">🩺</div>
+  <div class="name" id="site-name">Jun 的幣圈活動整理 🌸</div>
+  <div class="tagline" id="site-tagline"></div>
+  <div class="disclaimer" id="site-disclaimer"></div>
+  <div class="header-links" id="site-links"></div>
+</div>
+
+<div class="filter-wrap" id="filters"></div>
+
+<div class="cards" id="cards"></div>
+
+<div class="no-results" id="no-results">這個平台目前沒有活動 🌸</div>
+
+<div class="footer" id="site-footer"></div>
+
+<div class="toast" id="toast">🌸 已複製！</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+  // 套用網站基本資訊
+  const S = window.SITE || {};
+  if (S.emoji) document.getElementById("site-emoji").textContent = S.emoji;
+  if (S.name) {
+    document.getElementById("site-name").textContent = S.name;
+    document.title = S.name;
+  }
+  document.getElementById("site-tagline").innerHTML = S.tagline || "";
+  document.getElementById("site-disclaimer").textContent = S.disclaimer || "";
+  document.getElementById("site-footer").innerHTML = S.footer || "";
+
+  const linksEl = document.getElementById("site-links");
+  linksEl.innerHTML = (S.links || [])
+    .filter(l => l && l.url)
+    .map(l => `<a class="header-link" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`)
+    .join("");
+
+  // 畫卡片 + 篩選
+  const cards = document.getElementById("cards");
+  const noResults = document.getElementById("no-results");
+  const data = window.ACTIVITIES || [];
+  renderCards(cards, data);
+  buildFilters(document.getElementById("filters"), data, (type) => applyFilter(cards, noResults, type));
+</script>
+</body>
+</html>

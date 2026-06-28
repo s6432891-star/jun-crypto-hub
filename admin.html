@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jun 後台 — 活動管理</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  body { padding-bottom: 40px; background: #fbeef3; }
+  .admin-top {
+    background: linear-gradient(135deg, #e8608a, #f48fb1);
+    color: #fff; padding: 18px 20px; text-align: center;
+  }
+  .admin-top h1 { font-size: 18px; margin-bottom: 4px; }
+  .admin-top p { font-size: 12px; opacity: 0.92; }
+
+  .toolbar {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+    padding: 12px; background: #fff; border-bottom: 1.5px solid var(--border);
+    box-shadow: 0 2px 10px rgba(232,96,138,0.08);
+  }
+  .tbtn {
+    border: none; border-radius: 12px; padding: 10px 16px;
+    font-size: 13px; font-weight: 700; font-family: inherit; cursor: pointer;
+    transition: transform .1s, opacity .2s;
+  }
+  .tbtn:active { transform: scale(.96); }
+  .tbtn.main { background: linear-gradient(135deg,#e8608a,#f48fb1); color:#fff; box-shadow:0 4px 14px rgba(232,96,138,.35); }
+  .tbtn.ghost { background: #fff; color: var(--accent); border: 1.5px solid var(--border); }
+  .tbtn.warn { background: #fff; color: #c0556e; border: 1.5px solid #f0c0cc; }
+
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 18px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 860px){ .grid { grid-template-columns: 1fr; } }
+
+  .panel { background:#fff; border:1.5px solid var(--border); border-radius:18px; padding:18px; }
+  .panel h2 { font-size:15px; color:var(--accent); margin-bottom:12px; display:flex; align-items:center; gap:6px; }
+
+  details.section { border:1.5px solid var(--border); border-radius:14px; margin-bottom:14px; background:#fff; }
+  details.section > summary { cursor:pointer; padding:12px 14px; font-weight:700; color:var(--accent); font-size:14px; list-style:none; }
+  details.section > summary::-webkit-details-marker { display:none; }
+  details.section > summary::before { content:"▸ "; }
+  details.section[open] > summary::before { content:"▾ "; }
+  details.section .body { padding: 0 14px 14px; }
+
+  label.f { display:block; font-size:12px; font-weight:700; color:var(--muted); margin:12px 0 5px; }
+  .hint { font-size:11px; color:var(--muted); font-weight:400; }
+  input.t, select.t, textarea.t {
+    width:100%; padding:10px 12px; border:1.5px solid var(--border); border-radius:10px;
+    font-size:13px; font-family:inherit; color:var(--text); background:#fffafc;
+  }
+  input.t:focus, select.t:focus, textarea.t:focus { outline:none; border-color:var(--accent-soft); }
+  textarea.t { resize:vertical; min-height:54px; }
+  .row2 { display:flex; gap:10px; }
+  .row2 > div { flex:1; }
+
+  .stat-row, .link-row { display:flex; gap:8px; align-items:center; margin-bottom:8px; }
+  .stat-row input { flex:1; }
+  .mini-x { border:none; background:#fde8ef; color:var(--accent); border-radius:8px; width:34px; height:36px; cursor:pointer; font-weight:700; flex-shrink:0; }
+  .add-mini { border:1.5px dashed var(--accent-soft); background:#fff; color:var(--accent); border-radius:10px; padding:8px; width:100%; cursor:pointer; font-weight:700; font-size:12px; }
+
+  .form-actions { display:flex; gap:10px; margin-top:18px; }
+  .form-actions .tbtn { flex:1; }
+
+  /* 活動清單 */
+  .list-item {
+    display:flex; align-items:center; gap:10px; padding:11px 12px; margin-bottom:9px;
+    border:1.5px solid var(--border); border-radius:12px; background:#fffafc;
+  }
+  .li-main { flex:1; min-width:0; }
+  .li-title { font-size:13.5px; font-weight:700; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .li-sub { font-size:11px; color:var(--muted); margin-top:2px; }
+  .li-tag { display:inline-block; font-size:10px; padding:1px 7px; border-radius:6px; background:var(--accent-pale); color:var(--accent); margin-right:5px; }
+  .li-btns { display:flex; gap:5px; flex-shrink:0; }
+  .li-btns button { border:none; background:#fff0f4; color:var(--accent); border:1px solid var(--border); border-radius:8px; width:32px; height:32px; cursor:pointer; font-size:13px; }
+  .li-btns button.del { color:#c0556e; }
+  .li-btns button:disabled { opacity:.3; cursor:default; }
+
+  /* 預覽手機框 */
+  .preview-frame {
+    border:8px solid #2d1a24; border-radius:28px; overflow:hidden; max-width:380px; margin:0 auto;
+    height:640px; background:var(--bg); position:relative;
+  }
+  .preview-scroll { height:100%; overflow-y:auto; }
+  .preview-note { text-align:center; font-size:11px; color:var(--muted); margin-top:10px; }
+
+  .editing-banner { background:#fff8f0; border:1px solid #f0d4b8; color:#c0784a; font-size:12px; padding:8px 12px; border-radius:10px; margin-bottom:12px; display:none; }
+  .editing-banner.show { display:block; }
+</style>
+</head>
+<body>
+
+<div class="admin-top">
+  <h1>🌸 Jun 的活動管理後台</h1>
+  <p>填表新增/修改活動 → 右邊即時預覽 → 按「下載 data.js」上傳 GitHub 就更新</p>
+</div>
+
+<div class="toolbar">
+  <button class="tbtn main" id="btn-download">💾 下載 data.js（更新用）</button>
+  <button class="tbtn ghost" id="btn-copy">📋 複製資料</button>
+  <button class="tbtn ghost" id="btn-reload">↺ 重新載入線上版</button>
+  <button class="tbtn warn" id="btn-clear">🗑 清掉草稿</button>
+</div>
+
+<div class="wrap">
+  <div class="grid">
+
+    <!-- 左：編輯區 -->
+    <div>
+      <!-- 網站基本設定 -->
+      <details class="section">
+        <summary>⚙️ 網站基本設定（名字、標語、連結）</summary>
+        <div class="body">
+          <label class="f">頭像 emoji</label>
+          <input class="t" id="s-emoji" maxlength="4">
+          <label class="f">標題名稱</label>
+          <input class="t" id="s-name">
+          <label class="f">標語 <span class="hint">（換行用 &lt;br&gt;）</span></label>
+          <textarea class="t" id="s-tagline"></textarea>
+          <label class="f">免責聲明</label>
+          <input class="t" id="s-disclaimer">
+          <label class="f">頁尾文字 <span class="hint">（換行用 &lt;br&gt;）</span></label>
+          <textarea class="t" id="s-footer"></textarea>
+          <label class="f">上方導流連結 <span class="hint">（沒填網址的會自動隱藏）</span></label>
+          <div id="links-box"></div>
+          <button class="add-mini" id="add-link">＋ 新增一個連結</button>
+        </div>
+      </details>
+
+      <!-- 活動編輯表單 -->
+      <div class="panel" style="margin-bottom:16px;">
+        <h2 id="form-title">➕ 新增活動</h2>
+        <div class="editing-banner" id="edit-banner"></div>
+
+        <div class="row2">
+          <div>
+            <label class="f">平台</label>
+            <select class="t" id="f-platform">
+              <option value="bitget-wallet">Bitget Wallet</option>
+              <option value="bitget">Bitget</option>
+              <option value="gate">Gate</option>
+              <option value="bybit">Bybit</option>
+              <option value="mexc">MEXC</option>
+              <option value="bingx">BingX</option>
+              <option value="general">其他</option>
+            </select>
+          </div>
+          <div>
+            <label class="f">平台顯示名 <span class="hint">（卡片左上角）</span></label>
+            <input class="t" id="f-platformLabel" placeholder="例：Bitget Wallet">
+          </div>
+        </div>
+
+        <div class="row2">
+          <div>
+            <label class="f">狀態</label>
+            <select class="t" id="f-status">
+              <option value="hot">🔥 進行中（紅）</option>
+              <option value="ongoing">✅ 長期/合作中（綠）</option>
+              <option value="soon">⏳ 即將開始（橘）</option>
+              <option value="ended">⚪ 已結束（灰）</option>
+            </select>
+          </div>
+          <div>
+            <label class="f">狀態文字</label>
+            <input class="t" id="f-statusLabel" placeholder="例：🔥 進行中">
+          </div>
+        </div>
+
+        <label class="f">活動標題</label>
+        <input class="t" id="f-title" placeholder="例：PoolX 質押空投">
+
+        <label class="f">活動說明</label>
+        <textarea class="t" id="f-desc" placeholder="一兩句話講這個活動在做什麼"></textarea>
+
+        <label class="f">數據列 <span class="hint">（可放 APR、獎勵金額等，沒有可留空）</span></label>
+        <div id="stats-box"></div>
+        <button class="add-mini" id="add-stat">＋ 新增一個數據</button>
+
+        <label class="f">好處清單 <span class="hint">（一條一個重點；想標粉紅色重點用 **兩個星號** 包起來）</span></label>
+        <div id="benefits-box"></div>
+        <button class="add-mini" id="add-benefit">＋ 新增一條好處</button>
+
+        <label class="f">截止時間 <span class="hint">（留空就不顯示倒數列，例：截止：2026/07/03 17:00）</span></label>
+        <input class="t" id="f-deadline" placeholder="截止：2026/07/03 17:00">
+
+        <label class="f">Jun 說 <span class="hint">（你的個人心得，留空就不顯示）</span></label>
+        <textarea class="t" id="f-junNote" placeholder="例：我自己有質押，躺著領的感覺很好 😌"></textarea>
+
+        <div class="row2">
+          <div>
+            <label class="f">活動連結</label>
+            <input class="t" id="f-link" placeholder="https://...">
+          </div>
+          <div>
+            <label class="f">按鈕文字</label>
+            <input class="t" id="f-linkLabel" placeholder="例：🔗 前往 Bitget">
+          </div>
+        </div>
+
+        <div class="row2">
+          <div>
+            <label class="f">邀請碼 <span class="hint">（沒有就留空）</span></label>
+            <input class="t" id="f-code" placeholder="例：3uXZE">
+          </div>
+          <div>
+            <label class="f">邀請碼標籤 <span class="hint">（留空＝「邀請碼」）</span></label>
+            <input class="t" id="f-codeLabel" placeholder="例：Bitget 邀請碼">
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="tbtn main" id="btn-save">✓ 儲存這個活動</button>
+          <button class="tbtn ghost" id="btn-cancel">取消</button>
+        </div>
+      </div>
+
+      <!-- 活動清單 -->
+      <div class="panel">
+        <h2>📋 目前的活動清單 <span class="hint" id="count"></span></h2>
+        <div id="list"></div>
+        <button class="add-mini" id="btn-new" style="margin-top:6px;">＋ 新增一個活動</button>
+      </div>
+    </div>
+
+    <!-- 右：即時預覽 -->
+    <div>
+      <div class="panel" style="position:sticky; top:74px;">
+        <h2>👀 即時預覽</h2>
+        <div class="preview-frame">
+          <div class="preview-scroll" id="preview"></div>
+        </div>
+        <div class="preview-note">這就是粉絲打開連結會看到的樣子</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="toast" id="toast">🌸 已複製！</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+/* ====== 草稿狀態：優先讀 localStorage，沒有才讀 data.js ====== */
+const DRAFT_KEY = "junHubDraft";
+let state = loadState();
+let editIndex = -1; // -1 = 新增中
+
+function defaultState() {
+  return {
+    site: JSON.parse(JSON.stringify(window.SITE || {})),
+    activities: JSON.parse(JSON.stringify(window.ACTIVITIES || []))
+  };
+}
+function loadState() {
+  try {
+    const raw = localStorage.getItem(DRAFT_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch (e) {}
+  return defaultState();
+}
+function saveDraft() {
+  try { localStorage.setItem(DRAFT_KEY, JSON.stringify(state)); } catch (e) {}
+}
+
+/* ====== 狀態文字預設 ====== */
+const STATUS_DEFAULT = { hot:"🔥 進行中", ongoing:"✅ 合作中", soon:"⏳ 即將開始", ended:"⚪ 已結束" };
+
+/* ====== 網站設定表單 ====== */
+const $ = id => document.getElementById(id);
+function fillSiteForm() {
+  const s = state.site || {};
+  $("s-emoji").value = s.emoji || "";
+  $("s-name").value = s.name || "";
+  $("s-tagline").value = s.tagline || "";
+  $("s-disclaimer").value = s.disclaimer || "";
+  $("s-footer").value = s.footer || "";
+  renderLinks();
+}
+function renderLinks() {
+  const box = $("links-box");
+  const links = (state.site.links || []);
+  box.innerHTML = links.map((l, i) => `
+    <div class="link-row">
+      <input class="t" data-link-label="${i}" placeholder="名稱" value="${(l.label||'').replace(/"/g,'&quot;')}" style="flex:0 0 110px;">
+      <input class="t" data-link-url="${i}" placeholder="網址(留空=隱藏)" value="${(l.url||'').replace(/"/g,'&quot;')}">
+      <button class="mini-x" data-link-del="${i}">✕</button>
+    </div>`).join("");
+}
+function readSiteForm() {
+  state.site.emoji = $("s-emoji").value.trim();
+  state.site.name = $("s-name").value.trim();
+  state.site.tagline = $("s-tagline").value;
+  state.site.disclaimer = $("s-disclaimer").value;
+  state.site.footer = $("s-footer").value;
+}
+
+/* ====== 數據列 / 連結 動態欄位 ====== */
+function renderStatsInputs(stats) {
+  const box = $("stats-box");
+  box.innerHTML = (stats || []).map((s, i) => `
+    <div class="stat-row">
+      <input class="t" data-stat-label="${i}" placeholder="名稱(如 APR)" value="${(s.label||'').replace(/"/g,'&quot;')}">
+      <input class="t" data-stat-value="${i}" placeholder="數值(如 72%)" value="${(s.value||'').replace(/"/g,'&quot;')}">
+      <select class="t" data-stat-color="${i}" style="flex:0 0 92px;">
+        <option value="" ${!s.color?'selected':''}>一般</option>
+        <option value="highlight" ${s.color==='highlight'?'selected':''}>粉紅</option>
+        <option value="green" ${s.color==='green'?'selected':''}>綠色</option>
+      </select>
+      <button class="mini-x" data-stat-del="${i}">✕</button>
+    </div>`).join("");
+}
+let formStats = [];
+function readStatsInputs() {
+  const out = [];
+  document.querySelectorAll("[data-stat-label]").forEach(inp => {
+    const i = inp.getAttribute("data-stat-label");
+    const label = inp.value;
+    const value = document.querySelector(`[data-stat-value="${i}"]`).value;
+    const color = document.querySelector(`[data-stat-color="${i}"]`).value;
+    if (label || value) out.push({ label, value, color });
+  });
+  return out;
+}
+
+/* 好處清單動態欄位 */
+function renderBenefitsInputs(benefits) {
+  const box = $("benefits-box");
+  box.innerHTML = (benefits || []).map((b, i) => `
+    <div class="stat-row">
+      <input class="t" data-ben-icon="${i}" placeholder="圖示" value="${(b.icon||'').replace(/"/g,'&quot;')}" style="flex:0 0 56px;text-align:center;">
+      <input class="t" data-ben-text="${i}" placeholder="例：完成認證 → 領 **10 USDT**" value="${(b.text||'').replace(/"/g,'&quot;')}">
+      <button class="mini-x" data-ben-del="${i}">✕</button>
+    </div>`).join("");
+}
+let formBenefits = [];
+function readBenefitsInputs() {
+  const out = [];
+  document.querySelectorAll("[data-ben-text]").forEach(inp => {
+    const i = inp.getAttribute("data-ben-text");
+    const text = inp.value;
+    const icon = document.querySelector(`[data-ben-icon="${i}"]`).value;
+    if (text || icon) out.push({ icon, text });
+  });
+  return out;
+}
+
+/* ====== 載入一筆到表單 ====== */
+function blankActivity() {
+  return { platform:"bitget-wallet", platformLabel:"", status:"hot", statusLabel:STATUS_DEFAULT.hot,
+           title:"", desc:"", stats:[], benefits:[], deadline:"", junNote:"",
+           link:"", linkLabel:"🔗 前往活動", code:"", codeLabel:"" };
+}
+function loadToForm(a) {
+  $("f-platform").value = a.platform || "bitget-wallet";
+  $("f-platformLabel").value = a.platformLabel || "";
+  $("f-status").value = a.status || "hot";
+  $("f-statusLabel").value = a.statusLabel || "";
+  $("f-title").value = a.title || "";
+  $("f-desc").value = a.desc || "";
+  $("f-deadline").value = a.deadline || "";
+  $("f-junNote").value = a.junNote || "";
+  $("f-link").value = a.link || "";
+  $("f-linkLabel").value = a.linkLabel || "";
+  $("f-code").value = a.code || "";
+  $("f-codeLabel").value = a.codeLabel || "";
+  formStats = JSON.parse(JSON.stringify(a.stats || []));
+  renderStatsInputs(formStats);
+  formBenefits = JSON.parse(JSON.stringify(a.benefits || []));
+  renderBenefitsInputs(formBenefits);
+}
+function readForm() {
+  return {
+    platform: $("f-platform").value,
+    platformLabel: $("f-platformLabel").value.trim(),
+    status: $("f-status").value,
+    statusLabel: $("f-statusLabel").value.trim(),
+    title: $("f-title").value.trim(),
+    desc: $("f-desc").value.trim(),
+    stats: readStatsInputs(),
+    benefits: readBenefitsInputs(),
+    deadline: $("f-deadline").value.trim(),
+    junNote: $("f-junNote").value.trim(),
+    link: $("f-link").value.trim(),
+    linkLabel: $("f-linkLabel").value.trim(),
+    code: $("f-code").value.trim(),
+    codeLabel: $("f-codeLabel").value.trim()
+  };
+}
+
+function startNew() {
+  editIndex = -1;
+  loadToForm(blankActivity());
+  $("form-title").textContent = "➕ 新增活動";
+  $("edit-banner").classList.remove("show");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+function startEdit(i) {
+  editIndex = i;
+  loadToForm(state.activities[i]);
+  $("form-title").textContent = "✏️ 編輯活動";
+  const b = $("edit-banner");
+  b.textContent = "正在編輯：" + (state.activities[i].title || "（無標題）");
+  b.classList.add("show");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+/* ====== 清單渲染 ====== */
+function renderList() {
+  const list = $("list");
+  const acts = state.activities;
+  $("count").textContent = `（共 ${acts.length} 個）`;
+  if (!acts.length) { list.innerHTML = `<div class="hint" style="padding:8px 0;">還沒有活動，點下方「新增一個活動」開始 🌸</div>`; return; }
+  list.innerHTML = acts.map((a, i) => `
+    <div class="list-item">
+      <div class="li-main">
+        <div class="li-title">${esc(a.title || "（無標題）")}</div>
+        <div class="li-sub"><span class="li-tag">${esc(a.platformLabel || a.platform)}</span>${esc(a.statusLabel || a.status)}${a.code ? " · 邀請碼 "+esc(a.code) : ""}</div>
+      </div>
+      <div class="li-btns">
+        <button data-edit="${i}" title="編輯">✏️</button>
+        <button data-up="${i}" title="上移" ${i===0?"disabled":""}>↑</button>
+        <button data-down="${i}" title="下移" ${i===acts.length-1?"disabled":""}>↓</button>
+        <button class="del" data-del="${i}" title="刪除">🗑</button>
+      </div>
+    </div>`).join("");
+}
+
+/* ====== 預覽 ====== */
+function renderPreview() {
+  // 套用設定到草稿後渲染卡片
+  window.SITE = state.site;
+  renderCards($("preview"), state.activities);
+}
+
+function refreshAll() {
+  renderList();
+  renderPreview();
+  saveDraft();
+}
+
+/* ====== 事件綁定 ====== */
+// 工具列
+$("btn-new").addEventListener("click", startNew);
+$("btn-cancel").addEventListener("click", startNew);
+$("btn-save").addEventListener("click", () => {
+  const a = readForm();
+  if (!a.title) { showToast("請至少填活動標題"); return; }
+  if (!a.statusLabel) a.statusLabel = STATUS_DEFAULT[a.status] || "";
+  if (editIndex >= 0) state.activities[editIndex] = a;
+  else state.activities.push(a);
+  refreshAll();
+  showToast(editIndex >= 0 ? "已更新活動！" : "已新增活動！");
+  startNew();
+});
+
+// 狀態變更時自動帶入預設文字（若使用者沒自填）
+$("f-status").addEventListener("change", () => {
+  const cur = $("f-statusLabel").value.trim();
+  if (!cur || Object.values(STATUS_DEFAULT).includes(cur)) {
+    $("f-statusLabel").value = STATUS_DEFAULT[$("f-status").value] || "";
+  }
+});
+// 平台變更時，若顯示名空著就帶入預設
+$("f-platform").addEventListener("change", () => {
+  if (!$("f-platformLabel").value.trim()) {
+    $("f-platformLabel").value = (PLATFORM_META[$("f-platform").value] || {}).label || "";
+  }
+});
+
+// 數據列
+$("add-stat").addEventListener("click", () => {
+  formStats = readStatsInputs(); formStats.push({ label:"", value:"", color:"" });
+  renderStatsInputs(formStats);
+});
+$("stats-box").addEventListener("click", (e) => {
+  const del = e.target.getAttribute("data-stat-del");
+  if (del !== null) { formStats = readStatsInputs(); formStats.splice(+del,1); renderStatsInputs(formStats); }
+});
+
+// 好處清單
+$("add-benefit").addEventListener("click", () => {
+  formBenefits = readBenefitsInputs(); formBenefits.push({ icon:"✅", text:"" });
+  renderBenefitsInputs(formBenefits);
+});
+$("benefits-box").addEventListener("click", (e) => {
+  const del = e.target.getAttribute("data-ben-del");
+  if (del !== null) { formBenefits = readBenefitsInputs(); formBenefits.splice(+del,1); renderBenefitsInputs(formBenefits); }
+});
+
+// 連結
+$("add-link").addEventListener("click", () => {
+  state.site.links = state.site.links || [];
+  state.site.links.push({ label:"新連結", url:"" });
+  renderLinks();
+});
+$("links-box").addEventListener("input", (e) => {
+  const li = e.target.getAttribute("data-link-label");
+  const ui = e.target.getAttribute("data-link-url");
+  if (li !== null) state.site.links[+li].label = e.target.value;
+  if (ui !== null) { state.site.links[+ui].url = e.target.value; renderPreview(); saveDraft(); }
+});
+$("links-box").addEventListener("click", (e) => {
+  const del = e.target.getAttribute("data-link-del");
+  if (del !== null) { state.site.links.splice(+del,1); renderLinks(); renderPreview(); saveDraft(); }
+});
+
+// 網站設定即時更新
+["s-emoji","s-name","s-tagline","s-disclaimer","s-footer"].forEach(id => {
+  $(id).addEventListener("input", () => { readSiteForm(); renderPreview(); saveDraft(); });
+});
+
+// 清單按鈕
+$("list").addEventListener("click", (e) => {
+  const t = e.target;
+  const edit = t.getAttribute("data-edit");
+  const up = t.getAttribute("data-up");
+  const down = t.getAttribute("data-down");
+  const del = t.getAttribute("data-del");
+  if (edit !== null) return startEdit(+edit);
+  if (up !== null) { const i=+up; [state.activities[i-1],state.activities[i]]=[state.activities[i],state.activities[i-1]]; refreshAll(); }
+  if (down !== null) { const i=+down; [state.activities[i+1],state.activities[i]]=[state.activities[i],state.activities[i+1]]; refreshAll(); }
+  if (del !== null) {
+    const i=+del;
+    if (confirm(`確定刪除「${state.activities[i].title || "這個活動"}」嗎？`)) {
+      state.activities.splice(i,1);
+      if (editIndex === i) startNew();
+      refreshAll();
+      showToast("已刪除");
+    }
+  }
+});
+
+/* ====== 匯出 ====== */
+function buildDataJs() {
+  readSiteForm();
+  const header =
+`/* =========================================================================
+   Jun 幣圈活動整理 — 資料檔（由後台 admin.html 產生）
+   更新：${new Date().toLocaleString("zh-TW", { timeZone: "Asia/Taipei" })}（台北時間）
+   ========================================================================= */
+
+`;
+  return header +
+    "window.SITE = " + JSON.stringify(state.site, null, 2) + ";\n\n" +
+    "window.ACTIVITIES = " + JSON.stringify(state.activities, null, 2) + ";\n";
+}
+$("btn-download").addEventListener("click", () => {
+  const blob = new Blob([buildDataJs()], { type: "text/javascript;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = "data.js"; a.click();
+  URL.revokeObjectURL(url);
+  showToast("已下載 data.js，記得上傳到 GitHub");
+});
+$("btn-copy").addEventListener("click", () => {
+  const text = buildDataJs();
+  const done = () => showToast("資料已複製");
+  if (navigator.clipboard) navigator.clipboard.writeText(text).then(done).catch(()=>fallbackCopy(text,done));
+  else fallbackCopy(text, done);
+});
+
+// 重新載入線上版（丟掉草稿，回到 data.js 的內容）
+$("btn-reload").addEventListener("click", () => {
+  if (confirm("這會丟掉目前的草稿，回到 data.js 裡的內容。確定嗎？")) {
+    localStorage.removeItem(DRAFT_KEY);
+    location.reload();
+  }
+});
+$("btn-clear").addEventListener("click", () => {
+  if (confirm("清掉瀏覽器裡暫存的草稿？（不會動到已上傳的 data.js）")) {
+    localStorage.removeItem(DRAFT_KEY);
+    location.reload();
+  }
+});
+
+/* ====== 初始化 ====== */
+fillSiteForm();
+startNew();
+refreshAll();
+</script>
+</body>
+</html>
