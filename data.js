@@ -17,10 +17,10 @@ window.SITE = {
   tagline: "護理師下班後用 AI 整理的幣圈活動<br>我玩過的才分享，沒玩過的不亂推",
   disclaimer: "⚠️ 純個人分享，非投資建議，投資請自行評估風險",
   links: [
-    { label: "📱 Threads", url: "" },
-    { label: "✨ Instagram", url: "" }
+    { label: "📱 Threads", url: "https://www.threads.com/@j.i.y__ovo" },
+    { label: "✨ Instagram", url: "https://www.instagram.com/j.i.y__ovo" }
   ],
-  footer: "內容為個人分享，非投資建議 ♡<br>投資有風險，只投閒置資金，自行判斷"
+  footer: "追蹤我 Threads / IG：@j.i.y__ovo<br>內容為個人分享，非投資建議 ♡<br>投資有風險，只投閒置資金，自行判斷"
 };
 
 /* status：hot（🔥）/ ongoing（✅）/ soon（⏳即將）/ ended（⚪已結束）
