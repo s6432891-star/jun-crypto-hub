@@ -28,6 +28,72 @@ window.SITE = {
    stats / benefits 不需要就寫 []；code / deadline 沒有就留 "" */
 window.ACTIVITIES = [
   {
+    platform: "bybit",
+    platformLabel: "Bybit · 新用戶專屬",
+    status: "hot",
+    statusLabel: "🔥 限時",
+    title: "🌱 新人禮：$30 + 高達 $500 盲盒",
+    desc: "用我的邀請碼註冊 Bybit，完成新人任務逐步解鎖獎勵，最高可拿 $530 以上",
+    stats: [],
+    benefits: [
+      { icon: "✅", text: "完成身份認證 → 立領 **10 USDT 抵扣金**" },
+      { icon: "💰", text: "充值任務 → 再領 **20 USDT**" },
+      { icon: "🎁", text: "完成更多任務 → 解鎖高達 **$500 盲盒**驚喜獎勵" },
+      { icon: "📈", text: "TradFi 首單 ≥$10 → **5 USDT**（新用戶限定）" }
+    ],
+    deadline: "",
+    junNote: "Bybit 新人禮蠻實在的，身分驗證就先給 10U，一步一步做任務就有，適合剛進來的新人 🌸",
+    link: "https://partner.bybit.com/b/BYJUN",
+    linkLabel: "🔗 前往 Bybit 註冊",
+    code: "BYJUN",
+    codeLabel: "Bybit 邀請碼"
+  },
+  {
+    platform: "bybit",
+    platformLabel: "Bybit · 福利中心",
+    status: "hot",
+    statusLabel: "🔥 進行中",
+    title: "Bybit 福利中心 — 理財 & 質押高息",
+    desc: "登入 Bybit App → 福利中心，各種任務都可以領加息券，儲蓄質押最高衝 555% 年化",
+    stats: [],
+    benefits: [
+      { icon: "💸", text: "Bybit 儲蓄質押 ≥100 USDT → 享 **555% APR 加息券**（+300%）" },
+      { icon: "💸", text: "活期儲蓄帳戶餘額 ≥$100 → 享 **+800% 加息券**" },
+      { icon: "🃏", text: "Bybit Card 消費 ≥100 USDT → **2 USDT 空投**（循環任務）" },
+      { icon: "🎮", text: "模擬帳戶完成衍生品交易 → **50 USDT 等值倉位**" }
+    ],
+    deadline: "",
+    junNote: "福利中心每天都有新任務，有些是循環的，進去看一下會有驚喜，USDT 理財 555% 年化那個加息券很香 🌷",
+    link: "https://partner.bybit.com/b/BYJUN",
+    linkLabel: "🔗 前往 Bybit 福利中心",
+    code: "BYJUN",
+    codeLabel: "Bybit 邀請碼"
+  },
+  {
+    platform: "bybit",
+    platformLabel: "Bybit · 理財",
+    status: "hot",
+    statusLabel: "🔥 進行中",
+    title: "持有 USD1，賺 WLFI 收益",
+    desc: "持有 USD1 穩定幣自動獲得 WLFI 代幣，天天領獎勵，無需鎖倉、無需操作，放著就賺",
+    stats: [
+      { label: "預估年化", value: "7.29%", color: "highlight" },
+      { label: "最低持有", value: "≥ 1 USD1", color: "" },
+      { label: "結算", value: "每日自動", color: "" }
+    ],
+    benefits: [
+      { icon: "1️⃣", text: "完成身分驗證（1 級即可）" },
+      { icon: "2️⃣", text: "帳戶持有 ≥ 1 USD1（不用鎖倉）" },
+      { icon: "3️⃣", text: "每天自動獲得 WLFI 空投，隔天早上入帳" }
+    ],
+    deadline: "",
+    junNote: "USD1 是 World Liberty Financial 發行的穩定幣，1:1 錨定美元。放著就有 WLFI，適合懶人理財 🌷\n\n⚠️ 年化為預估值，WLFI 市價會波動",
+    link: "https://partner.bybit.com/b/BYJUN",
+    linkLabel: "🔗 前往 Bybit 買 USD1",
+    code: "BYJUN",
+    codeLabel: "Bybit 邀請碼"
+  },
+  {
     platform: "bitget-wallet",
     platformLabel: "Bitget Wallet",
     status: "hot",
@@ -157,72 +223,6 @@ window.ACTIVITIES = [
     linkLabel: "🔗 前往 Gate 活動",
     code: "VFVFVW9AVG",
     codeLabel: "Gate 邀請碼"
-  },
-  {
-    platform: "bybit",
-    platformLabel: "Bybit · 新用戶專屬",
-    status: "hot",
-    statusLabel: "🔥 限時",
-    title: "🌱 新人禮：$30 + 高達 $500 盲盒",
-    desc: "用我的邀請碼註冊 Bybit，完成新人任務逐步解鎖獎勵，最高可拿 $530 以上",
-    stats: [],
-    benefits: [
-      { icon: "✅", text: "完成身份認證 → 立領 **10 USDT 抵扣金**" },
-      { icon: "💰", text: "充值任務 → 再領 **20 USDT**" },
-      { icon: "🎁", text: "完成更多任務 → 解鎖高達 **$500 盲盒**驚喜獎勵" },
-      { icon: "📈", text: "TradFi 首單 ≥$10 → **5 USDT**（新用戶限定）" }
-    ],
-    deadline: "",
-    junNote: "Bybit 新人禮蠻實在的，身分驗證就先給 10U，一步一步做任務就有，適合剛進來的新人 🌸",
-    link: "https://partner.bybit.com/b/BYJUN",
-    linkLabel: "🔗 前往 Bybit 註冊",
-    code: "BYJUN",
-    codeLabel: "Bybit 邀請碼"
-  },
-  {
-    platform: "bybit",
-    platformLabel: "Bybit · 福利中心",
-    status: "hot",
-    statusLabel: "🔥 進行中",
-    title: "Bybit 福利中心 — 理財 & 質押高息",
-    desc: "登入 Bybit App → 福利中心，各種任務都可以領加息券，儲蓄質押最高衝 555% 年化",
-    stats: [],
-    benefits: [
-      { icon: "💸", text: "Bybit 儲蓄質押 ≥100 USDT → 享 **555% APR 加息券**（+300%）" },
-      { icon: "💸", text: "活期儲蓄帳戶餘額 ≥$100 → 享 **+800% 加息券**" },
-      { icon: "🃏", text: "Bybit Card 消費 ≥100 USDT → **2 USDT 空投**（循環任務）" },
-      { icon: "🎮", text: "模擬帳戶完成衍生品交易 → **50 USDT 等值倉位**" }
-    ],
-    deadline: "",
-    junNote: "福利中心每天都有新任務，有些是循環的，進去看一下會有驚喜，USDT 理財 555% 年化那個加息券很香 🌷",
-    link: "https://partner.bybit.com/b/BYJUN",
-    linkLabel: "🔗 前往 Bybit 福利中心",
-    code: "BYJUN",
-    codeLabel: "Bybit 邀請碼"
-  },
-  {
-    platform: "bybit",
-    platformLabel: "Bybit · 理財",
-    status: "hot",
-    statusLabel: "🔥 進行中",
-    title: "持有 USD1，賺 WLFI 收益",
-    desc: "持有 USD1 穩定幣自動獲得 WLFI 代幣，天天領獎勵，無需鎖倉、無需操作，放著就賺",
-    stats: [
-      { label: "預估年化", value: "7.29%", color: "highlight" },
-      { label: "最低持有", value: "≥ 1 USD1", color: "" },
-      { label: "結算", value: "每日自動", color: "" }
-    ],
-    benefits: [
-      { icon: "1️⃣", text: "完成身分驗證（1 級即可）" },
-      { icon: "2️⃣", text: "帳戶持有 ≥ 1 USD1（不用鎖倉）" },
-      { icon: "3️⃣", text: "每天自動獲得 WLFI 空投，隔天早上入帳" }
-    ],
-    deadline: "",
-    junNote: "USD1 是 World Liberty Financial 發行的穩定幣，1:1 錨定美元。放著就有 WLFI，適合懶人理財 🌷\n\n⚠️ 年化為預估值，WLFI 市價會波動",
-    link: "https://partner.bybit.com/b/BYJUN",
-    linkLabel: "🔗 前往 Bybit 買 USD1",
-    code: "BYJUN",
-    codeLabel: "Bybit 邀請碼"
   },
   {
     platform: "mexc",
