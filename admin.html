@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jun 後台 — 活動管理</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 <style>
   body { padding-bottom: 40px; background: #fbeef3; }
@@ -112,8 +113,8 @@
       <details class="section">
         <summary>⚙️ 網站基本設定（名字、標語、連結）</summary>
         <div class="body">
-          <label class="f">頭像 emoji</label>
-          <input class="t" id="s-emoji" maxlength="4">
+          <label class="f">頭像 emoji <span class="hint">（留空＝用專屬 logo；填了 emoji 會蓋掉 logo）</span></label>
+          <input class="t" id="s-emoji" maxlength="4" placeholder="留空＝用 logo">
           <label class="f">標題名稱</label>
           <input class="t" id="s-name">
           <label class="f">標語 <span class="hint">（換行用 &lt;br&gt;）</span></label>
