@@ -8,7 +8,7 @@
    小語法：
    - benefits 好處清單裡，想把金額/重點變粉紅色，用 **兩個星號** 包起來。
    - junNote（Jun 說）想換行，直接按 Enter 換行即可。
-   最後更新：2026-06-29
+   最後更新：2026-06-30
    ========================================================================= */
 
 window.SITE = {
@@ -257,30 +257,7 @@ window.ACTIVITIES = [
     platform: "gate",
     platformLabel: "Gate",
     status: "hot",
-    statusLabel: "🔥 今天截止",
-    title: "⚡ 瘋狂星期三 AI 儲存日",
-    desc: "報名即送抽獎機會，100% 解鎖盲盒，獎品含 MU 股票、美光旗艦 SSD 及高息理財豪禮",
-    stats: [
-      { label: "USDT 理財", value: "最高 100% 年化", color: "highlight" },
-      { label: "BTC/ETH/SOL 質押", value: "最高 16% 年化", color: "highlight" }
-    ],
-    benefits: [
-      { icon: "🎰", text: "活動一：報名即抽盲盒，獎品含 MU 股票、美光 SSD、USDT" },
-      { icon: "💰", text: "活動二：USDT 14 天定期理財 **6% 年化**；新用戶 3 天 **100% 年化**" },
-      { icon: "₿", text: "活動三：質押 BTC/ETH/SOL → 最高享 **16% 年化**（SOL 0-1 顆 8.5%）" }
-    ],
-    deadline: "截止：2026/06/28 08:00（UTC）",
-    junNote: "今天就截止了，要衝快點！不過盲盒任務不要短時間頻繁操作，避免觸發風控 💜",
-    link: "https://www.gate.io",
-    linkLabel: "🔗 前往 Gate 活動",
-    code: "VFVFVW9AVG",
-    codeLabel: "Gate 邀請碼"
-  },
-  {
-    platform: "gate",
-    platformLabel: "Gate",
-    status: "hot",
-    statusLabel: "🔥 剩 5 天",
+    statusLabel: "🔥 限時",
     title: "SK海力士・美光・閃迪 合約空投",
     desc: "SKHYNIX / MU / SNDK 合約，新人第一筆交易領 $5，天天打卡最高 $35，交易達標最高 $200",
     stats: [
