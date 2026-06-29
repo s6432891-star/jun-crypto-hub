@@ -94,6 +94,31 @@ window.ACTIVITIES = [
     codeLabel: "Bybit 邀請碼"
   },
   {
+    platform: "bybit",
+    platformLabel: "Bybit · TradFi 入金抽獎",
+    status: "hot",
+    statusLabel: "🔥 限時",
+    title: "入金 TradFi，必得獎勵",
+    desc: "活動期間完成 TradFi 淨充值任務可拿抽獎次數，100% 中獎，最高可抽 1 XAUT",
+    stats: [
+      { label: "活動時間", value: "6/3–7/31", color: "" },
+      { label: "最高獎勵", value: "1 XAUT", color: "highlight" },
+      { label: "中獎率", value: "100%", color: "highlight" }
+    ],
+    benefits: [
+      { icon: "🎁", text: "獎項含 **10 / 20 / 50 / 100 / 500 / 1000 USDT TradFi 獎勵金**" },
+      { icon: "🏆", text: "大獎含 **iPhone 17 Pro Max** 與 **1 XAUT**" },
+      { icon: "💰", text: "7 天內 TradFi 淨充值 ≥500 / ≥1,000 / ≥5,000 USDT，可各拿 1 次抽獎機會" },
+      { icon: "⚠️", text: "需先點立即參與並完成 1 級 KYC；獎品數量有限、先到先得" }
+    ],
+    deadline: "截止：2026/07/31 10:00（UTC）",
+    junNote: "這個是 Bybit TradFi 入金抽獎活動，適合原本就要把資金放進 TradFi 的人順手參加。任務看的是活動期間 7 天內淨充值，不是叫新手為了抽獎硬入金；活動僅開放特定地區，且獎品數量有限，先確認資格再做。",
+    link: "https://partner.bybit.com/b/BYJUN",
+    linkLabel: "🔗 前往 Bybit TradFi 活動",
+    code: "BYJUN",
+    codeLabel: "Bybit 邀請碼"
+  },
+  {
     platform: "bitget-wallet",
     platformLabel: "Bitget Wallet",
     status: "hot",
