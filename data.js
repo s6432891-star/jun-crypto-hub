@@ -8,7 +8,7 @@
    小語法：
    - benefits 好處清單裡，想把金額/重點變粉紅色，用 **兩個星號** 包起來。
    - junNote（Jun 說）想換行，直接按 Enter 換行即可。
-   最後更新：2026-06-28
+   最後更新：2026-06-29
    ========================================================================= */
 
 window.SITE = {
@@ -180,6 +180,31 @@ window.ACTIVITIES = [
   },
   {
     platform: "gate",
+    platformLabel: "Gate · USD1 理財",
+    status: "hot",
+    statusLabel: "🔥 進行中",
+    title: "持有 USD1 即享 15% 預估年化",
+    desc: "在 Gate 資產帳戶持有 USD1，系統每小時快照計算收益，次日發放到資產帳戶",
+    stats: [
+      { label: "預估年化", value: "15%", color: "highlight" },
+      { label: "最低持有", value: "≥ 1 USD1", color: "" },
+      { label: "快照", value: "每日 24 次", color: "" }
+    ],
+    benefits: [
+      { icon: "💵", text: "持有 USD1 即可計算收益，**無需申購、無需鎖倉**" },
+      { icon: "⏱️", text: "系統每小時快照，每天 24 次，收益次日發放" },
+      { icon: "📌", text: "APR 約每日 14:00（UTC+8）更新，顯示為預估值" },
+      { icon: "⚠️", text: "USD1 仍有穩定幣、監管、智能合約與市場波動風險" }
+    ],
+    deadline: "",
+    junNote: "這個比較像懶人型穩定幣收益，只要在 Gate 帳戶持有 USD1 就會計算，不用鎖倉。但 15% 是預估年化，不是保證收益，USD1 本身也有穩定幣、監管和市場波動風險，適合先小額研究。",
+    link: "https://www.gate.io",
+    linkLabel: "🔗 前往 Gate 查看 USD1",
+    code: "VFVFVW9AVG",
+    codeLabel: "Gate 邀請碼"
+  },
+  {
+    platform: "gate",
     platformLabel: "Gate",
     status: "hot",
     statusLabel: "🔥 今天截止",
@@ -242,6 +267,31 @@ window.ACTIVITIES = [
     linkLabel: "🔗 前往 MEXC 註冊",
     code: "3uXZE",
     codeLabel: "MEXC 邀請碼"
+  },
+  {
+    platform: "bingx",
+    platformLabel: "BingX · 世足競猜",
+    status: "hot",
+    statusLabel: "🔥 進行中",
+    title: "⚽ 世足競猜開打！預測正確贏 50U 倉位券",
+    desc: "免費報名預測足球賽事，單場預測正確可領 50 USDT 倉位券；任務能量可用來抽 USDT 獎勵",
+    stats: [
+      { label: "預測獎勵", value: "50 USDT 倉位券", color: "highlight" },
+      { label: "抽獎門檻", value: "5 能量 / 次", color: "" },
+      { label: "任務", value: "合約交易 / 事件合約", color: "" }
+    ],
+    benefits: [
+      { icon: "⚽", text: "免費報名預測，預測正確隔日發放 **50 USDT 倉位券**" },
+      { icon: "🎁", text: "每 5 個能量可抽獎 1 次，獎池含 USDT 獎勵" },
+      { icon: "📌", text: "投票須完成 KYC；提交後不可更改預測方向" },
+      { icon: "⚠️", text: "後續能量任務牽涉合約交易，新手不要為抽獎硬刷交易量" }
+    ],
+    deadline: "每場比賽開始前截止投票，逾時不接受預測",
+    junNote: "這個比較像足球預測 + 合約任務活動。免費報名可以先玩預測，但要注意後面的能量任務會牽涉合約交易，新手不要為了抽獎硬刷交易量，預測玩玩可以，合約請自己評估風險。",
+    link: "https://bingx.com/invite/22KLUM",
+    linkLabel: "🔗 前往 BingX 活動",
+    code: "22KLUM",
+    codeLabel: "BingX 邀請碼"
   },
   {
     platform: "bingx",
