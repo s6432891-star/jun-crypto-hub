@@ -140,29 +140,6 @@ window.ACTIVITIES = [
   },
   {
     platform: "bitget-wallet",
-    platformLabel: "Bitget Wallet",
-    status: "hot",
-    statusLabel: "🔥 限時",
-    title: "🚀 下一站・月球 合約抽獎",
-    desc: "做合約交易賺「燃料」，發射火箭抽 USDC，飛得越高獎越大，單抽最高 $200",
-    stats: [
-      { label: "總獎池", value: "$26,200 USDC", color: "highlight" },
-      { label: "單抽最高", value: "$200", color: "highlight" }
-    ],
-    benefits: [
-      { icon: "⛽", text: "合約交易額 ≥ $1,000 → +1 燃料" },
-      { icon: "⛽", text: "交易額每滿 $2,000 → +1 燃料" },
-      { icon: "👥", text: "每邀請 1 位好友累計交易 ≥ $2,000 → +1 燃料（上限 10 次）" }
-    ],
-    deadline: "截止：Jun 30, 2026 23:59（UTC+8）",
-    junNote: "需用邀請碼 Cqeue9 綁定才算。合約風險高，新手謹慎評估 🚀",
-    link: "https://web3.bitget.com",
-    linkLabel: "🔗 前往活動",
-    code: "Cqeue9",
-    codeLabel: "邀請碼"
-  },
-  {
-    platform: "bitget-wallet",
     platformLabel: "Bitget Wallet Card × Stellar",
     status: "hot",
     statusLabel: "🔥 進行中",
