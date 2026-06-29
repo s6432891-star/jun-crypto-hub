@@ -179,6 +179,31 @@ window.ACTIVITIES = [
     codeLabel: "Bitget 邀請碼"
   },
   {
+    platform: "bitget",
+    platformLabel: "Bitget · 新用戶股票代幣",
+    status: "hot",
+    statusLabel: "🔥 限時",
+    title: "新用戶最高 200U 股票代幣任你選",
+    desc: "6/22 後註冊並完成 KYC 的新用戶，完成入金與合約交易任務可拿積分，兌換 USDT 或股票代幣",
+    stats: [
+      { label: "最高獎勵", value: "200 USDT 等值", color: "highlight" },
+      { label: "活動時間", value: "6/29–7/13", color: "" },
+      { label: "資格", value: "新戶 + KYC", color: "" }
+    ],
+    benefits: [
+      { icon: "🎁", text: "首次入金 ≥100 USDT + 首次合約交易 ≥100 USDT → **20 積分**" },
+      { icon: "📈", text: "階梯合約交易量任務最高可再拿 **180 積分**" },
+      { icon: "🧾", text: "積分可兌換 USDT、SPY、QQQ、NVDA、TSM、MU、AMD 等股票代幣" },
+      { icon: "⚠️", text: "高階獎勵需要合約交易量，新手不要為了獎勵硬刷交易量" }
+    ],
+    deadline: "截止：2026/07/13 11:00（UTC+8）",
+    junNote: "這個是 Bitget 新用戶股票代幣活動，適合剛註冊 Bitget、原本就想小額體驗的人。重點是要 6/22 後註冊且完成 KYC，先入金 100U + 首次合約交易 100U 可拿 20 積分。後面高階積分需要合約交易量，新手不要為了獎勵硬刷交易量，先看懂規則再參加。",
+    link: "https://www.bitget.com/zh-TW/referral/register?from=referral&clacCode=MHEQPVWR",
+    linkLabel: "🔗 前往 Bitget 活動",
+    code: "MHEQPVWR",
+    codeLabel: "Bitget 邀請碼"
+  },
+  {
     platform: "gate",
     platformLabel: "Gate · USD1 理財",
     status: "hot",
