@@ -294,6 +294,56 @@ window.ACTIVITIES = [
     codeLabel: "MEXC 邀請碼"
   },
   {
+    platform: "mexc",
+    platformLabel: "MEXC · 足球盛宴",
+    status: "hot",
+    statusLabel: "🔥 限時",
+    title: "⚽ 足球盛宴 8,000,000 USDT 獎池",
+    desc: "報名參加足球競猜與合約積分賽，每日可免費競猜，交易任務可解鎖更高積分與獎池",
+    stats: [
+      { label: "總獎池", value: "8,000,000 USDT", color: "highlight" },
+      { label: "最高獎勵", value: "2,375 USDT", color: "highlight" },
+      { label: "活動時間", value: "6/11–7/21", color: "" }
+    ],
+    benefits: [
+      { icon: "⚽", text: "每日可免費預測足球賽，猜對可拿基礎積分" },
+      { icon: "📈", text: "合約交易量達標可抽積分加成，解鎖更高獎池" },
+      { icon: "👥", text: "邀請好友報名活動，也可抽積分加成" },
+      { icon: "⚠️", text: "合約任務風險高，新手不要為了獎勵硬刷交易量" }
+    ],
+    deadline: "截止：2026/07/21 15:00（UTC+8）",
+    junNote: "這個是 MEXC 足球盛宴活動，免費競猜可以玩，但後面積分加成跟獎池解鎖會牽涉合約交易量。新手不要為了獎勵硬刷合約，想參加可以先報名、玩免費競猜，合約交易請自己評估風險。",
+    link: "https://www.mexc.com/register?inviteCode=3uXZE",
+    linkLabel: "🔗 前往 MEXC 足球盛宴",
+    code: "3uXZE",
+    codeLabel: "MEXC 邀請碼"
+  },
+  {
+    platform: "mexc",
+    platformLabel: "MEXC Card",
+    status: "ongoing",
+    statusLabel: "✅ 進行中",
+    title: "MEXC Card｜最高 10% 返現 + 7% APR",
+    desc: "支援 Apple Pay / Google Pay 的加密貨幣消費卡，0 USD 開卡，全球消費並可享返現與卡片理財收益",
+    stats: [
+      { label: "開卡費", value: "0 USD", color: "highlight" },
+      { label: "最高返現", value: "10%", color: "highlight" },
+      { label: "最高 APR", value: "7%", color: "highlight" }
+    ],
+    benefits: [
+      { icon: "💳", text: "完成高級身分認證後可線上申請，支援 Apple Pay / Google Pay" },
+      { icon: "🌍", text: "可用 USDT 充值到法幣帳戶，全球消費使用" },
+      { icon: "🎁", text: "邀請好友開卡：邀請人 **20 USDT**，被邀請人 **10 USDT**" },
+      { icon: "⚠️", text: "最高 10% 返現依等級計算，APR 會浮動，不代表人人都拿得到" }
+    ],
+    deadline: "",
+    junNote: "MEXC Card 比較像加密貨幣簽帳卡，可以綁 Apple Pay / Google Pay，主打最高 10% 返現和最高 7% APR。重點是返現跟等級有關，不是每個人都一定拿 10%；申請前要先完成身分認證，並確認自己所在地區是否支援。",
+    link: "https://www.mexc.com/register?inviteCode=3uXZE",
+    linkLabel: "🔗 前往 MEXC Card",
+    code: "3uXZE",
+    codeLabel: "MEXC 邀請碼"
+  },
+  {
     platform: "bingx",
     platformLabel: "BingX · 世足競猜",
     status: "hot",
