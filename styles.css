@@ -97,41 +97,24 @@ body {
 }
 .hero-kicker b { color: #c98bff; font-weight: 700; }
 
-/* 全息旋轉光環頭像 */
+/* 品牌徽章 logo */
 .avatar-wrap {
-  position: relative; width: 100px; height: 100px; margin: 0 auto 20px;
+  position: relative; width: 118px; height: 118px; margin: 0 auto 20px;
   animation: rise .7s cubic-bezier(.2,.7,.2,1) .15s both;
 }
 .avatar-wrap::after {
-  content: ''; position: absolute; inset: -16px; z-index: -1; border-radius: 50%;
+  content: ''; position: absolute; inset: -14px; z-index: -1; border-radius: 50%;
   background: radial-gradient(circle, rgba(255,158,196,.55), transparent 70%);
-  filter: blur(12px); animation: haloPulse 4.5s ease-in-out infinite;
+  filter: blur(14px); animation: haloPulse 4.5s ease-in-out infinite;
 }
-@keyframes haloPulse { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
-.avatar-ring {
-  position: absolute; inset: 0; border-radius: 50%;
-  background: conic-gradient(from 0deg, #ff9ec4, #c9b3ff, #9fe7ff, #a8ecd8, #ffd1e6, #ff9ec4);
-  box-shadow: 0 10px 32px rgba(232,96,138,.35);
-  animation: spin 6.5s linear infinite;
+@keyframes haloPulse { 0%, 100% { opacity: .5; } 50% { opacity: .95; } }
+.brand-logo {
+  position: relative; z-index: 1; display: block;
+  width: 118px; height: 118px; object-fit: contain;
+  filter: drop-shadow(0 10px 22px rgba(232,96,138,.28));
+  animation: floaty 5.5s ease-in-out 1s infinite;
 }
-@keyframes spin { to { transform: rotate(360deg); } }
-.avatar {
-  position: absolute; inset: 5px; border-radius: 50%;
-  background: linear-gradient(150deg, #ffffff, #fff0f6);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 40px;
-  box-shadow: inset 0 2px 6px rgba(255,255,255,.95), inset 0 -7px 16px rgba(232,96,138,.12);
-}
-.avatar .logo-mark { width: 54px; height: 54px; display: block; }
-.orbit-dot {
-  position: absolute; top: 50%; left: 50%; width: 8px; height: 8px; margin: -4px;
-  border-radius: 50%; background: #fff; box-shadow: 0 0 10px 2px #ffadd1, 0 0 4px #fff;
-  animation: orbit 7s linear infinite;
-}
-@keyframes orbit {
-  from { transform: rotate(0deg) translateX(56px) rotate(0deg); }
-  to   { transform: rotate(360deg) translateX(56px) rotate(-360deg); }
-}
+@keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 
 /* 品牌名：流動全息漸層字 */
 .name {
@@ -187,7 +170,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-blob, .avatar-ring, .orbit-dot, .avatar-wrap::after, .hero-net .nd { animation: none !important; }
+  .hero-blob, .brand-logo, .avatar-wrap::after, .hero-net .nd { animation: none !important; }
   .hero-inner .hero-kicker, .avatar-wrap, .name, .tagline, .disclaimer, .header-links { animation: none !important; opacity: 1; transform: none; }
   .name { background-position: 0 center; }
 }
