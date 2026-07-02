@@ -96,6 +96,31 @@ window.ACTIVITIES = [
   },
   {
     platform: "bybit",
+    platformLabel: "Bybit · USD1 理財",
+    status: "hot",
+    statusLabel: "🔥 進行中",
+    title: "持有 USD1，賺 WLFI 收益",
+    desc: "持有 USD1 穩定幣可自動獲得 WLFI 收益，無需鎖倉、無需手動申購，適合想小額觀察 USD1 的人",
+    stats: [
+      { label: "預估年化", value: "7.29%", color: "highlight" },
+      { label: "最低持有", value: "≥ 1 USD1", color: "" },
+      { label: "結算", value: "每日自動", color: "" }
+    ],
+    benefits: [
+      { icon: "1️⃣", text: "完成身分驗證（1 級即可）" },
+      { icon: "2️⃣", text: "帳戶持有 ≥ 1 USD1，不用鎖倉、不用申購" },
+      { icon: "3️⃣", text: "每天自動獲得 WLFI 收益，通常隔天發放" },
+      { icon: "⚠️", text: "APR 為預估值且可能浮動，WLFI 價格也會波動，不是保證收益" }
+    ],
+    deadline: "",
+    junNote: "對，原本這個 USD1 升息 / 持有收益活動也還在進行，所以我把它獨立保留成一張卡。它跟 USD1 超級賽季不一樣：這張偏懶人持有收益，超級賽季偏交易量任務與抽獎。\n\n⚠️ 穩定幣和 WLFI 都有市場與平台風險，先小額研究，不要為了收益重倉。",
+    link: "https://partner.bybit.com/b/BYJUN",
+    linkLabel: "🔗 前往 Bybit 查看 USD1 理財",
+    code: "BYJUN",
+    codeLabel: "Bybit 邀請碼"
+  },
+  {
+    platform: "bybit",
     platformLabel: "Bybit · TradFi 入金抽獎",
     status: "hot",
     statusLabel: "🔥 限時",
