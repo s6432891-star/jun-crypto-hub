@@ -71,25 +71,26 @@ window.ACTIVITIES = [
   },
   {
     platform: "bybit",
-    platformLabel: "Bybit · 理財",
+    platformLabel: "Bybit · USD1 超級賽季",
     status: "hot",
-    statusLabel: "🔥 進行中",
-    title: "持有 USD1，賺 WLFI 收益",
-    desc: "持有 USD1 穩定幣自動獲得 WLFI 代幣，天天領獎勵，無需鎖倉、無需操作，放著就賺",
+    statusLabel: "🔥 限時",
+    title: "USD1 超級賽季：最高抽 1,000,000 WLFI",
+    desc: "報名後交易 USD1 現貨或衍生品，累積交易量可拿抽獎次數與 WLFI 空投獎勵",
     stats: [
-      { label: "預估年化", value: "7.29%", color: "highlight" },
-      { label: "最低持有", value: "≥ 1 USD1", color: "" },
-      { label: "結算", value: "每日自動", color: "" }
+      { label: "活動截止", value: "7/31 10:00 UTC", color: "" },
+      { label: "最高獎勵", value: "1,000,000 WLFI", color: "highlight" },
+      { label: "任務", value: "USD1 交易量", color: "" }
     ],
     benefits: [
-      { icon: "1️⃣", text: "完成身分驗證（1 級即可）" },
-      { icon: "2️⃣", text: "帳戶持有 ≥ 1 USD1（不用鎖倉）" },
-      { icon: "3️⃣", text: "每天自動獲得 WLFI 空投，隔天早上入帳" }
+      { icon: "🎁", text: "完成 USD1 現貨或衍生品交易量任務，可拿抽獎次數；截圖顯示單日 $500 任務與 $10,000 任務（最高 **50 次**）" },
+      { icon: "🪂", text: "交易量達標可拿 WLFI 空投：$100,000 → **200 WLFI**、$500,000 → **400 WLFI**、$2,500,000 → **800 WLFI**" },
+      { icon: "✅", text: "需先點活動頁「立即報名」，並完成 1 級個人身分認證或企業認證" },
+      { icon: "⚠️", text: "機構 / Pro 用戶不符合資格；部分國家 / 地區與 EEA 用戶無法參加" }
     ],
-    deadline: "",
-    junNote: "USD1 是 World Liberty Financial 發行的穩定幣，1:1 錨定美元。放著就有 WLFI，適合懶人理財 🌷\n\n⚠️ 年化為預估值，WLFI 市價會波動",
+    deadline: "截止：2026/07/31 10:00（UTC）",
+    junNote: "這個是 Bybit USD1 超級賽季，重點是交易 USD1 來拿 WLFI 抽獎與空投。適合本來就有在交易 USD1 的人順手看，不建議新手為了獎勵硬刷現貨或衍生品交易量；獎勵有限、先到先得，且需要先報名與完成 KYC。\n\n⚠️ WLFI 價格會波動，交易量任務也有風險，請只用自己能承受的資金。",
     link: "https://partner.bybit.com/b/BYJUN",
-    linkLabel: "🔗 前往 Bybit 買 USD1",
+    linkLabel: "🔗 前往 Bybit USD1 活動",
     code: "BYJUN",
     codeLabel: "Bybit 邀請碼"
   },
