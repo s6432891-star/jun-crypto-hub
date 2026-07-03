@@ -280,6 +280,33 @@ window.ACTIVITIES = [
     codeLabel: "Gate 邀請碼"
   },
   {
+    platform: "gate",
+    platformLabel: "Gate · 瘋狂星期三玩家派對",
+    status: "hot",
+    statusLabel: "🔥 限時",
+    title: "🎮 瘋狂星期三玩家派對：報名抽 PS5 Pro / GTA6 / XPIN",
+    desc: "報名就有盲盒抽獎機會，完成現貨、充值、合約、理財或質押任務可解鎖更多抽獎與收益活動",
+    stats: [
+      { label: "活動截止", value: "7/5 08:00 UTC", color: "" },
+      { label: "抽獎獎品", value: "PS5 Pro / GTA6 / XPIN", color: "highlight" },
+      { label: "任務類型", value: "現貨 / 充值 / 合約 / 理財", color: "" }
+    ],
+    benefits: [
+      { icon: "🎁", text: "報名活動即可拿 **1 次盲盒抽獎機會**，獎池含 XPIN、遊戲裝備、PS5 Pro + GTA6 等" },
+      { icon: "🪙", text: "現貨新手首筆交易 ≥ **1 USDT**，或累積現貨交易量達 500 / 2,000 / 10,000 可拿抽獎機會" },
+      { icon: "💰", text: "累計淨充值 ≥ **500 USDT** 並保持 24 小時，可再拿抽獎機會；不是叫新手為了抽獎硬入金" },
+      { icon: "📈", text: "合約新手首筆 ≥ **500 USDT**、或累積合約交易量達 2,000 / 10,000 / 50,000 可拿抽獎機會，合約風險高請小心" },
+      { icon: "🏦", text: "活動頁另有 USDT 14 天定期 **6% 年化**、新戶 3 天 100% 年化與 BTC / XAUT / USDD 等餘幣寶產品，APR 會浮動不是保證收益" },
+      { icon: "⛓️", text: "BTC / ETH / SOL 鏈上賺幣最高顯示 **16% 年化**，實際收益依幣種、數量與平台規則變動" }
+    ],
+    deadline: "截止：2026/07/05 08:00（UTC）／16:00（UTC+8）",
+    junNote: "這個 Gate 活動可以先報名拿免費抽獎機會，原本就要小額現貨或入金的人再順手解任務。不要為了 PS5、GTA6 或 XPIN 盲盒去硬刷合約交易量，也不要為了高年化把大額資金丟進去；抽獎獎品數量有限，理財 APR 是活動預估，不是保證收益。",
+    link: "https://www.gate.io",
+    linkLabel: "🔗 前往 Gate 活動",
+    code: "VFVFVW9AVG",
+    codeLabel: "Gate 邀請碼"
+  },
+  {
     platform: "mexc",
     platformLabel: "MEXC",
     status: "hot",
