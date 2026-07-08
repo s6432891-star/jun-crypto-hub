@@ -8,7 +8,7 @@
    小語法：
    - benefits 好處清單裡，想把金額/重點變粉紅色，用 **兩個星號** 包起來。
    - junNote（Jun 說）想換行，直接按 Enter 換行即可。
-   最後更新：2026-07-07
+   最後更新：2026-07-09
    ========================================================================= */
 
 window.SITE = {
@@ -194,29 +194,6 @@ window.ACTIVITIES = [
     codeLabel: "邀請碼（綁定領 5 USDT）"
   },
   {
-    platform: "bitget-wallet",
-    platformLabel: "Bitget Wallet Card × Stellar",
-    status: "hot",
-    statusLabel: "🔥 進行中",
-    title: "✨ 奧德賽之旅 × XLM 大獎",
-    desc: "持卡人專屬！完成任務累積積分，瓜分 $20 萬 XLM 獎勵",
-    stats: [
-      { label: "總獎池", value: "$200,000 XLM", color: "highlight" },
-      { label: "社群追加", value: "$2,000 XLM", color: "highlight" }
-    ],
-    benefits: [
-      { icon: "💳", text: "首次刷卡 ≥$1 → **+50 積分**" },
-      { icon: "👥", text: "每邀請 1 人開卡 → **+200 積分**（1人+150 / 3人+750 / 10人+2000 階梯加碼）" },
-      { icon: "🌐", text: "Stellar 網路做 ≥10 USDC Swap → **+10 積分**" }
-    ],
-    deadline: "截止：2026 年 7 月 7 日 15:59（UTC+8）",
-    junNote: "我目前預估獎勵 $3，積分還在累積中！持卡的都應該去參加 🌸",
-    link: "https://web3.bitget.com",
-    linkLabel: "🔗 前往奧德賽之旅",
-    code: "Cqeue9",
-    codeLabel: "邀請碼"
-  },
-  {
     platform: "bitget",
     platformLabel: "Bitget",
     status: "hot",
@@ -271,17 +248,19 @@ window.ACTIVITIES = [
     desc: "6/22 後註冊並完成 KYC 的新用戶，完成入金與合約交易任務可拿積分，兌換 USDT 或股票代幣",
     stats: [
       { label: "最高獎勵", value: "200 USDT 等值", color: "highlight" },
-      { label: "活動時間", value: "6/29–7/13", color: "" },
-      { label: "資格", value: "新戶 + KYC", color: "" }
+      { label: "活動時間", value: "2026/06/29 11:00–2026/07/13 11:00", color: "" },
+      { label: "資格", value: "6/22 後新戶 + KYC", color: "" }
     ],
     benefits: [
-      { icon: "🎁", text: "首次入金 ≥100 USDT + 首次合約交易 ≥100 USDT → **20 積分**" },
-      { icon: "📈", text: "階梯合約交易量任務最高可再拿 **180 積分**" },
-      { icon: "🧾", text: "積分可兌換 USDT、SPY、QQQ、NVDA、TSM、MU、AMD 等股票代幣" },
-      { icon: "⚠️", text: "高階獎勵需要合約交易量，新手不要為了獎勵硬刷交易量" }
+      { icon: "🎁", text: "首次入金 ≥ **100 USDT** + 首次合約交易 ≥ **100 USDT** → **20 積分**，可換 20 USDT 等值獎勵" },
+      { icon: "📈", text: "階梯合約交易量任務最高可再拿 **180 積分**；截圖可見 **50,000 / 200,000 / 600,000 / 1,000,000 / 3,000,000 USDT** 等門檻" },
+      { icon: "🧾", text: "積分可兌換 **USDT、SPY、QQQ、NVDA、TSM、MU、AMD、QCOM、INTC、SNDK** 等股票代幣；10 積分約可換 10 USDT 等值" },
+      { icon: "📌", text: "USDT 獎勵每人最多兌換 2 次、共 20 USDT；股票代幣支援碎股兌換，完成任務後約 7 個工作天內發放到福利中心" },
+      { icon: "⚠️", text: "活動不統計 **0 手續費 / 穩定幣 / CFD 幣對**交易量；子帳號交易量不計入且不能報名，API 用戶可正常報名" },
+      { icon: "🚫", text: "禁止短時間快速出入金、刻意刷量或作弊；多個用戶使用相同 IP 時，只有第一位參與者有資格獲得獎勵" }
     ],
     deadline: "截止：2026/07/13 11:00（UTC+8）",
-    junNote: "這個是 Bitget 新用戶股票代幣活動，適合剛註冊 Bitget、原本就想小額體驗的人。重點是要 6/22 後註冊且完成 KYC，先入金 100U + 首次合約交易 100U 可拿 20 積分。後面高階積分需要合約交易量，新手不要為了獎勵硬刷交易量，先看懂規則再參加。",
+    junNote: "這次截圖跟原本的『新用戶最高 200U 股票代幣任你選』是同一個 Bitget 新用戶活動，所以我不新增重複卡，而是把既有卡補完整。前段入金 100U + 首次合約交易 100U 可拿 20 積分，門檻相對清楚；但後面高階獎勵靠合約交易量累積，從 50,000 USDT 起跳，新手不要為了股票代幣硬刷合約交易量。\n\n⚠️ 最高 200U 是上限，不代表人人都適合拿滿；股票代幣與合約交易都有風險，先確認 KYC、活動資格、交易量統計規則與 IP / 子帳號限制，再決定要不要小額研究。部分連結可能含邀請碼 / 分潤。",
     link: "https://www.bitget.com/zh-TW/referral/register?from=referral&clacCode=MHEQPVWR",
     linkLabel: "🔗 前往 Bitget 活動",
     code: "MHEQPVWR",
@@ -309,56 +288,6 @@ window.ACTIVITIES = [
     junNote: "這個比較像懶人型穩定幣收益，只要在 Gate 帳戶持有 USD1 就會計算，不用鎖倉。但 15% 是預估年化，不是保證收益，USD1 本身也有穩定幣、監管和市場波動風險，適合先小額研究。",
     link: "https://www.gate.io",
     linkLabel: "🔗 前往 Gate 查看 USD1",
-    code: "VFVFVW9AVG",
-    codeLabel: "Gate 邀請碼"
-  },
-  {
-    platform: "gate",
-    platformLabel: "Gate",
-    status: "hot",
-    statusLabel: "🔥 限時",
-    title: "SK海力士・美光・閃迪 合約空投",
-    desc: "SKHYNIX / MU / SNDK 合約，新人第一筆交易領 $5，天天打卡最高 $35，交易達標最高 $200",
-    stats: [
-      { label: "單人最高", value: "$240", color: "highlight" },
-      { label: "新人首筆", value: "$5", color: "highlight" }
-    ],
-    benefits: [
-      { icon: "🎁", text: "福利一：合約新人首次交易（≥$5,000）→ 立領 **$5**" },
-      { icon: "📅", text: "福利二：每日交易打卡 → 累積最高 **$35**" },
-      { icon: "🏆", text: "福利三：交易量 ≥$10,000 → 瓜分 $30,000，單人最高 **$200**" }
-    ],
-    deadline: "截止：2026/07/03 17:00 · 先到先得",
-    junNote: "適合本來就有在玩合約的！新人做第一筆就可以拿錢，合約風險高請自評 💜",
-    link: "https://www.gate.io",
-    linkLabel: "🔗 前往 Gate 活動",
-    code: "VFVFVW9AVG",
-    codeLabel: "Gate 邀請碼"
-  },
-  {
-    platform: "gate",
-    platformLabel: "Gate · 瘋狂星期三玩家派對",
-    status: "hot",
-    statusLabel: "🔥 限時",
-    title: "🎮 瘋狂星期三玩家派對：報名抽 PS5 Pro / GTA6 / XPIN",
-    desc: "報名就有盲盒抽獎機會，完成現貨、充值、合約、理財或質押任務可解鎖更多抽獎與收益活動",
-    stats: [
-      { label: "活動截止", value: "7/5 08:00 UTC", color: "" },
-      { label: "抽獎獎品", value: "PS5 Pro / GTA6 / XPIN", color: "highlight" },
-      { label: "任務類型", value: "現貨 / 充值 / 合約 / 理財", color: "" }
-    ],
-    benefits: [
-      { icon: "🎁", text: "報名活動即可拿 **1 次盲盒抽獎機會**，獎池含 XPIN、遊戲裝備、PS5 Pro + GTA6 等" },
-      { icon: "🪙", text: "現貨新手首筆交易 ≥ **1 USDT**，或累積現貨交易量達 500 / 2,000 / 10,000 可拿抽獎機會" },
-      { icon: "💰", text: "累計淨充值 ≥ **500 USDT** 並保持 24 小時，可再拿抽獎機會；不是叫新手為了抽獎硬入金" },
-      { icon: "📈", text: "合約新手首筆 ≥ **500 USDT**、或累積合約交易量達 2,000 / 10,000 / 50,000 可拿抽獎機會，合約風險高請小心" },
-      { icon: "🏦", text: "活動頁另有 USDT 14 天定期 **6% 年化**、新戶 3 天 100% 年化與 BTC / XAUT / USDD 等餘幣寶產品，APR 會浮動不是保證收益" },
-      { icon: "⛓️", text: "BTC / ETH / SOL 鏈上賺幣最高顯示 **16% 年化**，實際收益依幣種、數量與平台規則變動" }
-    ],
-    deadline: "截止：2026/07/05 08:00（UTC）／16:00（UTC+8）",
-    junNote: "這個 Gate 活動可以先報名拿免費抽獎機會，原本就要小額現貨或入金的人再順手解任務。不要為了 PS5、GTA6 或 XPIN 盲盒去硬刷合約交易量，也不要為了高年化把大額資金丟進去；抽獎獎品數量有限，理財 APR 是活動預估，不是保證收益。",
-    link: "https://www.gate.io",
-    linkLabel: "🔗 前往 Gate 活動",
     code: "VFVFVW9AVG",
     codeLabel: "Gate 邀請碼"
   },
