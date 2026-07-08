@@ -14,7 +14,7 @@
 window.SITE = {
   emoji: "",
   name: "Jun 的幣圈活動整理 🌸",
-  tagline: "護理師下班後用 AI 整理的幣圈活動<br>我玩過的才分享，沒玩過的不亂推",
+  tagline: "幫小資族整理幣圈活動與空投<br>先看懂規則，再決定要不要研究",
   disclaimer: "⚠️ 純個人分享，非投資建議，投資請自行評估風險",
   links: [
     { label: "📱 Threads", url: "https://www.threads.com/@j.i.y__ovo" },
@@ -233,6 +233,33 @@ window.ACTIVITIES = [
     link: "https://www.bitget.com/zh-TW/referral/register?from=referral&clacCode=MHEQPVWR",
     linkLabel: "🔗 前往 Bitget 註冊",
     code: "MHEQPVWR",
+    codeLabel: "Bitget 邀請碼"
+  },
+  {
+    platform: "bitget",
+    platformLabel: "Bitget · 盛夏打卡週",
+    status: "hot",
+    statusLabel: "🔥 限時",
+    title: "盛夏打卡週：七日全勤最高 200 USDT",
+    desc: "活動期間每日完成合約交易量任務可領 USDT，每日打卡與高門檻階梯任務都以平台規則計算",
+    stats: [
+      { label: "活動時間", value: "2026/07/06–2026/07/13 11:00", color: "" },
+      { label: "每日獎勵", value: "1 / 3 USDT", color: "highlight" },
+      { label: "最高獎勵", value: "200 USDT", color: "highlight" }
+    ],
+    benefits: [
+      { icon: "✅", text: "每日輕鬆打卡：合約交易額 ≥ **10,000 USDT**，可領 **1 USDT**；每日額度有限，00:00（UTC+8）更新" },
+      { icon: "🔥", text: "每日進階打卡：合約交易額 ≥ **100,000 USDT**，可領 **3 USDT**；低門檻與中門檻獎勵可疊加" },
+      { icon: "🏆", text: "高門檻階梯任務看活動期間 **7 天累計合約交易量**，截圖可見 300K / 800K / 1.00M+ / 3.00M / 4.00M+ 等門檻" },
+      { icon: "🎯", text: "第 7 階獎勵 **82 USDT**需同時達成：累計交易量 ≥ **10,000,000 USDT**，且連續 7 天每日合約交易量均 ≥ **100,000 USDT**" },
+      { icon: "⚠️", text: "活動不統計 **0 手續費 / 穩定幣 / CFD 幣對**交易量；子帳號交易量不計入，同 IP / 同設備視為同一用戶" },
+      { icon: "🚫", text: "作幣、刷量、對沖或其他異常交易，Bitget 可取消資格並收回獎勵" }
+    ],
+    deadline: "截止：2026/07/13 11:00（UTC+8）",
+    junNote: "這個是 Bitget 合約交易打卡活動，重點是每天合約交易量達標才有 USDT 獎勵。小資新手可以先看懂規則就好，不要為了 1U / 3U 或階梯獎勵硬刷合約交易量；合約本身風險高，最高 200U 也不代表人人拿得到。\n\n⚠️ 如果你本來就有在 Bitget 做合約，可以順手看看；如果只是為了獎勵才想交易，建議先停一下，只用自己能承受的小錢並自行評估風險。部分連結可能含邀請碼 / 分潤。",
+    link: "https://www.bitget.com/zh-TW/referral/register?from=referral&clacCode=V0K17SD8",
+    linkLabel: "🔗 前往 Bitget 活動",
+    code: "V0K17SD8",
     codeLabel: "Bitget 邀請碼"
   },
   {
