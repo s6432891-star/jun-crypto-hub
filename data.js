@@ -244,25 +244,55 @@ window.ACTIVITIES = [
     platformLabel: "Bitget · 新用戶股票代幣",
     status: "hot",
     statusLabel: "🔥 限時",
-    title: "新用戶最高 200U 股票代幣任你選",
-    desc: "6/22 後註冊並完成 KYC 的新用戶，完成入金與合約交易任務可拿積分，兌換 USDT 或股票代幣",
+    title: "新用戶直接領 20U 股票，最高 200U",
+    desc: "繁體中文區 7/6 後註冊並完成 KYC 的新用戶，完成入金與合約任務拿積分，兌換 USDT 或股票代幣",
     stats: [
+      { label: "直接領", value: "20 USDT 等值股票", color: "highlight" },
       { label: "最高獎勵", value: "200 USDT 等值", color: "highlight" },
-      { label: "活動時間", value: "2026/06/29 11:00–2026/07/13 11:00", color: "" },
-      { label: "資格", value: "6/22 後新戶 + KYC", color: "" }
+      { label: "活動時間", value: "2026/07/13 11:00–2026/07/27 11:00", color: "" }
     ],
     benefits: [
-      { icon: "🎁", text: "首次入金 ≥ **100 USDT** + 首次合約交易 ≥ **100 USDT** → **20 積分**，可換 20 USDT 等值獎勵" },
-      { icon: "📈", text: "階梯合約交易量任務最高可再拿 **180 積分**；截圖可見 **50,000 / 200,000 / 600,000 / 1,000,000 / 3,000,000 USDT** 等門檻" },
-      { icon: "🧾", text: "積分可兌換 **USDT、SPY、QQQ、NVDA、TSM、MU、AMD、QCOM、INTC、SNDK** 等股票代幣；10 積分約可換 10 USDT 等值" },
-      { icon: "📌", text: "USDT 獎勵每人最多兌換 2 次、共 20 USDT；股票代幣支援碎股兌換，完成任務後約 7 個工作天內發放到福利中心" },
-      { icon: "⚠️", text: "活動不統計 **0 手續費 / 穩定幣 / CFD 幣對**交易量；子帳號交易量不計入且不能報名，API 用戶可正常報名" },
-      { icon: "🚫", text: "禁止短時間快速出入金、刻意刷量或作弊；多個用戶使用相同 IP 時，只有第一位參與者有資格獲得獎勵" }
+      { icon: "✅", text: "資格：繁體中文區 **7/6 後註冊的新用戶**，需完成 **KYC**" },
+      { icon: "🎁", text: "完成 KYC、累計入金 ≥ **200 USDT** 與指定合約交易任務，可取得首波 **20 積分**，兌換 20 USDT 等值股票" },
+      { icon: "📈", text: "合約交易量達標可再拿積分，頁面顯示最高 **180 積分**；可見門檻包含 **50,000 / 200,000 / 600,000 / 1,000,000 / 3,000,000 USDT**" },
+      { icon: "🧾", text: "10 積分可換 10 USDT 等值獎勵；可選 **USDT、rSPY、rQQQ、rNVDA、rTSM、rMU、rAMD、rQCOM、rINTC、rSNDK、rSKHY、rTSLA、rMeta、rGOOGL、rAAPL、rAVGO**" },
+      { icon: "📌", text: "USDT 每人最多兌換 2 次、共 20 USDT；股票代幣支援碎股兌換且無兌換次數限制，獎勵通常於 **7 個工作日內**到帳" },
+      { icon: "⚠️", text: "不統計 **0 手續費 / 穩定幣 / CFD 幣對**交易量；子帳號不能報名且交易量不計入，API 用戶可正常報名" },
+      { icon: "🚫", text: "禁止快速出入金、個人划轉刷量、對敲、批量註冊等行為；同 IP 多帳號可能被取消資格並追回獎勵" }
     ],
-    deadline: "截止：2026/07/13 11:00（UTC+8）",
-    junNote: "這次截圖跟原本的『新用戶最高 200U 股票代幣任你選』是同一個 Bitget 新用戶活動，所以我不新增重複卡，而是把既有卡補完整。前段入金 100U + 首次合約交易 100U 可拿 20 積分，門檻相對清楚；但後面高階獎勵靠合約交易量累積，從 50,000 USDT 起跳，新手不要為了股票代幣硬刷合約交易量。\n\n⚠️ 最高 200U 是上限，不代表人人都適合拿滿；股票代幣與合約交易都有風險，先確認 KYC、活動資格、交易量統計規則與 IP / 子帳號限制，再決定要不要小額研究。部分連結可能含邀請碼 / 分潤。",
-    link: "https://www.bitget.com/zh-TW/referral/register?from=referral&clacCode=MHEQPVWR",
-    linkLabel: "🔗 前往 Bitget 活動",
+    deadline: "截止：2026/07/27 11:00（UTC+8）",
+    junNote: "這檔是 7/13 開始的新版 Bitget 新戶活動，首波任務可換 20U 等值股票；後續要拿到最高 200U，仍需累積很高的合約交易量。新手不要為了股票獎勵硬刷合約交易量，合約可能虧損甚至爆倉，最高獎勵也不代表人人拿得到。\n\n⚠️ 股票代幣仍有市場波動、平台規則與地區資格風險；請先確認 KYC、任務門檻及反作弊規則。部分連結含邀請碼 / 分潤，不構成投資建議。",
+    link: "https://www.bitget.com/events/activities/new/e4bfb459098a5dde94a9ad70ec9e06f5?color=dark&languageType=5&clacCode=MHEQPVWR",
+    linkLabel: "🔗 前往 Bitget 新戶活動",
+    code: "MHEQPVWR",
+    codeLabel: "Bitget 邀請碼"
+  },
+  {
+    platform: "bitget",
+    platformLabel: "Bitget · 足球拼圖活動",
+    status: "hot",
+    statusLabel: "🔥 限時",
+    title: "⚽ 九宮格射門：集拼圖拿 2,026 USDT",
+    desc: "完成合約交易量任務拿拼圖碎片，集齊九宮格可換 2,026 USDT；碎片也能換抽獎機會，另有世界冠軍預測好禮",
+    stats: [
+      { label: "完整拼圖", value: "2,026 USDT", color: "highlight" },
+      { label: "單次抽獎", value: "1–666 USDT", color: "highlight" },
+      { label: "活動時間", value: "2026/07/13 11:00–2026/07/20 11:00", color: "" }
+    ],
+    benefits: [
+      { icon: "🧩", text: "完成指定合約交易量任務，最多取得 **13 個拼圖碎片**；碎片隨機發放且可能重複" },
+      { icon: "🎯", text: "集齊 9 個不同碎片可合成完整九宮格，領取 **2,026 USDT**；每人只能合成一次" },
+      { icon: "🎰", text: "任意 1 個碎片可換 1 次抽獎；獎池為 **1 / 5 / 10 / 20 / 66 / 99 / 168 / 666 USDT**" },
+      { icon: "🔄", text: "若不兌換 2,026 USDT 大禮包，最多可換 13 次抽獎；若先兌換大禮包，剩餘碎片最多可換 4 次" },
+      { icon: "🎁", text: "可與好友互贈碎片，活動期間贈送與接收合計上限 **20 次**，不可贈送給自己；活動結束後不可再贈送或撤回" },
+      { icon: "⚽", text: "完成 KYC 的繁體中文區老用戶可參加；另可填表預測世界冠軍，抽 Bitget 足球觀賽周邊禮盒" },
+      { icon: "📌", text: "代幣獎勵通常於 **7 個工作日內**到帳；不統計 CFD、0 手續費、穩定幣與美股交易量，子帳號不能報名且交易量不計入" },
+      { icon: "🚫", text: "禁止快速出入金、個人划轉刷量、對敲與批量註冊；同 IP 異常帳號可能取消資格，平台可追回獎勵" }
+    ],
+    deadline: "截止：2026/07/20 11:00（UTC+8）",
+    junNote: "這個活動的 2,026U 大獎要先靠合約交易量拿碎片，而且碎片可能重複，不是完成一次就能拿滿。新手不要為了獎勵硬刷合約交易量；合約的虧損或爆倉金額，很可能遠高於抽獎獎勵。\n\n⚠️ 1～666U 是抽獎獎池範圍，2,026U 需集齊九種碎片才可兌換，最高不代表人人拿得到。部分連結含邀請碼 / 分潤，不構成投資建議。",
+    link: "https://www.bitget.com/zh-TC/events/activities/new/d476af1609c9567a9eb6c1a70a448c3f?color=dark&clacCode=MHEQPVWR",
+    linkLabel: "🔗 前往 Bitget 足球拼圖活動",
     code: "MHEQPVWR",
     codeLabel: "Bitget 邀請碼"
   },
