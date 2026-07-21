@@ -8,7 +8,12 @@
    小語法：
    - benefits 好處清單裡，想把金額/重點變粉紅色，用 **兩個星號** 包起來。
    - junNote（Jun 說）想換行，直接按 Enter 換行即可。
-   最後更新：2026-07-09
+   最後更新：2026-07-21
+   本次更新：
+   - 刪除 2 張已過期卡片：Bitget 盛夏打卡週（7/13 截止）、Bitget 足球拼圖活動（7/20 截止）
+   - 新增 6 張卡片：Bybit Spot Trading Arena（20萬U現貨賽）、BingX Earnings Season（100萬U財報季）、
+     Bitget PoolX 鎖ETH領NES、MEXC Pre-IPO期貨限時0手續費、Gate Launchpool+HODLer Airdrop（長期）、
+     OKX Flash Earn Lite SENT（無邀請碼，純資訊分享）
    ========================================================================= */
 
 window.SITE = {
@@ -174,6 +179,31 @@ window.ACTIVITIES = [
     codeLabel: "Bybit 邀請碼"
   },
   {
+    platform: "bybit",
+    platformLabel: "Bybit · 現貨交易賽",
+    status: "hot",
+    statusLabel: "🔥 限時",
+    title: "🏆 Spot Trading Arena：20 萬 USDT 現貨交易賽",
+    desc: "BTC / ETH / SOL / HYPE 等現貨交易量排名賽，Top 100 分享 10 萬 USDT，總獎池 20 萬 USDT",
+    stats: [
+      { label: "總獎池", value: "200,000 USDT", color: "highlight" },
+      { label: "最低交易量", value: "5,000 USDT", color: "" },
+      { label: "截止", value: "7/23 10:00 UTC", color: "highlight" }
+    ],
+    benefits: [
+      { icon: "📈", text: "活動期間現貨交易量進榜排名，**Top 100** 名額瓜分 **100,000 USDT**" },
+      { icon: "✅", text: "需完成 **1 級實名認證**，且累積現貨交易量 ≥ **5,000 USDT** 才有排名資格" },
+      { icon: "🪙", text: "納入計算的幣種含 BTC、ETH、XRP、SOL、HYPE、XAUT 等現貨交易對" },
+      { icon: "⚠️", text: "活動只到 **7/23 10:00（UTC）**，時間不多；交易量不要為了衝排名硬做" }
+    ],
+    deadline: "截止：2026/07/23 10:00（UTC）",
+    junNote: "這個是純現貨的交易競賽，不用碰合約，門檻也不算太高。本來就有在用 Bybit 交易主流幣的人可以順手參加，但快截止了記得動作要快 🌸\n\n⚠️ 投資有風險，只投閒置資金，別為了排名硬衝交易量。",
+    link: "https://partner.bybit.com/b/BYJUN",
+    linkLabel: "🔗 前往 Bybit Spot Trading Arena",
+    code: "BYJUN",
+    codeLabel: "Bybit 邀請碼"
+  },
+  {
     platform: "bitget-wallet",
     platformLabel: "Bitget Wallet",
     status: "hot",
@@ -214,33 +244,6 @@ window.ACTIVITIES = [
   },
   {
     platform: "bitget",
-    platformLabel: "Bitget · 盛夏打卡週",
-    status: "hot",
-    statusLabel: "🔥 限時",
-    title: "盛夏打卡週：七日全勤最高 200 USDT",
-    desc: "活動期間每日完成合約交易量任務可領 USDT，每日打卡與高門檻階梯任務都以平台規則計算",
-    stats: [
-      { label: "活動時間", value: "2026/07/06–2026/07/13 11:00", color: "" },
-      { label: "每日獎勵", value: "1 / 3 USDT", color: "highlight" },
-      { label: "最高獎勵", value: "200 USDT", color: "highlight" }
-    ],
-    benefits: [
-      { icon: "✅", text: "每日輕鬆打卡：合約交易額 ≥ **10,000 USDT**，可領 **1 USDT**；每日額度有限，00:00（UTC+8）更新" },
-      { icon: "🔥", text: "每日進階打卡：合約交易額 ≥ **100,000 USDT**，可領 **3 USDT**；低門檻與中門檻獎勵可疊加" },
-      { icon: "🏆", text: "高門檻階梯任務看活動期間 **7 天累計合約交易量**，截圖可見 300K / 800K / 1.00M+ / 3.00M / 4.00M+ 等門檻" },
-      { icon: "🎯", text: "第 7 階獎勵 **82 USDT**需同時達成：累計交易量 ≥ **10,000,000 USDT**，且連續 7 天每日合約交易量均 ≥ **100,000 USDT**" },
-      { icon: "⚠️", text: "活動不統計 **0 手續費 / 穩定幣 / CFD 幣對**交易量；子帳號交易量不計入，同 IP / 同設備視為同一用戶" },
-      { icon: "🚫", text: "作幣、刷量、對沖或其他異常交易，Bitget 可取消資格並收回獎勵" }
-    ],
-    deadline: "截止：2026/07/13 11:00（UTC+8）",
-    junNote: "這個是 Bitget 合約交易打卡活動，重點是每天合約交易量達標才有 USDT 獎勵。小資新手可以先看懂規則就好，不要為了 1U / 3U 或階梯獎勵硬刷合約交易量；合約本身風險高，最高 200U 也不代表人人拿得到。\n\n⚠️ 如果你本來就有在 Bitget 做合約，可以順手看看；如果只是為了獎勵才想交易，建議先停一下，只用自己能承受的小錢並自行評估風險。部分連結可能含邀請碼 / 分潤。",
-    link: "https://www.bitget.com/zh-TW/referral/register?from=referral&clacCode=V0K17SD8",
-    linkLabel: "🔗 前往 Bitget 活動",
-    code: "V0K17SD8",
-    codeLabel: "Bitget 邀請碼"
-  },
-  {
-    platform: "bitget",
     platformLabel: "Bitget · 新用戶股票代幣",
     status: "hot",
     statusLabel: "🔥 限時",
@@ -269,31 +272,27 @@ window.ACTIVITIES = [
   },
   {
     platform: "bitget",
-    platformLabel: "Bitget · 足球拼圖活動",
+    platformLabel: "Bitget · PoolX 質押空投",
     status: "hot",
-    statusLabel: "🔥 限時",
-    title: "⚽ 九宮格射門：集拼圖拿 2,026 USDT",
-    desc: "完成合約交易量任務拿拼圖碎片，集齊九宮格可換 2,026 USDT；碎片也能換抽獎機會，另有世界冠軍預測好禮",
+    statusLabel: "🔥 進行中",
+    title: "🔒 PoolX 鎖 ETH 領 62 萬顆 NES",
+    desc: "Bitget PoolX 新上架 Nesa(NES)，鎖 ETH 進去就能瓜分 62 萬顆 NES 空投，操作簡單",
     stats: [
-      { label: "完整拼圖", value: "2,026 USDT", color: "highlight" },
-      { label: "單次抽獎", value: "1–666 USDT", color: "highlight" },
-      { label: "活動時間", value: "2026/07/13 11:00–2026/07/20 11:00", color: "" }
+      { label: "空投總量", value: "620,000 NES", color: "highlight" },
+      { label: "質押幣種", value: "ETH", color: "" },
+      { label: "額度", value: "先到先得", color: "" }
     ],
     benefits: [
-      { icon: "🧩", text: "完成指定合約交易量任務，最多取得 **13 個拼圖碎片**；碎片隨機發放且可能重複" },
-      { icon: "🎯", text: "集齊 9 個不同碎片可合成完整九宮格，領取 **2,026 USDT**；每人只能合成一次" },
-      { icon: "🎰", text: "任意 1 個碎片可換 1 次抽獎；獎池為 **1 / 5 / 10 / 20 / 66 / 99 / 168 / 666 USDT**" },
-      { icon: "🔄", text: "若不兌換 2,026 USDT 大禮包，最多可換 13 次抽獎；若先兌換大禮包，剩餘碎片最多可換 4 次" },
-      { icon: "🎁", text: "可與好友互贈碎片，活動期間贈送與接收合計上限 **20 次**，不可贈送給自己；活動結束後不可再贈送或撤回" },
-      { icon: "⚽", text: "完成 KYC 的繁體中文區老用戶可參加；另可填表預測世界冠軍，抽 Bitget 足球觀賽周邊禮盒" },
-      { icon: "📌", text: "代幣獎勵通常於 **7 個工作日內**到帳；不統計 CFD、0 手續費、穩定幣與美股交易量，子帳號不能報名且交易量不計入" },
-      { icon: "🚫", text: "禁止快速出入金、個人划轉刷量、對敲與批量註冊；同 IP 異常帳號可能取消資格，平台可追回獎勵" }
+      { icon: "🔒", text: "App → 理財 → PoolX → 找到 NES → 鎖倉 ETH，即可參加瓜分 **620,000 NES**" },
+      { icon: "⏳", text: "官方未公告明確截止日期，屬於**額度制**，額度發完就結束" },
+      { icon: "💡", text: "不用手動操作交易，鎖倉期間躺著等發放" },
+      { icon: "⚠️", text: "鎖倉期間資金無法動用，參加前建議進 App 確認目前倒數與規則細節" }
     ],
-    deadline: "截止：2026/07/20 11:00（UTC+8）",
-    junNote: "這個活動的 2,026U 大獎要先靠合約交易量拿碎片，而且碎片可能重複，不是完成一次就能拿滿。新手不要為了獎勵硬刷合約交易量；合約的虧損或爆倉金額，很可能遠高於抽獎獎勵。\n\n⚠️ 1～666U 是抽獎獎池範圍，2,026U 需集齊九種碎片才可兌換，最高不代表人人拿得到。部分連結含邀請碼 / 分潤，不構成投資建議。",
-    link: "https://www.bitget.com/zh-TC/events/activities/new/d476af1609c9567a9eb6c1a70a448c3f?color=dark&clacCode=MHEQPVWR",
-    linkLabel: "🔗 前往 Bitget 足球拼圖活動",
-    code: "MHEQPVWR",
+    deadline: "",
+    junNote: "這種鎖倉領空投的活動我一直很愛，操作單純。因為官方沒寫死截止日，我會建議想參加的人自己進 App 確認一下目前額度和倒數，不要拖太久 🌸\n\n⚠️ 純分享，投資請自行評估風險，鎖倉期間資金無法動用。",
+    link: "https://www.bitget.com/zh-TW/referral/register?from=referral&clacCode=V0K17SD8",
+    linkLabel: "🔗 前往 Bitget PoolX",
+    code: "V0K17SD8",
     codeLabel: "Bitget 邀請碼"
   },
   {
@@ -318,6 +317,31 @@ window.ACTIVITIES = [
     junNote: "這個比較像懶人型穩定幣收益，只要在 Gate 帳戶持有 USD1 就會計算，不用鎖倉。但 15% 是預估年化，不是保證收益，USD1 本身也有穩定幣、監管和市場波動風險，適合先小額研究。",
     link: "https://www.gate.io",
     linkLabel: "🔗 前往 Gate 查看 USD1",
+    code: "VFVFVW9AVG",
+    codeLabel: "Gate 邀請碼"
+  },
+  {
+    platform: "gate",
+    platformLabel: "Gate · Launchpool + HODLer",
+    status: "ongoing",
+    statusLabel: "✅ 長期",
+    title: "🎁 躺著領空投：Launchpool + HODLer Airdrop",
+    desc: "帳戶持有 GT 就自動有資格參加 HODLer Airdrop，Launchpool 質押主流幣也能拿新項目代幣",
+    stats: [
+      { label: "7月 Launchpool", value: "約 280 萬美元空投", color: "highlight" },
+      { label: "7月 HODLer", value: "約 52 萬美元空投", color: "highlight" },
+      { label: "參與門檻", value: "持有 ≥ 1 GT", color: "" }
+    ],
+    benefits: [
+      { icon: "💎", text: "只要帳戶持有 **1 顆 GT** 以上，就自動有資格參加 HODLer Airdrop，不用鎖倉、不用手動申購" },
+      { icon: "🌊", text: "Launchpool 則是質押主流幣（如 USDT、GT）快速挖新項目代幣，隨存隨取" },
+      { icon: "📊", text: "光是 7 月，Launchpool 加 HODLer 兩者合計已發出將近 **330 萬美元**空投" },
+      { icon: "⚠️", text: "這是長期機制、沒有明確截止日，但新項目代幣本身漲跌波動大" }
+    ],
+    deadline: "",
+    junNote: "這個真的很適合不想每天盯盤的人，設定好放著就好，不用急著今天做 🌸\n\n⚠️ 純分享，投資有風險，GT 與新項目代幣都有價格波動，自行評估。",
+    link: "https://www.gate.io",
+    linkLabel: "🔗 前往 Gate Launchpool / HODLer",
     code: "VFVFVW9AVG",
     codeLabel: "Gate 邀請碼"
   },
@@ -358,8 +382,8 @@ window.ACTIVITIES = [
       { icon: "👥", text: "邀請好友報名活動，也可抽積分加成" },
       { icon: "⚠️", text: "合約任務風險高，新手不要為了獎勵硬刷交易量" }
     ],
-    deadline: "截止：2026/07/21 15:00（UTC+8）",
-    junNote: "這個是 MEXC 足球盛宴活動，免費競猜可以玩，但後面積分加成跟獎池解鎖會牽涉合約交易量。新手不要為了獎勵硬刷合約，想參加可以先報名、玩免費競猜，合約交易請自己評估風險。",
+    deadline: "截止：2026/07/21 15:00（UTC+8）今天最後一天",
+    junNote: "這個是 MEXC 足球盛宴活動，免費競猜可以玩，但後面積分加成跟獎池解鎖會牽涉合約交易量。今天就是最後一天了，還沒參加的要動作快；新手不要為了獎勵硬刷合約，合約交易請自己評估風險。",
     link: "https://www.mexc.com/register?inviteCode=3uXZE",
     linkLabel: "🔗 前往 MEXC 足球盛宴",
     code: "3uXZE",
@@ -387,6 +411,31 @@ window.ACTIVITIES = [
     junNote: "MEXC Card 比較像加密貨幣簽帳卡，可以綁 Apple Pay / Google Pay，主打最高 10% 返現和最高 7% APR。重點是返現跟等級有關，不是每個人都一定拿 10%；申請前要先完成身分認證，並確認自己所在地區是否支援。",
     link: "https://www.mexc.com/register?inviteCode=3uXZE",
     linkLabel: "🔗 前往 MEXC Card",
+    code: "3uXZE",
+    codeLabel: "MEXC 邀請碼"
+  },
+  {
+    platform: "mexc",
+    platformLabel: "MEXC · Pre-IPO 期貨",
+    status: "hot",
+    statusLabel: "🔥 進行中",
+    title: "🚀 Pre-IPO 期貨新標的，限時 0 手續費",
+    desc: "MEXC 陸續上架多檔 Pre-IPO 永續期貨新標的，上架初期通常限時 0 手續費，SpaceX 系列已破 71 億 USDT 成交量",
+    stats: [
+      { label: "SpaceX 系列累積量", value: "71 億 USDT", color: "highlight" },
+      { label: "商品類型", value: "Pre-IPO 永續期貨", color: "" },
+      { label: "手續費", value: "新標的限時 0 手續費", color: "highlight" }
+    ],
+    benefits: [
+      { icon: "📈", text: "在公司真的 IPO 前，先用合約方式交易其價格預期，波動通常不小" },
+      { icon: "💸", text: "新標的上架初期常見**限時 0 手續費**，等於少一筆交易成本" },
+      { icon: "📊", text: "SpaceX 系列已累積超過 **71 億 USDT** 成交量，熱度持續" },
+      { icon: "⚠️", text: "屬於合約商品、有槓桿風險，跟現貨不同，新手先搞懂規則再進場" }
+    ],
+    deadline: "",
+    junNote: "這類商品波動通常不小，玩之前一定要先搞懂它跟現貨的差異，不是穩賺不賠的東西 🌸\n\n⚠️ 合約槓桿風險高，新手不要為了活動硬碰，只拿閒置資金，自行評估。",
+    link: "https://www.mexc.com/register?inviteCode=3uXZE",
+    linkLabel: "🔗 前往 MEXC Pre-IPO 期貨",
     code: "3uXZE",
     codeLabel: "MEXC 邀請碼"
   },
@@ -430,5 +479,53 @@ window.ACTIVITIES = [
     linkLabel: "🔗 前往 BingX",
     code: "22KLUM",
     codeLabel: "BingX 邀請碼"
+  },
+  {
+    platform: "bingx",
+    platformLabel: "BingX · 財報季 Earnings Season",
+    status: "hot",
+    statusLabel: "🔥 限時",
+    title: "📊 財報季戰役：100 萬 USDT Earnings Season",
+    desc: "Global Capital Gala 系列第四彈，圍繞美股財報季設計的股票交易任務，總獎池 100 萬 USDT",
+    stats: [
+      { label: "總獎池", value: "1,000,000 USDT", color: "highlight" },
+      { label: "活動時間", value: "7/9–7/29", color: "" },
+      { label: "系列", value: "Global Capital Gala 第四彈", color: "" }
+    ],
+    benefits: [
+      { icon: "📈", text: "首次交易股票、完成財報週交易挑戰，皆有額外加碼獎勵" },
+      { icon: "💰", text: "總獎池達 **1,000,000 USDT**，是系列活動裡數一數二大的一次" },
+      { icon: "📅", text: "任務設計圍繞財報公布前後的股票交易時機" },
+      { icon: "⚠️", text: "股票 / 股票代幣交易同樣有市場波動風險，只投閒置資金" }
+    ],
+    deadline: "截止：2026/07/29",
+    junNote: "這已經是這個系列第四彈了，每次都在財報旺季搞事 😩 本來就有在關注美股財報的人可以順手參加 🌸\n\n⚠️ 投資有風險，只投閒置資金，自行評估。",
+    link: "https://bingx.com/invite/22KLUM",
+    linkLabel: "🔗 前往 BingX 財報季活動",
+    code: "22KLUM",
+    codeLabel: "BingX 邀請碼"
+  },
+  {
+    platform: "general",
+    platformLabel: "OKX · 純資訊分享",
+    status: "soon",
+    statusLabel: "⏳ 即將截止",
+    title: "✨ OKX Flash Earn Lite：3,200 萬顆 SENT 空投",
+    desc: "OKX 上架 Flash Earn Lite，標的為 Sentient(SENT)，總計釋出 3,200 萬顆 SENT 作為空投獎勵",
+    stats: [
+      { label: "空投總量", value: "32,000,000 SENT", color: "highlight" },
+      { label: "活動時間", value: "7/17–7/27", color: "" }
+    ],
+    benefits: [
+      { icon: "🎁", text: "活動期間參與門檻不高，玩法相對簡單" },
+      { icon: "⏳", text: "還剩不到一週，有在用 OKX 的人可以自己進去看活動頁面" },
+      { icon: "📌", text: "Jun 在 OKX 沒有邀請碼，這則純粹是情報分享" }
+    ],
+    deadline: "截止：2026/07/27",
+    junNote: "單純分享一個看到的活動，我自己在 OKX 沒有邀請碼可以給大家，就當作情報同步 🌸\n\n⚠️ 純資訊分享，非投資建議，自行評估風險。",
+    link: "https://www.okx.com",
+    linkLabel: "🔗 前往 OKX 查看活動",
+    code: "",
+    codeLabel: ""
   }
 ];
