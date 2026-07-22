@@ -25,20 +25,6 @@ assert(stock.link.includes('clacCode=MHEQPVWR'), '股票活動連結需帶入邀
 assert(stockText.includes('硬刷合約交易量'), '股票活動需保留合約風險提醒');
 
 const puzzleCards = activities.filter((a) => a.title === '⚽ 九宮格射門：集拼圖拿 2,026 USDT');
-assert.strictEqual(puzzleCards.length, 1, 'Bitget 足球拼圖活動應只有一張卡');
-const puzzle = puzzleCards[0];
-const puzzleText = JSON.stringify(puzzle).replace(/\*\*/g, '');
-assert.strictEqual(puzzle.platform, 'bitget', '足球拼圖活動平台必須是 bitget');
-assert(puzzleText.includes('2026/07/13 11:00'), '足球拼圖活動需包含開始時間');
-assert(puzzleText.includes('2026/07/20 11:00'), '足球拼圖活動需包含截止時間');
-assert(puzzleText.includes('13 個拼圖碎片'), '需包含拼圖碎片上限');
-assert(puzzleText.includes('重複'), '需提醒碎片可能重複');
-assert(puzzleText.includes('2,026 USDT'), '需包含完整拼圖大獎');
-assert(puzzleText.includes('1 / 5 / 10 / 20 / 66 / 99 / 168 / 666 USDT'), '需包含抽獎獎池');
-assert(puzzleText.includes('20 次'), '需包含贈送與接收碎片次數上限');
-assert(puzzleText.includes('完成 KYC'), '需包含 KYC 資格');
-assert(puzzleText.includes('新手不要為了獎勵硬刷合約交易量'), '需包含合約風險提醒');
-assert(puzzle.link.includes('d476af1609c9567a9eb6c1a70a448c3f'), '需使用足球拼圖官方活動連結');
-assert(puzzle.link.includes('clacCode=MHEQPVWR'), '足球拼圖活動連結需帶入邀請碼');
+assert.strictEqual(puzzleCards.length, 0, '7/20 到期的 Bitget 足球拼圖活動不應再出現');
 
-console.log('Bitget 新版股票與足球拼圖活動檢查通過');
+console.log('Bitget 新版股票保留與足球拼圖到期清理檢查通過');

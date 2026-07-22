@@ -31,7 +31,7 @@ assert(text.includes('子帳號'), '需保留子帳號限制');
 assert(text.includes('IP'), '需保留 IP 限制');
 assert(text.includes('硬刷合約交易量'), '需保留 Jun 風險提醒');
 
-// 仍進行中的同日截止活動應保留。
-assert(titles.includes('盛夏打卡週：七日全勤最高 200 USDT'), 'Bitget 盛夏打卡週仍未到期，應保留');
+// 7/13 已截止的盛夏打卡週應移除。
+assert(!titles.includes('盛夏打卡週：七日全勤最高 200 USDT'), '過期的 Bitget 盛夏打卡週仍存在');
 
 console.log('到期清理與 Bitget 股票代幣重疊檢查通過');

@@ -8,12 +8,11 @@
    小語法：
    - benefits 好處清單裡，想把金額/重點變粉紅色，用 **兩個星號** 包起來。
    - junNote（Jun 說）想換行，直接按 Enter 換行即可。
-   最後更新：2026-07-21
+   最後更新：2026-07-23
    本次更新：
-   - 刪除 2 張已過期卡片：Bitget 盛夏打卡週（7/13 截止）、Bitget 足球拼圖活動（7/20 截止）
-   - 新增 6 張卡片：Bybit Spot Trading Arena（20萬U現貨賽）、BingX Earnings Season（100萬U財報季）、
-     Bitget PoolX 鎖ETH領NES、MEXC Pre-IPO期貨限時0手續費、Gate Launchpool+HODLer Airdrop（長期）、
-     OKX Flash Earn Lite SENT（無邀請碼，純資訊分享）
+   - 更新 Bybit 現貨競技場與 BingX 財報季活動卡片
+   - 新增 Bitget 網格機器人嘉年華卡片
+   - 移除 1 張已過期卡片：MEXC 足球盛宴（7/21 截止）
    ========================================================================= */
 
 window.SITE = {
@@ -180,26 +179,26 @@ window.ACTIVITIES = [
   },
   {
     platform: "bybit",
-    platformLabel: "Bybit · 現貨交易賽",
+    platformLabel: "Bybit · 現貨競技場",
     status: "hot",
     statusLabel: "🔥 限時",
-    title: "🏆 Spot Trading Arena：20 萬 USDT 現貨交易賽",
-    desc: "BTC / ETH / SOL / HYPE 等現貨交易量排名賽，Top 100 分享 10 萬 USDT，總獎池 20 萬 USDT",
+    title: "現貨競技場：200,000 USDT 獎池衝刺中",
+    desc: "完成報名與現貨交易量門檻後可參加排行榜，另有現貨網格抽獎機會；請先確認資格與截止時間",
     stats: [
       { label: "總獎池", value: "200,000 USDT", color: "highlight" },
-      { label: "最低交易量", value: "5,000 USDT", color: "" },
-      { label: "截止", value: "7/23 10:00 UTC", color: "highlight" }
+      { label: "排行榜獎池", value: "100,000 USDT", color: "highlight" },
+      { label: "活動時間", value: "7/9–7/23 10:00 UTC", color: "" }
     ],
     benefits: [
-      { icon: "📈", text: "活動期間現貨交易量進榜排名，**Top 100** 名額瓜分 **100,000 USDT**" },
-      { icon: "✅", text: "需完成 **1 級實名認證**，且累積現貨交易量 ≥ **5,000 USDT** 才有排名資格" },
-      { icon: "🪙", text: "納入計算的幣種含 BTC、ETH、XRP、SOL、HYPE、XAUT 等現貨交易對" },
-      { icon: "⚠️", text: "活動只到 **7/23 10:00（UTC）**，時間不多；交易量不要為了衝排名硬做" }
+      { icon: "📈", text: "現貨交易量累積達 **5,000 USDT** 才符合排行榜資格，前 **100 名**依規則瓜分 100,000 USDT" },
+      { icon: "🪙", text: "適用幣對包含 **BTC / ETH / XRP / SOL / HYPE / XAUT** 對 USDT" },
+      { icon: "🎰", text: "現貨網格單日交易量 ≥1,000 USDT 可拿 1 次抽獎機會，累積 ≥5,000 USDT 可拿 2 次" },
+      { icon: "✅", text: "需先報名並完成 1 級身分認證；機器人交易量與 0 手續費幣對是否計入，請以活動頁規則為準" }
     ],
-    deadline: "截止：2026/07/23 10:00（UTC）",
-    junNote: "這個是純現貨的交易競賽，不用碰合約，門檻也不算太高。本來就有在用 Bybit 交易主流幣的人可以順手參加，但快截止了記得動作要快 🌸\n\n⚠️ 投資有風險，只投閒置資金，別為了排名硬衝交易量。",
+    deadline: "截止：2026/07/23 10:00（UTC）；台北時間 18:00",
+    junNote: "這場比較適合本來就有在 Bybit 做現貨交易的人順手研究，排行榜資格仍要達到交易量門檻。不要為了衝榜硬刷超出自己風險承受度的量，也不要只看到總獎池就忽略實際排名與分配規則。\n\n⚠️ 投資有風險，只投閒置資金；部分連結可能含邀請碼 / 分潤。",
     link: "https://partner.bybit.com/b/BYJUN",
-    linkLabel: "🔗 前往 Bybit Spot Trading Arena",
+    linkLabel: "🔗 前往 Bybit 現貨競技場",
     code: "BYJUN",
     codeLabel: "Bybit 邀請碼"
   },
@@ -222,6 +221,30 @@ window.ACTIVITIES = [
     linkLabel: "🔗 申請 Bitget Wallet 卡",
     code: "Cqeue9",
     codeLabel: "邀請碼（綁定領 5 USDT）"
+  },
+  {
+    platform: "bitget",
+    platformLabel: "Bitget · 網格機器人嘉年華",
+    status: "ongoing",
+    statusLabel: "✅ 進行中",
+    title: "網格新手禮：首單最高 200 USDT，再分 10 萬獎池",
+    desc: "首次完成符合條件的網格機器人交易，可依活動規則領取迎新禮，另有 100,000 USDT 加碼獎池",
+    stats: [
+      { label: "新手迎新禮", value: "最高 200 USDT", color: "highlight" },
+      { label: "加碼獎池", value: "100,000 USDT", color: "highlight" }
+    ],
+    benefits: [
+      { icon: "🤖", text: "第一次開現貨或合約網格單，仍須完成官方指定的交易額與資格條件" },
+      { icon: "🎁", text: "另有 **100,000 USDT** 加碼獎池，實際分配與名額依活動規則為準" },
+      { icon: "📊", text: "網格會依設定自動分批買賣，但行情單邊波動時仍可能產生虧損" },
+      { icon: "⚠️", text: "最高獎勵不代表人人拿得到；網格交易仍有市場與參數風險，**非保證獲利**" }
+    ],
+    deadline: "活動期限與剩餘名額請以 Bitget 活動頁為準",
+    junNote: "這類活動比較適合本來就想研究網格的人，不要只為了迎新禮就直接開單。先看懂現貨網格和合約網格的差別，再用小額測試；參數設得不合適或遇到單邊行情，一樣可能虧損。\n\n⚠️ 純分享，不構成投資建議；部分連結可能含邀請碼 / 分潤。",
+    link: "https://www.bitget.com/zh-TW/referral/register?from=referral&clacCode=V0K17SD8",
+    linkLabel: "🔗 前往 Bitget 查看網格活動",
+    code: "V0K17SD8",
+    codeLabel: "Bitget 邀請碼"
   },
   {
     platform: "bitget",
@@ -364,31 +387,7 @@ window.ACTIVITIES = [
     code: "3uXZE",
     codeLabel: "MEXC 邀請碼"
   },
-  {
-    platform: "mexc",
-    platformLabel: "MEXC · 足球盛宴",
-    status: "hot",
-    statusLabel: "🔥 限時",
-    title: "⚽ 足球盛宴 8,000,000 USDT 獎池",
-    desc: "報名參加足球競猜與合約積分賽，每日可免費競猜，交易任務可解鎖更高積分與獎池",
-    stats: [
-      { label: "總獎池", value: "8,000,000 USDT", color: "highlight" },
-      { label: "最高獎勵", value: "2,375 USDT", color: "highlight" },
-      { label: "活動時間", value: "6/11–7/21", color: "" }
-    ],
-    benefits: [
-      { icon: "⚽", text: "每日可免費預測足球賽，猜對可拿基礎積分" },
-      { icon: "📈", text: "合約交易量達標可抽積分加成，解鎖更高獎池" },
-      { icon: "👥", text: "邀請好友報名活動，也可抽積分加成" },
-      { icon: "⚠️", text: "合約任務風險高，新手不要為了獎勵硬刷交易量" }
-    ],
-    deadline: "截止：2026/07/21 15:00（UTC+8）今天最後一天",
-    junNote: "這個是 MEXC 足球盛宴活動，免費競猜可以玩，但後面積分加成跟獎池解鎖會牽涉合約交易量。今天就是最後一天了，還沒參加的要動作快；新手不要為了獎勵硬刷合約，合約交易請自己評估風險。",
-    link: "https://www.mexc.com/register?inviteCode=3uXZE",
-    linkLabel: "🔗 前往 MEXC 足球盛宴",
-    code: "3uXZE",
-    codeLabel: "MEXC 邀請碼"
-  },
+
   {
     platform: "mexc",
     platformLabel: "MEXC Card",
@@ -482,24 +481,24 @@ window.ACTIVITIES = [
   },
   {
     platform: "bingx",
-    platformLabel: "BingX · 財報季 Earnings Season",
+    platformLabel: "BingX · 財報季交易嘉年華",
     status: "hot",
-    statusLabel: "🔥 限時",
-    title: "📊 財報季戰役：100 萬 USDT Earnings Season",
-    desc: "Global Capital Gala 系列第四彈，圍繞美股財報季設計的股票交易任務，總獎池 100 萬 USDT",
+    statusLabel: "🔥 進行中",
+    title: "財報季來了：100萬 USDT 獎池陪你追財報",
+    desc: "全球資本盛典第四彈，圍繞多家國際公司財報日安排股票交易任務，活動頁會持續新增標的",
     stats: [
       { label: "總獎池", value: "1,000,000 USDT", color: "highlight" },
       { label: "活動時間", value: "7/9–7/29", color: "" },
-      { label: "系列", value: "Global Capital Gala 第四彈", color: "" }
+      { label: "系列", value: "全球資本盛典第 4 彈", color: "" }
     ],
     benefits: [
-      { icon: "📈", text: "首次交易股票、完成財報週交易挑戰，皆有額外加碼獎勵" },
-      { icon: "💰", text: "總獎池達 **1,000,000 USDT**，是系列活動裡數一數二大的一次" },
-      { icon: "📅", text: "任務設計圍繞財報公布前後的股票交易時機" },
-      { icon: "⚠️", text: "股票 / 股票代幣交易同樣有市場波動風險，只投閒置資金" }
+      { icon: "📊", text: "活動串聯多家國際公司財報公布日，交易對應標的後才可能符合指定任務" },
+      { icon: "🆕", text: "新用戶首次下單可能另有加碼，實際資格、門檻與名額以活動頁為準" },
+      { icon: "📅", text: "活動期間會持續新增財報標的，參加前要重新確認當週清單" },
+      { icon: "⚠️", text: "股票與股票代幣都有市場波動風險；**實際任務門檻與獎勵請以 BingX 活動頁為準**" }
     ],
     deadline: "截止：2026/07/29",
-    junNote: "這已經是這個系列第四彈了，每次都在財報旺季搞事 😩 本來就有在關注美股財報的人可以順手參加 🌸\n\n⚠️ 投資有風險，只投閒置資金，自行評估。",
+    junNote: "這張比較適合本來就在關注美股財報、也看得懂股票代幣風險的人順手研究。不要只看到 100 萬獎池就急著下單，先確認自己能不能參加、當週標的是什麼，以及交易成本是否划算。\n\n⚠️ 純分享，投資請自行評估風險；部分連結可能含邀請碼 / 分潤。",
     link: "https://bingx.com/invite/22KLUM",
     linkLabel: "🔗 前往 BingX 財報季活動",
     code: "22KLUM",
