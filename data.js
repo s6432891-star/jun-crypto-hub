@@ -319,6 +319,31 @@ window.ACTIVITIES = [
     codeLabel: "Bitget 邀請碼"
   },
   {
+    platform: "bitget",
+    platformLabel: "Bitget · PoolX 質押空投",
+    status: "hot",
+    statusLabel: "🔥 限時",
+    title: "🎮 PoolX 鎖 BTC 領 186.6 萬顆 ESPORTS",
+    desc: "Bitget PoolX 上線 ESPORTS 質押池，依活動規則鎖倉 BTC 分享空投；全站額度有限，額滿可能提前結束",
+    stats: [
+      { label: "空投總量", value: "1,866,000 ESPORTS", color: "highlight" },
+      { label: "質押幣種", value: "BTC", color: "" },
+      { label: "全站上限", value: "20 BTC", color: "" }
+    ],
+    benefits: [
+      { icon: "🔒", text: "依 PoolX 活動規則鎖倉 **BTC**，分享 **1,866,000 ESPORTS** 空投池" },
+      { icon: "⏳", text: "活動時間為 **7/21 16:00–7/28 16:00（UTC+8）**；全站上限 20 BTC，額滿可能提前結束" },
+      { icon: "📍", text: "操作前請在 Bitget App → 理財 → PoolX 確認目前額度、倒數、個人上限與發放規則" },
+      { icon: "⚠️", text: "ESPORTS 上市後價格可能波動；鎖倉期間資金無法自由運用，空投數量與價值都不是保證收益" }
+    ],
+    deadline: "截止：2026/07/28 16:00（UTC+8；額滿可能提前結束）",
+    junNote: "這張適合本來就持有 BTC、也看得懂 PoolX 規則的人順手研究。不要只看到空投總量就重倉；實際分到多少會受總質押量與官方規則影響。\n\n⚠️ ESPORTS 價格會波動，鎖倉期間資金無法自由運用；請先確認活動仍有額度，只用自己能承受的資金。部分連結含邀請碼 / 分潤。",
+    link: "https://www.bitget.com/zh-TW/referral/register?from=referral&clacCode=V0K17SD8",
+    linkLabel: "🔗 前往 Bitget PoolX 查看",
+    code: "V0K17SD8",
+    codeLabel: "Bitget 邀請碼"
+  },
+  {
     platform: "gate",
     platformLabel: "Gate · USD1 理財",
     status: "hot",
@@ -503,6 +528,32 @@ window.ACTIVITIES = [
     linkLabel: "🔗 前往 BingX 財報季活動",
     code: "22KLUM",
     codeLabel: "BingX 邀請碼"
+  },
+  {
+    platform: "general",
+    platformLabel: "OKX · 純資訊分享",
+    status: "hot",
+    statusLabel: "🔥 新戶限定",
+    title: "🧠 記憶體股網格新戶活動：最高 1,000 USDT 等值倉位",
+    desc: "符合資格且尚未完成首筆交易的新用戶，依淨入金與持有條件，可能取得 Micron／SanDisk 合約網格倉位",
+    stats: [
+      { label: "最高標示", value: "1,000 USDT 等值倉位", color: "highlight" },
+      { label: "活動時間", value: "7/2–7/31 23:59", color: "" },
+      { label: "商品類型", value: "合約網格（含槓桿）", color: "" }
+    ],
+    benefits: [
+      { icon: "1️⃣", text: "活動資料標示：符合資格的新戶淨入金滿 **100 USDT 並維持 1 天**，可能取得 500 USDT 等值倉位" },
+      { icon: "2️⃣", text: "淨入金滿 **500 USDT 並維持 3 天**，可能再加碼 500 USDT；實際資格、名額與發放以登入後官方活動頁為準" },
+      { icon: "⚠️", text: "這是合約網格的**倉位價值，不是現金**；倉位價值通常是保證金乘上槓桿" },
+      { icon: "🛑", text: "活動資料標示含 **30% 停損機制**，且倉位若逾期未使用可能被收回；請先閱讀官方完整規則" },
+      { icon: "📌", text: "需完成 KYC，且僅限符合活動資格的新用戶；不同地區或帳號可能看不到活動" }
+    ],
+    deadline: "截止：2026/07/31 23:59（UTC+8；資格與名額以官方活動頁為準）",
+    junNote: "這張是純情報整理，我在 OKX 沒有邀請碼。重點不是『免費拿 1,000U 現金』，而是符合條件後取得含槓桿的合約網格倉位；有停損、期限與資格限制。\n\n⚠️ 合約與槓桿商品風險高，可能虧損；先登入確認自己是否有活動資格，再讀完官方規則，不要為了倉位獎勵硬入金。",
+    link: "https://www.okx.com/zh-hant/learn/crypto/how-to-buy-us-stocks-with-crypto",
+    linkLabel: "🔗 查看 OKX 合約網格說明",
+    code: "",
+    codeLabel: ""
   },
   {
     platform: "general",
