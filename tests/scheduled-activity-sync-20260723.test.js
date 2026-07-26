@@ -11,23 +11,18 @@ const activities = sandbox.window.ACTIVITIES || [];
 const titles = activities.map((a) => a.title);
 const get = (title) => activities.find((a) => a.title === title);
 
-// 2026-07-23 安全更新：只新增／改寫指定活動，不整份覆蓋 Claude 輸出。
-const bybit = get('現貨競技場：200,000 USDT 獎池衝刺中');
-assert(bybit, '缺少更新後的 Bybit 現貨競技場卡片');
-assert(JSON.stringify(bybit).includes('200,000 USDT'), 'Bybit 卡片需保留 200,000 USDT 獎池');
-assert(bybit.deadline.includes('2026/07/23 10:00（UTC）'), 'Bybit 截止時間需使用絕對日期');
-assert(!JSON.stringify(bybit).includes('明天'), 'Bybit 卡片不得保留會過期的「明天」文案');
-assert(JSON.stringify(bybit).includes('不要為了衝榜硬刷'), 'Bybit 卡片需保留交易量風險提醒');
+// 已於 2026-07-23 到期的 Bybit 現貨競技場應移除。
+assert(!get('現貨競技場：200,000 USDT 獎池衝刺中'), '7/23 到期的 Bybit 現貨競技場仍存在');
 
 const grid = get('網格新手禮：首單最高 200 USDT，再分 10 萬獎池');
 assert(grid, '缺少 Bitget 網格機器人嘉年華卡片');
 assert(JSON.stringify(grid).includes('100,000 USDT'), 'Bitget 網格卡需含 100,000 USDT 加碼獎池');
 assert(JSON.stringify(grid).includes('非保證獲利'), 'Bitget 網格卡需明確提醒非保證獲利');
 
-const bingx = get('財報季來了：100萬 USDT 獎池陪你追財報');
+const bingx = get('財報季：100 萬 USDT 活動池');
 assert(bingx, '缺少更新後的 BingX 財報季卡片');
 assert(bingx.deadline.includes('2026/07/29'), 'BingX 財報季需保留 7/29 截止日');
-assert(JSON.stringify(bingx).includes('實際任務門檻與獎勵請以 BingX 活動頁為準'), 'BingX 資料不足處需標示以官方規則為準');
+assert(JSON.stringify(bingx).includes('不代表人人拿得到'), 'BingX 卡需說明總活動池不等於個人可得獎勵');
 
 // 明確過期項目應移除。
 assert(!titles.includes('⚽ 足球盛宴 8,000,000 USDT 獎池'), '7/21 到期的 MEXC 足球盛宴仍存在');

@@ -8,7 +8,7 @@ vm.runInNewContext(source, sandbox);
 
 const cards = sandbox.window.ACTIVITIES;
 assert(Array.isArray(cards), 'window.ACTIVITIES 應為陣列');
-assert.strictEqual(cards.length, 23, '加入兩張活動後應共有 23 張卡片');
+assert.strictEqual(cards.length, 23, '7/26 安全更新後應共有 23 張卡片');
 
 const esports = cards.find((card) => card.title.includes('ESPORTS'));
 assert(esports, '缺少 Bitget PoolX ESPORTS 卡片');
@@ -29,7 +29,7 @@ assert.strictEqual(okxMemory.code, '', 'OKX 純資訊卡不應放邀請碼');
 
 assert(cards.some((card) => card.title.includes('OKX Flash Earn Lite')), '不得刪除既有 OKX SENT 卡片');
 assert(cards.some((card) => card.title.includes('Launchpool + HODLer')), '不得刪除既有 Gate 長期卡片');
-assert(cards.some((card) => card.title.includes('現貨競技場：200,000 USDT')), '不得改成 Claude 日期錯誤的 Bybit 重複卡');
+assert(!cards.some((card) => card.title.includes('現貨競技場：200,000 USDT')), '7/23 到期的 Bybit 現貨競技場不得保留');
 assert.strictEqual(cards.filter((card) => card.title.includes('財報季')).length, 1, 'BingX 財報季不得重複新增');
 
 console.log('Claude 7/23 小網頁安全同步測試通過');
