@@ -10,7 +10,7 @@ const cards = sandbox.window.ACTIVITIES || [];
 const titles = cards.map((card) => card.title);
 const findTitle = (needle) => cards.find((card) => card.title.includes(needle));
 
-assert(source.includes('最後更新：2026-07-26'), 'data.js 檔頭需更新為 2026-07-26');
+assert(source.includes('最後更新：2026-07-28'), 'data.js 檔頭需更新為 2026-07-28');
 
 const mexc = findTitle('Up/Down');
 assert(mexc, '缺少 MEXC Up/Down 活動卡');
@@ -33,11 +33,20 @@ assert(!titles.includes('現貨競技場：200,000 USDT 獎池衝刺中'), '7/23
 [
   '新用戶直接領 20U 股票，最高 200U',
   'PoolX 鎖 BTC 領 186.6 萬顆 ESPORTS',
-  'OKX Flash Earn Lite：3,200 萬顆 SENT 空投',
+  'OKX Flash Earn Lite：3,200 萬顆 SENT 空投'
+].forEach((title) => assert(!titles.some((item) => item.includes(title)), `明確已過期的活動必須移除：${title}`));
+
+[
   '記憶體股網格新戶活動：最高 1,000 USDT 等值倉位',
   '躺著領空投：Launchpool + HODLer Airdrop',
   'Pre-IPO 期貨新標的，限時 0 手續費'
 ].forEach((title) => assert(titles.some((item) => item.includes(title)), `不可誤刪尚未到期或未確認結束的活動：${title}`));
 
-assert.strictEqual(cards.length, 23, '本次安全更新後應共有 23 張活動卡');
-console.log('2026-07-26 排程活動安全同步檢查通過');
+const evaa = findTitle('EVAA');
+assert(evaa, '缺少 Bitget PoolX EVAA 活動卡');
+assert(JSON.stringify(evaa).includes('65,000 EVAA'), 'EVAA 卡需包含 65,000 EVAA 空投總量');
+assert(JSON.stringify(evaa).includes('額度有限'), 'EVAA 卡需提醒額度有限');
+assert(JSON.stringify(evaa).includes('鎖倉期間資產會被鎖住'), 'EVAA 卡需提醒鎖倉風險');
+
+assert.strictEqual(cards.length, 21, '本次安全更新後應共有 21 張活動卡');
+console.log('2026-07-28 排程活動安全同步檢查通過');

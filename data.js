@@ -8,12 +8,13 @@
    小語法：
    - benefits 好處清單裡，想把金額/重點變粉紅色，用 **兩個星號** 包起來。
    - junNote（Jun 說）想換行，直接按 Enter 換行即可。
-   最後更新：2026-07-26
-   本次更新：
-   - 新增 MEXC Up/Down 短週期預測活動卡
-   - 更新 BingX 財報季卡片為官方核實版，避免重複新增
-   - 移除 1 張已過期卡片：Bybit 現貨競技場（7/23 截止）
-   - Gate TGT 僅找到舊公告，未新增為 2026 活動
+   最後更新：2026-07-28
+   本次更新（以 2026-07-26 版本為基礎）：
+   - 刪除 3 張已過期活動卡：Bitget 新用戶股票代幣（截止 7/27 11:00）、
+     Bitget PoolX 鎖 BTC 領 ESPORTS（截止 7/28 16:00，已過）、
+     OKX Flash Earn Lite SENT 空投（截止 7/27）
+   - 新增 1 張活動卡：Bitget PoolX 鎖 XAUT 領 EVAA Protocol（7/27 上線，額度有限）
+   - BingX 財報季（截止 7/29）確認仍在進行中，繼續保留
    ========================================================================= */
 
 window.SITE = {
@@ -243,34 +244,6 @@ window.ACTIVITIES = [
   },
   {
     platform: "bitget",
-    platformLabel: "Bitget · 新用戶股票代幣",
-    status: "hot",
-    statusLabel: "🔥 限時",
-    title: "新用戶直接領 20U 股票，最高 200U",
-    desc: "繁體中文區 7/6 後註冊並完成 KYC 的新用戶，完成入金與合約任務拿積分，兌換 USDT 或股票代幣",
-    stats: [
-      { label: "直接領", value: "20 USDT 等值股票", color: "highlight" },
-      { label: "最高獎勵", value: "200 USDT 等值", color: "highlight" },
-      { label: "活動時間", value: "2026/07/13 11:00–2026/07/27 11:00", color: "" }
-    ],
-    benefits: [
-      { icon: "✅", text: "資格：繁體中文區 **7/6 後註冊的新用戶**，需完成 **KYC**" },
-      { icon: "🎁", text: "完成 KYC、累計入金 ≥ **200 USDT** 與指定合約交易任務，可取得首波 **20 積分**，兌換 20 USDT 等值股票" },
-      { icon: "📈", text: "合約交易量達標可再拿積分，頁面顯示最高 **180 積分**；可見門檻包含 **50,000 / 200,000 / 600,000 / 1,000,000 / 3,000,000 USDT**" },
-      { icon: "🧾", text: "10 積分可換 10 USDT 等值獎勵；可選 **USDT、rSPY、rQQQ、rNVDA、rTSM、rMU、rAMD、rQCOM、rINTC、rSNDK、rSKHY、rTSLA、rMeta、rGOOGL、rAAPL、rAVGO**" },
-      { icon: "📌", text: "USDT 每人最多兌換 2 次、共 20 USDT；股票代幣支援碎股兌換且無兌換次數限制，獎勵通常於 **7 個工作日內**到帳" },
-      { icon: "⚠️", text: "不統計 **0 手續費 / 穩定幣 / CFD 幣對**交易量；子帳號不能報名且交易量不計入，API 用戶可正常報名" },
-      { icon: "🚫", text: "禁止快速出入金、個人划轉刷量、對敲、批量註冊等行為；同 IP 多帳號可能被取消資格並追回獎勵" }
-    ],
-    deadline: "截止：2026/07/27 11:00（UTC+8）",
-    junNote: "這檔是 7/13 開始的新版 Bitget 新戶活動，首波任務可換 20U 等值股票；後續要拿到最高 200U，仍需累積很高的合約交易量。新手不要為了股票獎勵硬刷合約交易量，合約可能虧損甚至爆倉，最高獎勵也不代表人人拿得到。\n\n⚠️ 股票代幣仍有市場波動、平台規則與地區資格風險；請先確認 KYC、任務門檻及反作弊規則。部分連結含邀請碼 / 分潤，不構成投資建議。",
-    link: "https://www.bitget.com/events/activities/new/e4bfb459098a5dde94a9ad70ec9e06f5?color=dark&languageType=5&clacCode=MHEQPVWR",
-    linkLabel: "🔗 前往 Bitget 新戶活動",
-    code: "MHEQPVWR",
-    codeLabel: "Bitget 邀請碼"
-  },
-  {
-    platform: "bitget",
     platformLabel: "Bitget · PoolX 質押空投",
     status: "hot",
     statusLabel: "🔥 進行中",
@@ -299,23 +272,23 @@ window.ACTIVITIES = [
     platformLabel: "Bitget · PoolX 質押空投",
     status: "hot",
     statusLabel: "🔥 限時",
-    title: "🎮 PoolX 鎖 BTC 領 186.6 萬顆 ESPORTS",
-    desc: "Bitget PoolX 上線 ESPORTS 質押池，依活動規則鎖倉 BTC 分享空投；全站額度有限，額滿可能提前結束",
+    title: "🔒 PoolX 鎖 XAUT 領 65,000 顆 EVAA",
+    desc: "Bitget PoolX 新上架 EVAA Protocol，鎖入 XAUT 依鎖倉金額與時間分潤 EVAA 空投，額度有限",
     stats: [
-      { label: "空投總量", value: "1,866,000 ESPORTS", color: "highlight" },
-      { label: "質押幣種", value: "BTC", color: "" },
-      { label: "全站上限", value: "20 BTC", color: "" }
+      { label: "空投總量", value: "65,000 EVAA", color: "highlight" },
+      { label: "鎖倉幣種", value: "XAUT", color: "" },
+      { label: "上線時間", value: "2026/07/27", color: "" }
     ],
     benefits: [
-      { icon: "🔒", text: "依 PoolX 活動規則鎖倉 **BTC**，分享 **1,866,000 ESPORTS** 空投池" },
-      { icon: "⏳", text: "活動時間為 **7/21 16:00–7/28 16:00（UTC+8）**；全站上限 20 BTC，額滿可能提前結束" },
-      { icon: "📍", text: "操作前請在 Bitget App → 理財 → PoolX 確認目前額度、倒數、個人上限與發放規則" },
-      { icon: "⚠️", text: "ESPORTS 上市後價格可能波動；鎖倉期間資金無法自由運用，空投數量與價值都不是保證收益" }
+      { icon: "🔒", text: "App → 理財 → PoolX，鎖倉 **XAUT** 即可參與，不用手動申購" },
+      { icon: "🎁", text: "空投總量 **65,000 EVAA**，依鎖倉金額與時間分潤，額度有限、發完為止" },
+      { icon: "⏱️", text: "PoolX 通常為短天期活動，建議儘早鎖倉卡位額度" },
+      { icon: "⚠️", text: "實際鎖倉門檻、期限與分潤比例請以 App 內活動頁為準，鎖倉期間資產無法自由調度" }
     ],
-    deadline: "截止：2026/07/28 16:00（UTC+8；額滿可能提前結束）",
-    junNote: "這張適合本來就持有 BTC、也看得懂 PoolX 規則的人順手研究。不要只看到空投總量就重倉；實際分到多少會受總質押量與官方規則影響。\n\n⚠️ ESPORTS 價格會波動，鎖倉期間資金無法自由運用；請先確認活動仍有額度，只用自己能承受的資金。部分連結含邀請碼 / 分潤。",
+    deadline: "上線：2026/07/27（額度有限，先到先得）",
+    junNote: "PoolX 我自己有在玩，之前那期 APR 有衝到 72.29%，這次是鎖 XAUT 拿 EVAA，喜歡躺著領空投的可以去看一下額度還在不在 🌸\n\n⚠️ 鎖倉期間資產會被鎖住不能動，實際門檻與期限請以 App 內公告為準，投資有風險自行評估。",
     link: "https://www.bitget.com/zh-TW/referral/register?from=referral&clacCode=V0K17SD8",
-    linkLabel: "🔗 前往 Bitget PoolX 查看",
+    linkLabel: "🔗 前往 Bitget PoolX",
     code: "V0K17SD8",
     codeLabel: "Bitget 邀請碼"
   },
@@ -388,7 +361,6 @@ window.ACTIVITIES = [
     code: "3uXZE",
     codeLabel: "MEXC 邀請碼"
   },
-
   {
     platform: "mexc",
     platformLabel: "MEXC Card",
@@ -553,29 +525,6 @@ window.ACTIVITIES = [
     junNote: "這張是純情報整理，我在 OKX 沒有邀請碼。重點不是『免費拿 1,000U 現金』，而是符合條件後取得含槓桿的合約網格倉位；有停損、期限與資格限制。\n\n⚠️ 合約與槓桿商品風險高，可能虧損；先登入確認自己是否有活動資格，再讀完官方規則，不要為了倉位獎勵硬入金。",
     link: "https://www.okx.com/zh-hant/learn/crypto/how-to-buy-us-stocks-with-crypto",
     linkLabel: "🔗 查看 OKX 合約網格說明",
-    code: "",
-    codeLabel: ""
-  },
-  {
-    platform: "general",
-    platformLabel: "OKX · 純資訊分享",
-    status: "soon",
-    statusLabel: "⏳ 即將截止",
-    title: "✨ OKX Flash Earn Lite：3,200 萬顆 SENT 空投",
-    desc: "OKX 上架 Flash Earn Lite，標的為 Sentient(SENT)，總計釋出 3,200 萬顆 SENT 作為空投獎勵",
-    stats: [
-      { label: "空投總量", value: "32,000,000 SENT", color: "highlight" },
-      { label: "活動時間", value: "7/17–7/27", color: "" }
-    ],
-    benefits: [
-      { icon: "🎁", text: "活動期間參與門檻不高，玩法相對簡單" },
-      { icon: "⏳", text: "還剩不到一週，有在用 OKX 的人可以自己進去看活動頁面" },
-      { icon: "📌", text: "Jun 在 OKX 沒有邀請碼，這則純粹是情報分享" }
-    ],
-    deadline: "截止：2026/07/27",
-    junNote: "單純分享一個看到的活動，我自己在 OKX 沒有邀請碼可以給大家，就當作情報同步 🌸\n\n⚠️ 純資訊分享，非投資建議，自行評估風險。",
-    link: "https://www.okx.com",
-    linkLabel: "🔗 前往 OKX 查看活動",
     code: "",
     codeLabel: ""
   }

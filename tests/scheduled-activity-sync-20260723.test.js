@@ -27,14 +27,15 @@ assert(JSON.stringify(bingx).includes('不代表人人拿得到'), 'BingX 卡需
 // 明確過期項目應移除。
 assert(!titles.includes('⚽ 足球盛宴 8,000,000 USDT 獎池'), '7/21 到期的 MEXC 足球盛宴仍存在');
 
-// Claude 輸出曾誤刪的活動必須保留，除非另有官方到期證據。
+// Claude 輸出曾誤刪的未到期活動必須保留。
 [
   '🚀 星艦啟航：太空邀約戰',
   '🔒 PoolX 鎖 ETH 領 62 萬顆 NES',
   '🎁 躺著領空投：Launchpool + HODLer Airdrop',
   '🚀 Pre-IPO 期貨新標的，限時 0 手續費',
-  '⚽ 世足競猜開打！預測正確贏 50U 倉位券',
-  '✨ OKX Flash Earn Lite：3,200 萬顆 SENT 空投'
+  '⚽ 世足競猜開打！預測正確贏 50U 倉位券'
 ].forEach((title) => assert(titles.includes(title), `安全更新不可誤刪：${title}`));
+
+assert(!titles.includes('✨ OKX Flash Earn Lite：3,200 萬顆 SENT 空投'), '7/27 到期的 OKX SENT 卡片不得保留');
 
 console.log('2026-07-23 Claude 排程安全同步檢查通過');
