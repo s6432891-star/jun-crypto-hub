@@ -20,9 +20,7 @@ assert(JSON.stringify(grid).includes('100,000 USDT'), 'Bitget 網格卡需含 10
 assert(JSON.stringify(grid).includes('非保證獲利'), 'Bitget 網格卡需明確提醒非保證獲利');
 
 const bingx = get('財報季：100 萬 USDT 活動池');
-assert(bingx, '缺少更新後的 BingX 財報季卡片');
-assert(bingx.deadline.includes('2026/07/29'), 'BingX 財報季需保留 7/29 截止日');
-assert(JSON.stringify(bingx).includes('不代表人人拿得到'), 'BingX 卡需說明總活動池不等於個人可得獎勵');
+assert(!bingx, '2026/07/29 到期的 BingX 財報季不應再出現');
 
 // 明確過期項目應移除。
 assert(!titles.includes('⚽ 足球盛宴 8,000,000 USDT 獎池'), '7/21 到期的 MEXC 足球盛宴仍存在');
@@ -32,9 +30,10 @@ assert(!titles.includes('⚽ 足球盛宴 8,000,000 USDT 獎池'), '7/21 到期�
   '🚀 星艦啟航：太空邀約戰',
   '🔒 PoolX 鎖 ETH 領 62 萬顆 NES',
   '🎁 躺著領空投：Launchpool + HODLer Airdrop',
-  '🚀 Pre-IPO 期貨新標的，限時 0 手續費',
-  '⚽ 世足競猜開打！預測正確贏 50U 倉位券'
+  '🚀 Pre-IPO 期貨新標的，限時 0 手續費'
 ].forEach((title) => assert(titles.includes(title), `安全更新不可誤刪：${title}`));
+
+assert(!titles.includes('⚽ 世足競猜開打！預測正確贏 50U 倉位券'), '2026/07/20 結束的 BingX 世足活動不得保留');
 
 assert(!titles.includes('✨ OKX Flash Earn Lite：3,200 萬顆 SENT 空投'), '7/27 到期的 OKX SENT 卡片不得保留');
 

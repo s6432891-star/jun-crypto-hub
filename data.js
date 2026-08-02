@@ -8,13 +8,15 @@
    小語法：
    - benefits 好處清單裡，想把金額/重點變粉紅色，用 **兩個星號** 包起來。
    - junNote（Jun 說）想換行，直接按 Enter 換行即可。
-   最後更新：2026-07-28
-   本次更新（以 2026-07-26 版本為基礎）：
-   - 刪除 3 張已過期活動卡：Bitget 新用戶股票代幣（截止 7/27 11:00）、
-     Bitget PoolX 鎖 BTC 領 ESPORTS（截止 7/28 16:00，已過）、
-     OKX Flash Earn Lite SENT 空投（截止 7/27）
-   - 新增 1 張活動卡：Bitget PoolX 鎖 XAUT 領 EVAA Protocol（7/27 上線，額度有限）
-   - BingX 財報季（截止 7/29）確認仍在進行中，繼續保留
+   最後更新：2026-08-02
+   本次安全同步（以 GitHub Pages 2026-07-28 版本為基礎）：
+   - 新增 2 張有官方直連可核實活動：Bitget CandyBomb x XAUT、MEXC GRVT Airdrop+
+   - 修正 1 張既有活動：Bitget PoolX EVAA 的正式期間、每人門檻、資格與風險
+   - 移除 5 張明確過期活動：Bybit USD1 超級賽季、Bybit TradFi 入金、
+     BingX 世足競猜、BingX 財報季、OKX 記憶體股網格
+   - 不採用 IKA（實為 2025 年活動）；Gate ANTFUN、Bybit DCA、MEXC AI Trading
+     因本輪未取得官方直連完整核實，暫不上線
+   - 活動資格、名額、獎勵與地區限制仍以登入後官方活動頁為準
    ========================================================================= */
 
 window.SITE = {
@@ -33,6 +35,56 @@ window.SITE = {
    platform：bitget-wallet / bitget / gate / bybit / mexc / bingx / general
    stats / benefits 不需要就寫 []；code / deadline 沒有就留 "" */
 window.ACTIVITIES = [
+  {
+    platform: "bitget",
+    platformLabel: "Bitget · CandyBomb XAUT",
+    status: "hot",
+    statusLabel: "🔥 新戶限定",
+    title: "CandyBomb x XAUT 合約新戶活動：瓜分 3 XAUT",
+    desc: "限報名前沒有合約交易紀錄的新合約用戶；須先完成 KYC 並在 CandyBomb 頁點 Join",
+    stats: [
+      { label: "活動池", value: "3 XAUT", color: "highlight" },
+      { label: "資格", value: "報名前無合約交易紀錄的新戶", color: "" },
+      { label: "截止", value: "2026/08/09 14:00 UTC", color: "" }
+    ],
+    benefits: [
+      { icon: "👤", text: "僅限報名前**沒有合約交易紀錄**的新合約用戶；須完成 KYC 並先在活動頁點 **Join**" },
+      { icon: "🥇", text: "完成指定交易任務後依規則瓜分 **3 XAUT**；總活動池不等於個人可得" },
+      { icon: "📅", text: "活動期間：2026/07/30 14:00 至 **2026/08/09 14:00（UTC）**" },
+      { icon: "⚠️", text: "永續合約有槓桿、爆倉與滑價風險；新手不要為了獎勵硬刷交易量" }
+    ],
+    deadline: "截止：2026/08/09 14:00（UTC；台北時間 22:00）",
+    junNote: "它仍是高風險合約活動，不是免費領黃金。只適合本來就了解永續合約、也符合首次交易資格的人先看規則。\n\n⚠️ 部分連結可能含邀請碼 / 分潤，非投資建議。",
+    link: "https://www.bitget.com/events/candy-bomb?bl=futures",
+    linkLabel: "🔗 前往 Bitget CandyBomb 官方頁",
+    code: "V0K17SD8",
+    codeLabel: "Bitget 邀請碼"
+  },
+  {
+    platform: "mexc",
+    platformLabel: "MEXC · GRVT Airdrop+",
+    status: "hot",
+    statusLabel: "🔥 限時",
+    title: "GRVT Airdrop+：60,000 美元等值 GRVT + 10,000 USDT",
+    desc: "GRVT 上架活動分為入金／現貨與 LIT 交易任務，以及 GRVT 期貨任務；三種任務的獎勵性質不同",
+    stats: [
+      { label: "GRVT 獎勵", value: "60,000 美元等值", color: "highlight" },
+      { label: "期貨獎勵", value: "10,000 USDT", color: "highlight" },
+      { label: "截止", value: "2026/08/13 10:00 UTC", color: "" }
+    ],
+    benefits: [
+      { icon: "1️⃣", text: "入金並交易 GRVT：依規則瓜分 **54,000 美元等值 GRVT**" },
+      { icon: "2️⃣", text: "交易 LIT：依規則瓜分 **6,000 美元等值 GRVT**" },
+      { icon: "3️⃣", text: "交易 GRVT 期貨：依規則瓜分 **10,000 USDT 期貨獎勵**" },
+      { icon: "⚠️", text: "期貨獎勵可能是 Bonus／體驗金，不等於可直接提領現金；不要為了獎勵硬刷交易量" }
+    ],
+    deadline: "截止：2026/08/13 10:00（UTC；台北時間 18:00）",
+    junNote: "現貨／入金和期貨不是同一種風險。獎池也分成 GRVT 代幣與期貨獎勵，不能全部當成可提領的 USDT。\n\n⚠️ 部分連結可能含邀請碼 / 分潤，非投資建議。",
+    link: "https://blog.mexc.com/press-release/mexc-lists-grvt-with-grvt-usdt-airdrop-rewards/",
+    linkLabel: "🔗 查看 MEXC GRVT 官方公告",
+    code: "3uXZE",
+    codeLabel: "MEXC 邀請碼"
+  },
   {
     platform: "bybit",
     platformLabel: "Bybit · 新用戶專屬",
@@ -77,33 +129,6 @@ window.ACTIVITIES = [
   },
   {
     platform: "bybit",
-    platformLabel: "Bybit · USD1 超級賽季",
-    status: "hot",
-    statusLabel: "🔥 限時",
-    title: "USD1 超級賽季：最高抽 1,000,000 WLFI",
-    desc: "先報名活動後交易 USD1 現貨或衍生品，完成交易量任務可拿抽獎次數與 WLFI 空投階梯獎勵",
-    stats: [
-      { label: "活動截止", value: "7/31 10:00 UTC", color: "" },
-      { label: "轉盤大獎", value: "1,000,000 WLFI", color: "highlight" },
-      { label: "最高抽獎", value: "50 次", color: "highlight" }
-    ],
-    benefits: [
-      { icon: "🎯", text: "轉盤顯示可抽 **25 / 50 / 200 / 1000 WLFI**，最高大獎為 **1,000,000 WLFI**；獎勵有限、先到先得" },
-      { icon: "🎁", text: "抽獎任務：USD1 現貨交易量達 **US$10,000** 可拿 1 次抽獎；截圖顯示每次完成任務皆可獲得獎勵，最多 **50 次**" },
-      { icon: "🪂", text: "WLFI 空投階梯：USD1 現貨或衍生品交易量達 **US$100,000 → 200 WLFI**、**US$500,000 → 400 WLFI**、**US$2,500,000 → 800 WLFI**" },
-      { icon: "✅", text: "需先點活動頁「立即報名」，並完成 1 級個人身分認證或企業認證；機構 / Pro 用戶不符合資格" },
-      { icon: "⏳", text: "獎勵預計活動結束後 **30 個工作日**內發到福利中心，且需在 30 天內領取" },
-      { icon: "⚠️", text: "來自服務受限制國家 / 地區的用戶無法參與；Bybit 可依規則調整活動與取消惡意套利資格" }
-    ],
-    deadline: "截止：2026/07/31 10:00（UTC）",
-    junNote: "這個是 Bybit USD1 超級賽季，重點是交易 USD1 來拿 WLFI 轉盤抽獎與空投階梯獎勵。適合本來就有在交易 USD1 的人順手看；新手不要為了抽獎硬刷交易量，尤其衍生品交易量風險更高。\n\n⚠️ WLFI 價格會波動，交易量任務也有成本與風險；最高獎勵不代表人人拿得到，請先確認報名、KYC、地區資格與活動規則，只用自己能承受的資金。",
-    link: "https://partner.bybit.com/b/BYJUN",
-    linkLabel: "🔗 前往 Bybit USD1 活動",
-    code: "BYJUN",
-    codeLabel: "Bybit 邀請碼"
-  },
-  {
-    platform: "bybit",
     platformLabel: "Bybit · USD1 理財",
     status: "hot",
     statusLabel: "🔥 進行中",
@@ -124,31 +149,6 @@ window.ACTIVITIES = [
     junNote: "對，原本這個 USD1 升息 / 持有收益活動也還在進行，所以我把它獨立保留成一張卡。它跟 USD1 超級賽季不一樣：這張偏懶人持有收益，超級賽季偏交易量任務與抽獎。\n\n⚠️ 穩定幣和 WLFI 都有市場與平台風險，先小額研究，不要為了收益重倉。",
     link: "https://partner.bybit.com/b/BYJUN",
     linkLabel: "🔗 前往 Bybit 查看 USD1 理財",
-    code: "BYJUN",
-    codeLabel: "Bybit 邀請碼"
-  },
-  {
-    platform: "bybit",
-    platformLabel: "Bybit · TradFi 入金抽獎",
-    status: "hot",
-    statusLabel: "🔥 限時",
-    title: "入金 TradFi，必得獎勵",
-    desc: "活動期間完成 TradFi 淨充值任務可拿抽獎次數，100% 中獎，最高可抽 1 XAUT",
-    stats: [
-      { label: "活動時間", value: "6/3–7/31", color: "" },
-      { label: "最高獎勵", value: "1 XAUT", color: "highlight" },
-      { label: "中獎率", value: "100%", color: "highlight" }
-    ],
-    benefits: [
-      { icon: "🎁", text: "獎項含 **10 / 20 / 50 / 100 / 500 / 1000 USDT TradFi 獎勵金**" },
-      { icon: "🏆", text: "大獎含 **iPhone 17 Pro Max** 與 **1 XAUT**" },
-      { icon: "💰", text: "7 天內 TradFi 淨充值 ≥500 / ≥1,000 / ≥5,000 USDT，可各拿 1 次抽獎機會" },
-      { icon: "⚠️", text: "需先點立即參與並完成 1 級 KYC；獎品數量有限、先到先得" }
-    ],
-    deadline: "截止：2026/07/31 10:00（UTC）",
-    junNote: "這個是 Bybit TradFi 入金抽獎活動，適合原本就要把資金放進 TradFi 的人順手參加。任務看的是活動期間 7 天內淨充值，不是叫新手為了抽獎硬入金；活動僅開放特定地區，且獎品數量有限，先確認資格再做。",
-    link: "https://partner.bybit.com/b/BYJUN",
-    linkLabel: "🔗 前往 Bybit TradFi 活動",
     code: "BYJUN",
     codeLabel: "Bybit 邀請碼"
   },
@@ -273,22 +273,22 @@ window.ACTIVITIES = [
     status: "hot",
     statusLabel: "🔥 限時",
     title: "🔒 PoolX 鎖 XAUT 領 65,000 顆 EVAA",
-    desc: "Bitget PoolX 新上架 EVAA Protocol，鎖入 XAUT 依鎖倉金額與時間分潤 EVAA 空投，額度有限",
+    desc: "活動期間鎖入 XAUT，依個人合格鎖倉占比瓜分 EVAA；每人可鎖 0.001–300 XAUT",
     stats: [
       { label: "空投總量", value: "65,000 EVAA", color: "highlight" },
       { label: "鎖倉幣種", value: "XAUT", color: "" },
-      { label: "上線時間", value: "2026/07/27", color: "" }
+      { label: "活動期間", value: "7/28 10:00–8/4 10:00 UTC", color: "" }
     ],
     benefits: [
-      { icon: "🔒", text: "App → 理財 → PoolX，鎖倉 **XAUT** 即可參與，不用手動申購" },
-      { icon: "🎁", text: "空投總量 **65,000 EVAA**，依鎖倉金額與時間分潤，額度有限、發完為止" },
-      { icon: "⏱️", text: "PoolX 通常為短天期活動，建議儘早鎖倉卡位額度" },
-      { icon: "⚠️", text: "實際鎖倉門檻、期限與分潤比例請以 App 內活動頁為準，鎖倉期間資產無法自由調度" }
+      { icon: "🔒", text: "鎖倉門檻為每人 **0.001–300 XAUT**，按個人合格鎖倉占全部合格鎖倉量的比例分配" },
+      { icon: "🎁", text: "PoolX 總獎池 **65,000 EVAA**；不是每人固定取得，實際數量取決於全體合格鎖倉量" },
+      { icon: "✅", text: "須完成身分驗證；子帳戶、機構用戶與造市商不適用" },
+      { icon: "⚠️", text: "XAUT 有代幣、託管與價格偏離風險；EVAA 市值會波動，鎖倉期間資產流動性受限" }
     ],
-    deadline: "上線：2026/07/27（額度有限，先到先得）",
-    junNote: "PoolX 我自己有在玩，之前那期 APR 有衝到 72.29%，這次是鎖 XAUT 拿 EVAA，喜歡躺著領空投的可以去看一下額度還在不在 🌸\n\n⚠️ 鎖倉期間資產會被鎖住不能動，實際門檻與期限請以 App 內公告為準，投資有風險自行評估。",
-    link: "https://www.bitget.com/zh-TW/referral/register?from=referral&clacCode=V0K17SD8",
-    linkLabel: "🔗 前往 Bitget PoolX",
+    deadline: "期間：2026/07/28 10:00–08/04 10:00（UTC；台北時間 18:00）",
+    junNote: "這期不是 7/27 上線：PoolX 正式期間是 7/28 10:00 到 8/4 10:00 UTC。每人可鎖 0.001–300 XAUT，獎勵按全體鎖倉占比分配。\n\n⚠️ XAUT 與 EVAA 都有價格及平台風險，鎖倉期間也會降低資金流動性。",
+    link: "https://www.bitget.com/support/articles/12560603890259",
+    linkLabel: "🔗 查看 Bitget EVAA 官方規則",
     code: "V0K17SD8",
     codeLabel: "Bitget 邀請碼"
   },
@@ -438,31 +438,6 @@ window.ACTIVITIES = [
   },
   {
     platform: "bingx",
-    platformLabel: "BingX · 世足競猜",
-    status: "hot",
-    statusLabel: "🔥 進行中",
-    title: "⚽ 世足競猜開打！預測正確贏 50U 倉位券",
-    desc: "免費報名預測足球賽事，單場預測正確可領 50 USDT 倉位券；任務能量可用來抽 USDT 獎勵",
-    stats: [
-      { label: "預測獎勵", value: "50 USDT 倉位券", color: "highlight" },
-      { label: "抽獎門檻", value: "5 能量 / 次", color: "" },
-      { label: "任務", value: "合約交易 / 事件合約", color: "" }
-    ],
-    benefits: [
-      { icon: "⚽", text: "免費報名預測，預測正確隔日發放 **50 USDT 倉位券**" },
-      { icon: "🎁", text: "每 5 個能量可抽獎 1 次，獎池含 USDT 獎勵" },
-      { icon: "📌", text: "投票須完成 KYC；提交後不可更改預測方向" },
-      { icon: "⚠️", text: "後續能量任務牽涉合約交易，新手不要為抽獎硬刷交易量" }
-    ],
-    deadline: "每場比賽開始前截止投票，逾時不接受預測",
-    junNote: "這個比較像足球預測 + 合約任務活動。免費報名可以先玩預測，但要注意後面的能量任務會牽涉合約交易，新手不要為了抽獎硬刷交易量，預測玩玩可以，合約請自己評估風險。",
-    link: "https://bingx.com/invite/22KLUM",
-    linkLabel: "🔗 前往 BingX 活動",
-    code: "22KLUM",
-    codeLabel: "BingX 邀請碼"
-  },
-  {
-    platform: "bingx",
     platformLabel: "BingX",
     status: "ongoing",
     statusLabel: "✅ 長期",
@@ -477,55 +452,5 @@ window.ACTIVITIES = [
     code: "22KLUM",
     codeLabel: "BingX 邀請碼"
   },
-  {
-    platform: "bingx",
-    platformLabel: "BingX · 財報季交易活動",
-    status: "hot",
-    statusLabel: "🔥 限時",
-    title: "財報季：100 萬 USDT 活動池",
-    desc: "BingX Global Capital Gala 第四彈，圍繞 15 家以上國際公司財報安排 TradFi 交易任務",
-    stats: [
-      { label: "總活動池", value: "1,000,000 USDT", color: "highlight" },
-      { label: "活動時間", value: "2026/07/09–07/29", color: "" },
-      { label: "涵蓋公司", value: "15 家以上", color: "" }
-    ],
-    benefits: [
-      { icon: "📊", text: "BingX 官方公告確認包含財報股交易任務、首次交易，以及配合財報公布日的交易挑戰" },
-      { icon: "🆕", text: "活動期間會持續增加股票標的；實際可交易商品、個人資格與任務門檻需登入後確認" },
-      { icon: "🎁", text: "完成活動要求才有機會依規則分享總活動池，**100 萬 USDT 不代表人人拿得到**" },
-      { icon: "⚠️", text: "BingX TradFi 商品可能含衍生品與槓桿，財報公布前後波動通常較大，可能損失部分或全部資金" }
-    ],
-    deadline: "截止：2026/07/29（實際時間與資格以登入後官方活動頁為準）",
-    junNote: "這張比較適合原本就在追美股財報、也看得懂 TradFi 商品風險的人順手研究。總活動池很大，不等於每個人都能分到，也不要因為快截止就急著開倉。\n\n⚠️ 財報行情波動可能很大，若商品含槓桿，虧損會被放大；先確認帳號資格、商品規則與交易成本。BingX 邀請碼可能含分潤，純分享不構成投資建議。",
-    link: "https://bingx.com/en/blog/article/bingx-tradfi-offerings-with-1-million-earnings-season-campaign",
-    linkLabel: "🔗 查看 BingX 官方活動說明",
-    code: "22KLUM",
-    codeLabel: "BingX 邀請碼"
-  },
-  {
-    platform: "general",
-    platformLabel: "OKX · 純資訊分享",
-    status: "hot",
-    statusLabel: "🔥 新戶限定",
-    title: "🧠 記憶體股網格新戶活動：最高 1,000 USDT 等值倉位",
-    desc: "符合資格且尚未完成首筆交易的新用戶，依淨入金與持有條件，可能取得 Micron／SanDisk 合約網格倉位",
-    stats: [
-      { label: "最高標示", value: "1,000 USDT 等值倉位", color: "highlight" },
-      { label: "活動時間", value: "7/2–7/31 23:59", color: "" },
-      { label: "商品類型", value: "合約網格（含槓桿）", color: "" }
-    ],
-    benefits: [
-      { icon: "1️⃣", text: "活動資料標示：符合資格的新戶淨入金滿 **100 USDT 並維持 1 天**，可能取得 500 USDT 等值倉位" },
-      { icon: "2️⃣", text: "淨入金滿 **500 USDT 並維持 3 天**，可能再加碼 500 USDT；實際資格、名額與發放以登入後官方活動頁為準" },
-      { icon: "⚠️", text: "這是合約網格的**倉位價值，不是現金**；倉位價值通常是保證金乘上槓桿" },
-      { icon: "🛑", text: "活動資料標示含 **30% 停損機制**，且倉位若逾期未使用可能被收回；請先閱讀官方完整規則" },
-      { icon: "📌", text: "需完成 KYC，且僅限符合活動資格的新用戶；不同地區或帳號可能看不到活動" }
-    ],
-    deadline: "截止：2026/07/31 23:59（UTC+8；資格與名額以官方活動頁為準）",
-    junNote: "這張是純情報整理，我在 OKX 沒有邀請碼。重點不是『免費拿 1,000U 現金』，而是符合條件後取得含槓桿的合約網格倉位；有停損、期限與資格限制。\n\n⚠️ 合約與槓桿商品風險高，可能虧損；先登入確認自己是否有活動資格，再讀完官方規則，不要為了倉位獎勵硬入金。",
-    link: "https://www.okx.com/zh-hant/learn/crypto/how-to-buy-us-stocks-with-crypto",
-    linkLabel: "🔗 查看 OKX 合約網格說明",
-    code: "",
-    codeLabel: ""
-  }
+
 ];
