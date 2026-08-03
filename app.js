@@ -12,6 +12,17 @@ window.PLATFORM_META = {
   general: { label: "其他" }
 };
 
+// 上方交易所直達按鈕固定順序；更新活動資料時不可跟著卡片順序變動
+window.PLATFORM_FILTER_ORDER = [
+  "bybit",
+  "bitget",
+  "mexc",
+  "bitget-wallet",
+  "gate",
+  "bingx",
+  "general"
+];
+
 // HTML 跳脫，避免內容裡的符號破壞版面
 function esc(s) {
   return String(s == null ? "" : s)
@@ -104,10 +115,15 @@ function renderCards(container, activities) {
 
 // 依現有活動產生篩選按鈕
 function buildFilters(wrap, activities, onFilter) {
-  const platforms = [];
+  const discoveredPlatforms = [];
   (activities || []).forEach(a => {
-    if (a.platform && !platforms.includes(a.platform)) platforms.push(a.platform);
+    if (a.platform && !discoveredPlatforms.includes(a.platform)) discoveredPlatforms.push(a.platform);
   });
+  const fixedOrder = window.PLATFORM_FILTER_ORDER || [];
+  const platforms = [
+    ...fixedOrder.filter(platform => discoveredPlatforms.includes(platform)),
+    ...discoveredPlatforms.filter(platform => !fixedOrder.includes(platform))
+  ];
   const tabs = [
     { type: "all", label: "🌸 全部" },
     { type: "hot", label: "🔥 進行中" }
