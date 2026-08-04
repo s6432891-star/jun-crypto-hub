@@ -25,9 +25,9 @@ assert(!bingx, '2026/07/29 到期的 BingX 財報季不應再出現');
 // 明確過期項目應移除。
 assert(!titles.includes('⚽ 足球盛宴 8,000,000 USDT 獎池'), '7/21 到期的 MEXC 足球盛宴仍存在');
 
-// Claude 輸出曾誤刪的未到期活動必須保留。
+// 已確認過期的星艦活動必須移除；其餘未確認到期活動保留。
+assert(!titles.includes('🚀 星艦啟航：太空邀約戰'), '已過期的 Bybit 星艦啟航活動不得保留');
 [
-  '🚀 星艦啟航：太空邀約戰',
   '🔒 PoolX 鎖 ETH 領 62 萬顆 NES',
   '🎁 躺著領空投：Launchpool + HODLer Airdrop',
   '🚀 Pre-IPO 期貨新標的，限時 0 手續費'

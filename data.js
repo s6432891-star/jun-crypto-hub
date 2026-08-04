@@ -8,14 +8,13 @@
    小語法：
    - benefits 好處清單裡，想把金額/重點變粉紅色，用 **兩個星號** 包起來。
    - junNote（Jun 說）想換行，直接按 Enter 換行即可。
-   最後更新：2026-08-02
-   本次安全同步（以 GitHub Pages 2026-07-28 版本為基礎）：
-   - 新增 2 張有官方直連可核實活動：Bitget CandyBomb x XAUT、MEXC GRVT Airdrop+
-   - 修正 1 張既有活動：Bitget PoolX EVAA 的正式期間、每人門檻、資格與風險
-   - 移除 5 張明確過期活動：Bybit USD1 超級賽季、Bybit TradFi 入金、
-     BingX 世足競猜、BingX 財報季、OKX 記憶體股網格
-   - 不採用 IKA（實為 2025 年活動）；Gate ANTFUN、Bybit DCA、MEXC AI Trading
-     因本輪未取得官方直連完整核實，暫不上線
+   最後更新：2026-08-05
+   本次安全同步：
+   - 移除 2 張明確過期活動：Bybit 星艦啟航邀請戰、Bitget PoolX EVAA
+   - 新增 1 張可由 MEXC 新聞稿與官方活動網址交叉核對的活動：RealStocks 財報季交易賽
+   - MEXC GRVT 已存在，不重複新增
+   - BingX「最高 8,250U + 永久 25% 折扣」只找到第三方整理，未取得可直接核對的官方活動頁，暫不上線
+   - 保留尚未確認到期的既有活動，不整份覆蓋 Claude 的舊底稿
    - 活動資格、名額、獎勵與地區限制仍以登入後官方活動頁為準
    ========================================================================= */
 
@@ -86,6 +85,32 @@ window.ACTIVITIES = [
     codeLabel: "MEXC 邀請碼"
   },
   {
+    platform: "mexc",
+    platformLabel: "MEXC · RealStocks 財報季",
+    status: "hot",
+    statusLabel: "🔥 限時",
+    title: "RealStocks 財報季交易賽：1,000,000 美元獎池",
+    desc: "活動期間開通 RealStocks 並完成指定入金、合格美股標的交易或邀請任務，可依規則參與不同獎池",
+    stats: [
+      { label: "總獎池", value: "1,000,000 美元", color: "highlight" },
+      { label: "活動期間", value: "8/3–8/24 10:00 UTC", color: "" },
+      { label: "合格標的手續費", value: "活動宣稱 0 費用", color: "highlight" }
+    ],
+    benefits: [
+      { icon: "💵", text: "首次入金至少 **100 美元**可依規則瓜分 **100,000 美元**歡迎獎池；前 2,000 名合格用戶另有 10 美元股票獎勵" },
+      { icon: "📈", text: "完成第一筆合格美股標的交易，可依規則瓜分 **500,000 美元**股票獎池" },
+      { icon: "🎟️", text: "完成指定資金轉入，可取得 **30 天 Nasdaq 即時報價**權益；細節以官方任務頁為準" },
+      { icon: "👥", text: "邀請好友完成首筆交易，每位合格好友可依規則取得 **5 美元股票獎勵**" },
+      { icon: "⚠️", text: "總獎池不等於個人可得；先確認 KYC、地區資格、合格標的、資產性質與發放條件。美股與平台產品都有價格、匯率及平台風險" }
+    ],
+    deadline: "截止：2026/08/24 10:00（UTC；台北時間 18:00）",
+    junNote: "這檔是 MEXC 的 RealStocks 財報季活動，適合本來就想研究美股標的人先看規則。獎勵分成入金、首筆交易、轉入與邀請任務，不能把 100 萬美元總池當成自己能拿到的金額。\n\n⚠️ 部分連結可能含邀請碼／分潤；請先確認所在地區是否支援，以及 RealStocks 的實際產品與資產性質，非投資建議。",
+    link: "https://www.mexc.com/campaigns/earningsrealstocksrally",
+    linkLabel: "🔗 前往 MEXC RealStocks 官方活動頁",
+    code: "3uXZE",
+    codeLabel: "MEXC 邀請碼"
+  },
+  {
     platform: "bybit",
     platformLabel: "Bybit · 新用戶專屬",
     status: "hot",
@@ -152,33 +177,7 @@ window.ACTIVITIES = [
     code: "BYJUN",
     codeLabel: "Bybit 邀請碼"
   },
-  {
-    platform: "bybit",
-    platformLabel: "Bybit · 星艦啟航邀請戰",
-    status: "hot",
-    statusLabel: "🔥 限時",
-    title: "🚀 星艦啟航：太空邀約戰",
-    desc: "邀請好友登上 Bybit 星艦，完成註冊與入金任務可解鎖抽獎、首邀獎勵、推薦返現與排行榜獎金",
-    stats: [
-      { label: "單人最高", value: "$4,850", color: "highlight" },
-      { label: "排行榜獎池", value: "$25,000", color: "highlight" },
-      { label: "好友門檻", value: "14 天內儲值 ≥ $100", color: "" }
-    ],
-    benefits: [
-      { icon: "🛸", text: "星際里程碑：邀請 **3 / 5 / 7 位**符合條件好友，可解鎖 **1 / 2 / 3 次**星艦補給抽獎機會" },
-      { icon: "🎁", text: "幸運抽獎獎項含 **1000 / 500 / 200 / 100 / 50 USDT** 空投倉位、手續費抵扣券與體驗金等" },
-      { icon: "🧊", text: "首次邀請破冰：從未邀請過好友的用戶，首位符合條件好友達標後可拿 **6.12 USDT**（名額有限）" },
-      { icon: "👥", text: "受邀好友完成新手任務最高可拿 **$100**，雙方另可依規則瓜分儲值返現與推薦返佣" },
-      { icon: "🏆", text: "太空精英排行榜：前 **200 名**依有效好友數瓜分獎池，榜首最高顯示 **$1,750**" },
-      { icon: "⚠️", text: "SPCX / 合約倉位空投不等於現金；0 手續費交易對可能不計入任務，獎勵需通過平台風控審核" }
-    ],
-    deadline: "活動頁倒數中：截圖顯示約剩 6 天，實際截止請以 Bybit 活動頁為準",
-    junNote: "這個是 Bybit 的邀請好友活動，包裝成太空任務、里程碑、抽獎和排行榜。適合本來就有朋友想開 Bybit、而且能清楚說明風險的人；不建議為了衝排行榜亂拉人，更不要鼓勵小白為了獎勵去硬入金或硬交易合約。\n\n⚠️ 部分獎勵是合約倉位 / 抵扣券 / 體驗金，不一定等於可直接領出的現金；實際資格、地區限制、KYC、發放時間與風控審核都以 Bybit 官方規則為準。",
-    link: "https://partner.bybit.com/b/BYJUN",
-    linkLabel: "🔗 前往 Bybit 星艦活動",
-    code: "BYJUN",
-    codeLabel: "Bybit 邀請碼"
-  },
+
   {
     platform: "bitget-wallet",
     platformLabel: "Bitget Wallet",
@@ -264,31 +263,6 @@ window.ACTIVITIES = [
     junNote: "這種鎖倉領空投的活動我一直很愛，操作單純。因為官方沒寫死截止日，我會建議想參加的人自己進 App 確認一下目前額度和倒數，不要拖太久 🌸\n\n⚠️ 純分享，投資請自行評估風險，鎖倉期間資金無法動用。",
     link: "https://www.bitget.com/zh-TW/referral/register?from=referral&clacCode=V0K17SD8",
     linkLabel: "🔗 前往 Bitget PoolX",
-    code: "V0K17SD8",
-    codeLabel: "Bitget 邀請碼"
-  },
-  {
-    platform: "bitget",
-    platformLabel: "Bitget · PoolX 質押空投",
-    status: "hot",
-    statusLabel: "🔥 限時",
-    title: "🔒 PoolX 鎖 XAUT 領 65,000 顆 EVAA",
-    desc: "活動期間鎖入 XAUT，依個人合格鎖倉占比瓜分 EVAA；每人可鎖 0.001–300 XAUT",
-    stats: [
-      { label: "空投總量", value: "65,000 EVAA", color: "highlight" },
-      { label: "鎖倉幣種", value: "XAUT", color: "" },
-      { label: "活動期間", value: "7/28 10:00–8/4 10:00 UTC", color: "" }
-    ],
-    benefits: [
-      { icon: "🔒", text: "鎖倉門檻為每人 **0.001–300 XAUT**，按個人合格鎖倉占全部合格鎖倉量的比例分配" },
-      { icon: "🎁", text: "PoolX 總獎池 **65,000 EVAA**；不是每人固定取得，實際數量取決於全體合格鎖倉量" },
-      { icon: "✅", text: "須完成身分驗證；子帳戶、機構用戶與造市商不適用" },
-      { icon: "⚠️", text: "XAUT 有代幣、託管與價格偏離風險；EVAA 市值會波動，鎖倉期間資產流動性受限" }
-    ],
-    deadline: "期間：2026/07/28 10:00–08/04 10:00（UTC；台北時間 18:00）",
-    junNote: "這期不是 7/27 上線：PoolX 正式期間是 7/28 10:00 到 8/4 10:00 UTC。每人可鎖 0.001–300 XAUT，獎勵按全體鎖倉占比分配。\n\n⚠️ XAUT 與 EVAA 都有價格及平台風險，鎖倉期間也會降低資金流動性。",
-    link: "https://www.bitget.com/support/articles/12560603890259",
-    linkLabel: "🔗 查看 Bitget EVAA 官方規則",
     code: "V0K17SD8",
     codeLabel: "Bitget 邀請碼"
   },

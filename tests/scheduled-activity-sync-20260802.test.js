@@ -10,8 +10,8 @@ const cards = sandbox.window.ACTIVITIES || [];
 const findTitle = (needle) => cards.find((card) => card.title.includes(needle));
 const cardText = (needle) => JSON.stringify(findTitle(needle) || {});
 
-assert(source.includes('最後更新：2026-08-02'), 'data.js 檔頭需更新為台北時間 2026-08-02');
-assert.strictEqual(cards.length, 18, '官方來源保守同步後應共有 18 張活動卡');
+assert(source.includes('最後更新：2026-08-05'), 'data.js 檔頭需更新為台北時間 2026-08-05');
+assert.strictEqual(cards.length, 17, '8/5 安全同步後應共有 17 張活動卡');
 
 const candy = findTitle('CandyBomb x XAUT');
 assert(candy, '缺少 Bitget CandyBomb x XAUT 官方活動');
@@ -22,13 +22,7 @@ assert(cardText('CandyBomb x XAUT').includes('槓桿') && cardText('CandyBomb x 
 assert(candy.link.includes('/events/candy-bomb'), 'CandyBomb CTA 應指向 Bitget 官方活動頁');
 assert(!cardText('CandyBomb x XAUT').includes('貴金屬／大宗商品'), '官方未列指定交易對，不可自行限定貴金屬／大宗商品');
 
-const evaa = findTitle('65,000 顆 EVAA');
-assert(evaa, '需保留並修正既有 EVAA 卡');
-assert(cardText('65,000 顆 EVAA').includes('0.001–300 XAUT'), 'EVAA 需標示每人鎖倉上下限');
-assert(evaa.deadline.includes('2026/07/28 10:00') && evaa.deadline.includes('08/04 10:00'), 'EVAA 需標示官方 PoolX 期間');
-assert(cardText('65,000 顆 EVAA').includes('子帳戶') && cardText('65,000 顆 EVAA').includes('機構用戶'), 'EVAA 需標示排除資格');
-assert(evaa.link.includes('12560603890259'), 'EVAA CTA 應指向官方規則');
-assert(!cardText('65,000 顆 EVAA').includes('2026/07/27（額度有限'), 'EVAA 不可再誤寫 7/27 上線');
+assert(!findTitle('65,000 顆 EVAA'), '2026/08/04 10:00 UTC 到期的 EVAA 卡必須移除');
 
 const grvt = findTitle('GRVT Airdrop+');
 assert(grvt, '缺少 MEXC GRVT Airdrop+');
@@ -62,4 +56,4 @@ assert(grvt.link.includes('blog.mexc.com/press-release/'), 'GRVT CTA 應指向 M
 assert(!source.includes('小遊戲'), '高風險產品不可淡化成小遊戲');
 assert(!source.includes('不用算槓桿也不用設停損'), '不可宣稱高風險產品不需風控');
 
-console.log('2026-08-02 官方來源保守同步檢查通過');
+console.log('2026-08-05 官方來源保守同步檢查通過');
