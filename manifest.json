@@ -1,0 +1,18 @@
+{
+  "name": "Jun 的幣圈活動整理 🌸",
+  "short_name": "Jun 活動整理",
+  "description": "幫小資族整理幣圈活動與空投，先看懂規則，再決定要不要研究",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fdf5f7",
+  "theme_color": "#ffe0eb",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "440x440",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

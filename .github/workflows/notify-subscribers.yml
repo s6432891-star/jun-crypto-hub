@@ -1,0 +1,26 @@
+# 當 data.js 更新（= Jun 上架新活動）時，自動比對並推播給訂閱者
+name: 新活動自動推播
+
+on:
+  push:
+    branches: [main]
+    paths: ["data.js"]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 # 需要上一版 data.js 來比對
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: 比對新活動並發送推播
+        env:
+          ONESIGNAL_APP_ID: ${{ secrets.ONESIGNAL_APP_ID }}
+          ONESIGNAL_API_KEY: ${{ secrets.ONESIGNAL_API_KEY }}
+          SITE_URL: "https://s6432891-star.github.io/jun-crypto-hub/"
+        run: node scripts/notify_new_activities.mjs

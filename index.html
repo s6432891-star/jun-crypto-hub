@@ -10,8 +10,12 @@
 <meta property="og:description" content="護理師下班後用 AI 整理的幣圈活動，我玩過的才分享。純個人分享，非投資建議。">
 <meta property="og:type" content="website">
 <link rel="icon" href="favicon.png" type="image/png">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="logo.png">
 <meta name="theme-color" content="#ffe0eb">
 <link rel="stylesheet" href="styles.css">
+<script src="notify-config.js"></script>
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 </head>
 <body>
 
@@ -54,6 +58,10 @@
     <p class="tagline" id="site-tagline"></p>
     <div class="disclaimer" id="site-disclaimer"></div>
     <nav class="header-links" id="site-links"></nav>
+    <div class="notify-wrap" id="notify-wrap" hidden>
+      <button class="notify-btn" id="notify-btn" type="button">🔔 訂閱新活動通知</button>
+      <div class="notify-hint" id="notify-hint"></div>
+    </div>
   </div>
 </header>
 
@@ -93,6 +101,80 @@
   const data = window.ACTIVITIES || [];
   renderCards(cards, data);
   buildFilters(document.getElementById("filters"), data, (type) => applyFilter(cards, noResults, type));
+
+  /* ============ 🔔 訂閱新活動通知（OneSignal 推播） ============ */
+  (function () {
+    const appId = (window.NOTIFY_CONFIG || {}).oneSignalAppId;
+    if (!appId) return; // 還沒設定 OneSignal 就不顯示按鈕
+
+    const wrap = document.getElementById("notify-wrap");
+    const btn = document.getElementById("notify-btn");
+    const hint = document.getElementById("notify-hint");
+    wrap.hidden = false;
+
+    // iPhone / iPad 的 Safari 要「加入主畫面」後才能收推播
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const isStandalone = window.matchMedia("(display-mode: standalone)").matches
+      || window.navigator.standalone === true;
+    if (isIOS && !isStandalone) {
+      btn.disabled = false;
+      btn.addEventListener("click", () => {
+        hint.textContent = "iPhone 請先用 Safari 按「分享 → 加入主畫面」，再從主畫面打開本頁訂閱 🌸";
+      });
+      return;
+    }
+    if (!("Notification" in window) || !("serviceWorker" in navigator)) {
+      wrap.hidden = true;
+      return;
+    }
+
+    // 依目前網址自動算出 service worker 的路徑（支援 GitHub Pages 子目錄）
+    const basePath = location.pathname.replace(/[^/]*$/, "");
+
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(async function (OneSignal) {
+      await OneSignal.init({
+        appId: appId,
+        serviceWorkerParam: { scope: basePath },
+        serviceWorkerPath: basePath + "OneSignalSDKWorker.js"
+      });
+
+      function refresh() {
+        const optedIn = OneSignal.User.PushSubscription.optedIn;
+        if (Notification.permission === "denied") {
+          btn.textContent = "🔕 通知被瀏覽器封鎖";
+          btn.disabled = true;
+          hint.textContent = "曾拒絕過通知的話，要到瀏覽器網站設定把通知改回「允許」";
+        } else if (optedIn) {
+          btn.textContent = "🌸 已訂閱通知 ✓";
+          btn.classList.add("subscribed");
+          hint.textContent = "有新活動上架會推播提醒你！";
+        } else {
+          btn.textContent = "🔔 訂閱新活動通知";
+          btn.classList.remove("subscribed");
+          hint.textContent = "";
+        }
+      }
+
+      btn.addEventListener("click", async () => {
+        try {
+          if (OneSignal.User.PushSubscription.optedIn) {
+            showToast("你已經訂閱囉！");
+            return;
+          }
+          await OneSignal.Notifications.requestPermission();
+          await OneSignal.User.PushSubscription.optIn();
+          refresh();
+          if (OneSignal.User.PushSubscription.optedIn) showToast("訂閱成功！有新活動會通知你");
+        } catch (e) {
+          hint.textContent = "訂閱沒有成功，重新整理再試一次看看";
+        }
+      });
+
+      OneSignal.User.PushSubscription.addEventListener("change", refresh);
+      refresh();
+    });
+  })();
 </script>
 </body>
 </html>
