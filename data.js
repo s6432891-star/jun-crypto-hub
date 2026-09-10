@@ -8,11 +8,12 @@
    小語法：
    - benefits 好處清單裡，想把金額/重點變粉紅色，用 **兩個星號** 包起來。
    - junNote（Jun 說）想換行，直接按 Enter 換行即可。
-   最後更新：2026-08-30（台北時間）
+   最後更新：2026-09-10（台北時間）
    本次更新：
-   - 新增 1 張活動：MEXC IPO Express - SHEIN 卡位（圖片 2026/08/28 與 8/29 整理，截止 8/31 10:00 UTC、SHEIN 香港上市 9/1）
-   - 卡片重點：總額度 $1,000,000、個人限額 100-10,000 USDT、以 USDT 申購並取得鏡像積分（非直接持股）、額度分三檔先搶先贏
-   - 保留風險提醒：鏡像積分性質、配額機制、資格與地區限制以 MEXC 官方活動頁為準；投資有風險，非投資建議
+   - 排程於 2026/09/10 執行，搜尋未找到新活動（找到的皆已過期或在佇列中），故無新卡片加入、無新貼文發佈
+   - 過期卡片現況維持：CandyBomb XAUT（8/9 過期）、GRVT Airdrop+（8/13 過期）、RealStocks 財報季（8/24 過期）、MEXC Up/Down（8/9 過期）皆標示為 ended，不予移除
+   - 佇列中的 8 個活動（KCGI 王者盃、MOVE Carnival、PoolX Catizen、Bybit 轉輪盤、BingX SuperX、BingX 新人禮、Gate Red Bull Tour、Bitget USDTGO）因無圖片附件，暫不整理進 data.js；後續有圖片素材再補
+   - data.js 語法與回歸測試皆通過，11 張測試皆 pass
    本次安全同步：
    - 標示過期 3 張：CandyBomb XAUT（8/9 過期）、GRVT Airdrop+（8/13 過期）、MEXC Up/Down（8/9 過期）
    - 更新 RealStocks 財報季狀態為「明日截止」並提醒把握最後機會（截止 8/24 10:00 UTC）

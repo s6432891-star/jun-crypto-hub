@@ -10,7 +10,7 @@ const cards = sandbox.window.ACTIVITIES || [];
 const titles = cards.map((card) => card.title);
 const findTitle = (needle) => cards.find((card) => card.title.includes(needle));
 
-assert(source.includes('最後更新：2026-08-30'), 'data.js 檔頭需更新為 2026-08-30');
+assert(source.includes('最後更新：2026-09-10'), 'data.js 檔頭需更新為 2026-09-10');
 
 const mexc = findTitle('Up/Down');
 assert(mexc, '缺少 MEXC Up/Down 活動卡');
