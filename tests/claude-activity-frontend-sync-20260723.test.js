@@ -8,7 +8,7 @@ vm.runInNewContext(source, sandbox);
 
 const cards = sandbox.window.ACTIVITIES;
 assert(Array.isArray(cards), 'window.ACTIVITIES 應為陣列');
-assert.strictEqual(cards.length, 21, '2026-08-30 新增 SHEIN IPO 後應共有 21 張卡片');
+assert.strictEqual(cards.length, 22, '2026-09-12 新增官方 KCGI 後應共有 22 張卡片');
 
 const esports = cards.find((card) => card.title.includes('ESPORTS'));
 assert(!esports, '7/28 16:00 到期的 Bitget PoolX ESPORTS 卡片不得保留');

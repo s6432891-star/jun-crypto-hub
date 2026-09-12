@@ -10,11 +10,11 @@ const cards = sandbox.window.ACTIVITIES || [];
 const titles = cards.map((card) => card.title);
 const findTitle = (needle) => cards.find((card) => card.title.includes(needle));
 
-assert(source.includes('最後更新：2026-09-10'), 'data.js 檔頭需更新為 2026-09-10');
+assert(source.includes('最後更新：2026-09-12'), 'data.js 檔頭需更新為 2026-09-12');
 
 const mexc = findTitle('Up/Down');
 assert(mexc, '缺少 MEXC Up/Down 活動卡');
-assert.strictEqual(cards.length, 21, '2026-08-30 新增 SHEIN IPO 後應共有 21 張活動卡');
+assert.strictEqual(cards.length, 22, '2026-09-12 新增官方 KCGI 後應共有 22 張活動卡');
 
 const bingxCards = cards.filter((card) => card.platform === 'bingx' && card.title.includes('財報季'));
 assert.strictEqual(bingxCards.length, 0, '2026/07/29 到期的 BingX 財報季不得保留');

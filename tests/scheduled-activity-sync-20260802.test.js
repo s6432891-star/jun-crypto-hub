@@ -10,8 +10,8 @@ const cards = sandbox.window.ACTIVITIES || [];
 const findTitle = (needle) => cards.find((card) => card.title.includes(needle));
 const cardText = (needle) => JSON.stringify(findTitle(needle) || {});
 
-assert(source.includes('最後更新：2026-09-10'), 'data.js 檔頭需更新為台北時間 2026-09-10');
-assert.strictEqual(cards.length, 21, '2026-08-30 新增 SHEIN IPO 後應共有 21 張活動卡');
+assert(source.includes('最後更新：2026-09-12'), 'data.js 檔頭需更新為台北時間 2026-09-12');
+assert.strictEqual(cards.length, 22, '2026-09-12 新增官方 KCGI 後應共有 22 張活動卡');
 
 const candy = findTitle('CandyBomb x XAUT');
 assert(candy, '缺少 Bitget CandyBomb x XAUT 官方活動');

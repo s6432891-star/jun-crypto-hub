@@ -8,15 +8,16 @@
    小語法：
    - benefits 好處清單裡，想把金額/重點變粉紅色，用 **兩個星號** 包起來。
    - junNote（Jun 說）想換行，直接按 Enter 換行即可。
-   最後更新：2026-09-10（台北時間）
+   最後更新：2026-09-12（台北時間）
    本次更新：
-   - 排程於 2026/09/10 執行，搜尋未找到新活動（找到的皆已過期或在佇列中），故無新卡片加入、無新貼文發佈
+   - 以真實 Git 187ea39 為基準最小合併；新增官方直連核實的 KCGI 2026，未整份覆蓋排程 17 張卡
+   - SHEIN 依既有 8/31 截止資料標記 ended；DAPPOS 移除過時「最後一天」，保留待核實紀錄
+   - 其餘 7 個候選未通過本次官方日期／條件核驗，不新增；詳見 UPDATE-2026-09-12.md
    - 過期卡片現況維持：CandyBomb XAUT（8/9 過期）、GRVT Airdrop+（8/13 過期）、RealStocks 財報季（8/24 過期）、MEXC Up/Down（8/9 過期）皆標示為 ended，不予移除
-   - 佇列中的 8 個活動（KCGI 王者盃、MOVE Carnival、PoolX Catizen、Bybit 轉輪盤、BingX SuperX、BingX 新人禮、Gate Red Bull Tour、Bitget USDTGO）因無圖片附件，暫不整理進 data.js；後續有圖片素材再補
-   - data.js 語法與回歸測試皆通過，11 張測試皆 pass
+   - 原有未確認結束卡與風險文案保留；Threads 未操作、通知未啟用
    本次安全同步：
    - 標示過期 3 張：CandyBomb XAUT（8/9 過期）、GRVT Airdrop+（8/13 過期）、MEXC Up/Down（8/9 過期）
-   - 更新 RealStocks 財報季狀態為「明日截止」並提醒把握最後機會（截止 8/24 10:00 UTC）
+   - RealStocks 財報季已標示 ended（截止 8/24 10:00 UTC）
    - 新增 3 張活動：BingX 全球資本嘉年華 200萬美元多資產競賽、MEXC 0808 股票季、MEXC DAPPOS（皆依圖片紀錄先行整理，細節以官方頁為準）
    - 活動資格、名額、獎勵與地區限制仍以登入後官方活動頁為準
    ========================================================================= */
@@ -480,20 +481,20 @@ window.ACTIVITIES = [
   {
     platform: "mexc",
     platformLabel: "MEXC · DAPPOS",
-    status: "hot",
-    statusLabel: "🔥 最後一天",
-    title: "MEXC DAPPOS 活動（最後一天）",
-    desc: "MEXC 推出的 DAPPOS 系列活動，圖片那邊標示為該活動的最後一天，需以官方活動頁確認確切截止時間與規則",
+    status: "unverified",
+    statusLabel: "📋 活動狀態待確認",
+    title: "MEXC DAPPOS 活動（狀態待確認）",
+    desc: "MEXC DAPPOS 歷史圖片紀錄；目前是否仍開放、確切期限與規則尚未核實，請勿直接據此入金或交易",
     stats: [
-      { label: "狀態", value: "圖片顯示最後一天", color: "highlight" },
+      { label: "狀態", value: "目前期限待官方確認", color: "" },
       { label: "來源", value: "圖片活動來源清單", color: "" }
     ],
     benefits: [
-      { icon: "💧", text: "DAPPOS 活動，圖片清單顯示為該活動最後一天，需進官方活動頁確認餘額、資格與規則" },
+      { icon: "💧", text: "DAPPOS 歷史圖片活動紀錄，不代表目前仍開放；需先向官方確認期限、資格與規則" },
       { icon: "⚠️", text: "此卡片係根據圖片紀錄先行整理，活動細節與獎勵以 MEXC 官方頁為準；若官方已結束，請以實際為準" }
     ],
     deadline: "",
-    junNote: "這張是從圖片清單更新的 MEXC DAPPOS 活動，當時顯示排在最後一天。因沒背官方頁細節，我先用比較保守的文案；之後如果有確切官方訊息，再補詳細規則。\\n\\n⚠️ 空投類活動常有資格、任務與發放細節，請以 MEXC 官方活動頁為準，非投資建議。",
+    junNote: "這張先保留歷史圖片紀錄，尚未核實現在是否仍可參加，不沿用當時的倒數標籤。請先確認官方活動頁，不要因這張卡硬入金。\\n\\n⚠️ 空投類活動常有資格、任務與發放細節，請以 MEXC 官方活動頁為準，非投資建議。",
     link: "https://www.mexc.com",
     linkLabel: "🔗 前往 MEXC 查看活動",
     code: "3uXZE",
@@ -502,10 +503,10 @@ window.ACTIVITIES = [
   {
     platform: "mexc",
     platformLabel: "MEXC · SHEIN IPO Express",
-    status: "hot",
-    statusLabel: "🔥 最後一天",
-    title: "MEXC IPO Express：搶在掛牌前卡位 SHEIN（最後一天）",
-    desc: "MEXC 推出 SHEIN（希音）IPO Express 新股快線活動，總額度 $1,000,000，先搶先贏；SHEIN 香港上市時間為 9/1（圖片 8/29 標示）",
+    status: "ended",
+    statusLabel: "⚪ 已結束",
+    title: "MEXC IPO Express：SHEIN 歷史圖片紀錄（已結束）",
+    desc: "依既有圖片紀錄截止 2026/08/31，本卡已結束、不再招募。以下保留歷史資料，認購條件與所稱上市資訊未經本次官方核驗，不代表事實已確認",
     stats: [
       { label: "總額度", value: "$1,000,000", color: "highlight" },
       { label: "認購價範圍", value: "HKD 47.60-49.50／股（約 $6.07-$6.32）", color: "" },
@@ -520,11 +521,38 @@ window.ACTIVITIES = [
       { icon: "⏰", text: "截止 **2026/08/31 10:00 UTC**（台北時間 8/31 18:00）；SHEIN 香港上市時間為 9/1（圖片 8/29 標示）" },
       { icon: "⚠️", text: "鏡像積分性質、配額機制、資格與地區限制請以 MEXC 官方活動頁為準；**投資有風險，請自行評估，非投資建議**" }
     ],
-    deadline: "截止：2026/08/31 10:00 UTC（台北時間 8/31 18:00）｜SHEIN 香港上市 9/1",
+    deadline: "已結束：2026/08/31 10:00 UTC（台北時間 8/31 18:00；依既有圖片紀錄）",
     junNote: "這張是從 2026/08/28 與 8/29 兩張圖片整理出來的 MEXC SHEIN IPO Express 活動。重點是總額度 $100萬、個人限額 100-10,000 USDT、用 USDT 認購後取得等於鏡像積分（不是直接持股）、先搶先贏。\\n\\n⚠️ 這類新股快線／鏡像積分產品風險不小，認購價只是區間賣示，實際配給與積分規則請以官方活動頁為準；不是保證獲利，也不要為了額度硬入金。部分連結可能含 MEXC 邀請碼 / 分潤，純分享不構成投資建議。",
     link: "https://www.mexc.com",
     linkLabel: "🔗 前往 MEXC 查看 IPO Express 活動",
     code: "3uXZE",
     codeLabel: "MEXC 邀請碼"
+  },
+  {
+    platform: "bitget",
+    platformLabel: "Bitget · KCGI 2026",
+    status: "hot",
+    statusLabel: "🔥 9/22 台北 23:59 截止",
+    title: "KCGI 2026 王者盃：跨市場交易賽，總池最高 3,000,000 USDT",
+    desc: "加密合約、TradFi 永續合約與代幣化美股 rToken 同場；總獎池隨合資格參賽人數解鎖，不是每人都能拿到獎金",
+    stats: [
+      { label: "總池上限", value: "3,000,000 USDT", color: "highlight" },
+      { label: "正賽（台北）", value: "2026/09/09–09/22", color: "" },
+      { label: "報名餘額門檻", value: "100 USDT", color: "" }
+    ],
+    benefits: [
+      { icon: "📅", text: "正賽：台北時間 **2026/09/09 00:00–2026/09/22 23:59**（UTC+8）；報名同樣於 9/22 23:59 截止。8/30 早鳥已結束，不再列為可領福利" },
+      { icon: "👤", text: "須主動報名，帳戶餘額至少 **100 USDT**，活動結束前完成 **KYC**；組隊／加入隊伍另需至少 100 USDT 合約資產，團隊至少 10 人" },
+      { icon: "📊", text: "獎池分配須達至少 **30,000 USDT 有效合約交易量**並符合排名與結算規則；僅出現在榜上不代表有獎。不要為了獎勵硬刷交易量或硬入金" },
+      { icon: "🎁", text: "排行榜獎勵以 USDT 發放；寶箱可能含實物、代幣券、合約體驗金或倉位加碼券，券／體驗金屬**非現金**獎勵，不能視同可提領現金" },
+      { icon: "🔍", text: "子帳號、做市商、PRO、經紀商及機構帳戶不符資格；受限制地區不能參加。刷量、對敲、多帳號及自動化作弊可被取消資格" },
+      { icon: "⚠️", text: "合約涉及**槓桿、爆倉、滑價**與本金損失，rToken 也有產品與價格風險；不要為了獎池去承擔原本不會承擔的風險" }
+    ],
+    deadline: "截止：2026/09/22 23:59（台北時間 UTC+8；UTC 15:59）",
+    junNote: "官方公告發布於 2026/08/25，本次直接核對正賽日期、報名與領獎門檻後才加入。這是交易競賽，不是免費領錢；新手先看規則，不適合就跳過。\n\n⚠️ 下方是官方完整規則頁；邀請碼 V0K17SD8 可能涉及返佣／分潤，是否使用由你決定。投資有風險，非投資建議。",
+    link: "https://www.bitget.com/support/articles/12560603893290",
+    linkLabel: "🔗 查看 KCGI 2026 官方完整規則",
+    code: "V0K17SD8",
+    codeLabel: "Bitget 邀請碼（可能含分潤）"
   },
 ];

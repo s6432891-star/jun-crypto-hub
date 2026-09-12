@@ -14,8 +14,9 @@ const cardText = (needle) => JSON.stringify(findTitle(needle) || {});
 const shein = findTitle('MEXC IPO Express');
 assert(shein, '缺少 MEXC SHEIN IPO Express 卡片');
 
-// 卡片總數（2026-08-30 新增此卡後應為 21）
-assert.strictEqual(cards.length, 21, '2026-08-30 新增 SHEIN IPO Express 後應共有 21 張活動卡');
+// 保留歷史卡與原有風險斷言；新增 KCGI 後共 22 張
+assert.strictEqual(cards.length, 22, '2026-09-12 新增官方 KCGI 後應共有 22 張活動卡');
+assert.strictEqual(shein.status, 'ended', '8/31 截止 SHEIN 應已結束');
 
 // 總額度與限額
 assert(cardText('SHEIN').includes('$1,000,000'), '總額度應為 $1,000,000');

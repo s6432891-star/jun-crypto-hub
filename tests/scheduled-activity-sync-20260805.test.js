@@ -11,8 +11,8 @@ const findTitle = (needle) => cards.find((card) => card.title.includes(needle));
 const countTitle = (needle) => cards.filter((card) => card.title.includes(needle)).length;
 const titles = cards.map((card) => card.title);
 
-assert(source.includes('最後更新：2026-09-10'), 'data.js 檔頭應為 2026-09-10');
-assert.strictEqual(cards.length, 21, '2026-08-30 新增 SHEIN IPO 後應共有 21 張活動卡');
+assert(source.includes('最後更新：2026-09-12'), 'data.js 檔頭應為 2026-09-12');
+assert.strictEqual(cards.length, 22, '2026-09-12 新增官方 KCGI 後應共有 22 張活動卡');
 assert.strictEqual(new Set(titles).size, titles.length, '活動標題不可重複');
 
 assert(!findTitle('星艦啟航'), '過期的 Bybit 星艦啟航活動必須移除');
