@@ -8,19 +8,12 @@
    小語法：
    - benefits 好處清單裡，想把金額/重點變粉紅色，用 **兩個星號** 包起來。
    - junNote（Jun 說）想換行，直接按 Enter 換行即可。
-   最後更新：2026-09-12（台北時間）
+   最後更新：2026-11-05（台北時間）
    本次更新：
-   - 以真實 Git 187ea39 為基準最小合併；新增官方直連核實的 KCGI 2026，未整份覆蓋排程 17 張卡
-   - SHEIN 依既有 8/31 截止資料標記 ended；DAPPOS 移除過時「最後一天」，保留待核實紀錄
-   - 其餘 7 個候選未通過本次官方日期／條件核驗，不新增；詳見 UPDATE-2026-09-12.md
-   - 過期卡片現況維持：CandyBomb XAUT（8/9 過期）、GRVT Airdrop+（8/13 過期）、RealStocks 財報季（8/24 過期）、MEXC Up/Down（8/9 過期）皆標示為 ended，不予移除
-   - 原有未確認結束卡與風險文案保留；Threads 未操作、通知未啟用
-   本次安全同步：
-   - 標示過期 3 張：CandyBomb XAUT（8/9 過期）、GRVT Airdrop+（8/13 過期）、MEXC Up/Down（8/9 過期）
-   - RealStocks 財報季已標示 ended（截止 8/24 10:00 UTC）
-   - 新增 3 張活動：BingX 全球資本嘉年華 200萬美元多資產競賽、MEXC 0808 股票季、MEXC DAPPOS（皆依圖片紀錄先行整理，細節以官方頁為準）
-   - 活動資格、名額、獎勵與地區限制仍以登入後官方活動頁為準
-   ========================================================================= */
+   - 移除過期／已過時：MEXC OURA IPO Express（OURA 上市已延後）、Bitget PoolX NES、MEXC 0808 股票季、MEXC DAPPOS、BingX 200 萬美元多資產競賽
+   - 更新 Bitget 熱錢包事故說明（提款已分階段恢復，以官方公告為準）
+   - 保留 MEXC Canton 嘉年華（至 11/30）；長期卡未逐張重新核實
+   =========================================================================== */
 
 window.SITE = {
   emoji: "",
@@ -39,78 +32,27 @@ window.SITE = {
    stats / benefits 不需要就寫 []；code / deadline 沒有就留 "" */
 window.ACTIVITIES = [
   {
-    platform: "bitget",
-    platformLabel: "Bitget · CandyBomb XAUT",
-    status: "ended",
-    statusLabel: "⚪ 已結束",
-    title: "CandyBomb x XAUT 合約新戶活動：瓜分 3 XAUT",
-    desc: "限報名前沒有合約交易紀錄的新合約用戶；須先完成 KYC 並在 CandyBomb 頁點 Join（已結束）",
-    stats: [
-      { label: "活動池", value: "3 XAUT", color: "highlight" },
-      { label: "資格", value: "報名前無合約交易紀錄的新戶", color: "" },
-      { label: "截止", value: "2026/08/09 14:00 UTC（已過期）", color: "" }
-    ],
-    benefits: [
-      { icon: "👤", text: "僅限報名前**沒有合約交易紀錄**的新合約用戶；須完成 KYC 並先在活動頁點 **Join**" },
-      { icon: "🥇", text: "完成指定交易任務後依規則瓜分 **3 XAUT**；總活動池不等於個人可得" },
-      { icon: "📅", text: "活動期間：2026/07/30 14:00 至 **2026/08/09 14:00（UTC）**" },
-      { icon: "⚠️", text: "永續合約有槓桿、爆倉與滑價風險；新手不要為了獎勵硬刷交易量" }
-    ],
-    deadline: "截止：2026/08/09 14:00（UTC；台北時間 22:00）",
-    junNote: "它仍是高風險合約活動，不是免費領黃金。只適合本來就了解永續合約、也符合首次交易資格的人先看規則。\n\n⚠️ 部分連結可能含邀請碼 / 分潤，非投資建議。",
-    link: "https://www.bitget.com/events/candy-bomb?bl=futures",
-    linkLabel: "🔗 前往 Bitget CandyBomb 官方頁",
-    code: "V0K17SD8",
-    codeLabel: "Bitget 邀請碼"
-  },
-  {
     platform: "mexc",
-    platformLabel: "MEXC · GRVT Airdrop+",
-    status: "ended",
-    statusLabel: "⚪ 已結束",
-    title: "GRVT Airdrop+：60,000 美元等值 GRVT + 10,000 USDT（已結束）",
-    desc: "GRVT 上架活動分為入金／現貨與 LIT 交易任務，以及 GRVT 期貨任務；三種任務的獎勵性質不同（已結束）",
+    platformLabel: "MEXC · Canton 嘉年華",
+    status: "hot",
+    statusLabel: "🔥 進行中",
+    title: "Canton (CC) 0 手續費嘉年華，獎池 $100 萬",
+    desc: "CC/USDT、CC/USDC 現貨與 CCUSDT 合約免手續費，另有新手持倉空投、交易排行、持有獎勵與學習獎勵；多項獎勵先搶先得且有每人上限",
     stats: [
-      { label: "GRVT 獎勵", value: "60,000 美元等值（已結束）", color: "highlight" },
-      { label: "期貨獎勵", value: "10,000 USDT（已結束）", color: "highlight" },
-      { label: "截止", value: "2026/08/13 10:00 UTC（已過期）", color: "" }
+      { label: "總獎池", value: "$1,000,000", color: "highlight" },
+      { label: "活動期間", value: "10/30 10:00 – 11/30 10:00 UTC", color: "" },
+      { label: "手續費", value: "指定交易對 0 手續費", color: "highlight" }
     ],
     benefits: [
-      { icon: "1️⃣", text: "入金並交易 GRVT：依規則瓜分 **54,000 美元等值 GRVT**" },
-      { icon: "2️⃣", text: "交易 LIT：依規則瓜分 **6,000 美元等值 GRVT**" },
-      { icon: "3️⃣", text: "交易 GRVT 期貨：依規則瓜分 **10,000 USDT 期貨獎勵**" },
-      { icon: "⚠️", text: "期貨獎勵可能是 Bonus／體驗金，不等於可直接提領現金；不要為了獎勵硬刷交易量" }
+      { icon: "1️⃣", text: "新手禮：淨入金滿 **100 美元**並持有 24 小時，可領 **$200 CC 持倉空投**＋$5 CC（先搶先得）" },
+      { icon: "2️⃣", text: "交易衝刺：現貨池 **150 萬 CC**、合約池 **350 萬 CC**，需累積現貨 $5,000／合約 $100,000 交易量，個人有上限" },
+      { icon: "3️⃣", text: "持有賺幣：**100 萬 CC** 依平均持倉分，至少持有 1,000 CC；學習賺幣讀文章答題每人 **50 CC**" },
+      { icon: "⚠️", text: "地區限制與完整規則請以官方活動頁為準；合約有槓桿風險" }
     ],
-    deadline: "截止：2026/08/13 10:00（UTC；台北時間 18:00）",
-    junNote: "現貨／入金和期貨不是同一種風險。獎池也分成 GRVT 代幣與期貨獎勵，不能全部當成可提領的 USDT。\n\n⚠️ 部分連結可能含邀請碼 / 分潤，非投資建議。",
-    link: "https://blog.mexc.com/press-release/mexc-lists-grvt-with-grvt-usdt-airdrop-rewards/",
-    linkLabel: "🔗 查看 MEXC GRVT 官方公告",
-    code: "3uXZE",
-    codeLabel: "MEXC 邀請碼"
-  },
-  {
-    platform: "mexc",
-    platformLabel: "MEXC · RealStocks 財報季",
-    status: "ended",
-    statusLabel: "⚪ 已結束",
-    title: "RealStocks 財報季交易賽：1,000,000 美元獎池（已結束）",
-    desc: "活動期間開通 RealStocks 並完成指定入金、合格美股標的交易或邀請任務，可依規則參與不同獎池（截止：8/24 10:00 UTC；已結束）",
-    stats: [
-      { label: "總獎池", value: "1,000,000 美元", color: "highlight" },
-      { label: "活動期間", value: "8/3–8/24 10:00 UTC（已結束）", color: "" },
-      { label: "合格標的手續費", value: "活動宣稱 0 费用", color: "highlight" }
-    ],
-    benefits: [
-      { icon: "💵", text: "首次入金至少 **100 美元**可依規則瓜分 **100,000 美元**歡迎獎池；前 2,000 名合格用戶另有 10 美元股票獎勵" },
-      { icon: "📈", text: "完成第一筆合格美股標的交易，可依規則瓜分 **500,000 美元**股票獎池" },
-      { icon: "🎟️", text: "完成指定資金轉入，可取得 **30 天 Nasdaq 即時報價**權益；細節以官方任務頁為準" },
-      { icon: "👥", text: "邀請好友完成首筆交易，每位合格好友可依規則取得 **5 美元股票獎勵**" },
-      { icon: "⚠️", text: "總獎池不等於個人可得；先確認 KYC、地區資格、合格標的、資產性質與發放條件。美股與平台產品都有價格、匯率及平台風險" }
-    ],
-    deadline: "截止：2026/08/24 10:00（UTC；台北時間 18:00）— 已結束",
-    junNote: "這檔是 MEXC 的 RealStocks 財報季活動，適合本來就想研究美股標的人先看規則。獎勵分成入金、首筆交易、轉入與邀請任務，不能把 100 萬美元總池當成自己能拿到的金額。\n\n⚠️ 部分連結可能含邀請碼／分潤；請先確認所在地區是否支援，以及 RealStocks 的實際產品與資產性質，非投資建議。",
-    link: "https://www.mexc.com/campaigns/earningsrealstocksrally",
-    linkLabel: "🔗 前往 MEXC RealStocks 官方活動頁",
+    deadline: "2026/11/30 10:00 UTC",
+    junNote: "這次是 Canton 主題的 0 手續費活動，獎項很多但很多是先搶先得、而且有交易量門檻，別為了拿獎勵去硬衝合約 🌸\n\n⚠️ 投資有風險，只拿閒置資金，自行評估；純分享不構成投資建議。",
+    link: "https://www.mexc.com/register?inviteCode=3uXZE",
+    linkLabel: "🔗 前往 MEXC Canton 活動",
     code: "3uXZE",
     codeLabel: "MEXC 邀請碼"
   },
@@ -181,7 +123,6 @@ window.ACTIVITIES = [
     code: "BYJUN",
     codeLabel: "Bybit 邀請碼"
   },
-
   {
     platform: "bitget-wallet",
     platformLabel: "Bitget Wallet",
@@ -196,7 +137,7 @@ window.ACTIVITIES = [
       { icon: "🌍", text: "0 手續費 · 用 Google 匯率 · 全球通用" }
     ],
     deadline: "",
-    junNote: "我的實體卡已經到手了！0 手續費刷卡真的很香 💳🌸",
+    junNote: "Bitget 9 月曾發生熱錢包事故，提款已依官方時程分階段恢復（BTC 9/28 起），實際開放狀態請以 Bitget 官方公告為準；這張卡是實體卡申請，跟熱錢包關聯較低，但申請前建議先看一下最新公告。\n\n我的實體卡已經到手了！0 手續費刷卡真的很香 💳🌸",
     link: "https://web3.bitget.com",
     linkLabel: "🔗 申請 Bitget Wallet 卡",
     code: "Cqeue9",
@@ -220,7 +161,7 @@ window.ACTIVITIES = [
       { icon: "⚠️", text: "最高獎勵不代表人人拿得到；網格交易仍有市場與參數風險，**非保證獲利**" }
     ],
     deadline: "活動期限與剩餘名額請以 Bitget 活動頁為準",
-    junNote: "這類活動比較適合本來就想研究網格的人，不要只為了迎新禮就直接開單。先看懂現貨網格和合約網格的差別，再用小額測試；參數設得不合適或遇到單邊行情，一樣可能虧損。\n\n⚠️ 純分享，不構成投資建議；部分連結可能含邀請碼 / 分潤。",
+    junNote: "Bitget 9 月曾發生熱錢包事故，提款已分階段恢復，實際狀態請以官方公告為準，投入新資金前先確認提款功能正常。\n\n這類活動比較適合本來就想研究網格的人，不要只為了迎新禮就直接開單。先看懂現貨網格和合約網格的差別，再用小額測試；參數設得不合適或遇到單邊行情，一樣可能虧損。\n\n⚠️ 純分享，不構成投資建議；部分連結可能含邀請碼 / 分潤。",
     link: "https://www.bitget.com/zh-TW/referral/register?from=referral&clacCode=V0K17SD8",
     linkLabel: "🔗 前往 Bitget 查看網格活動",
     code: "V0K17SD8",
@@ -239,35 +180,10 @@ window.ACTIVITIES = [
       { icon: "🎁", text: "+ **1,500 USDT 盲盒**驚喜獎勵" }
     ],
     deadline: "",
-    junNote: "Bitget 的 PoolX 質押空投我也有在用，目前 APR 72.29%，新人進來記得先去看看理財區 😌",
+    junNote: "Bitget 9 月曾發生熱錢包事故，提款已分階段恢復，實際狀態請以官方公告為準；新戶開戶前先看一下最新公告，資金先小額、別一次投入 😌",
     link: "https://www.bitget.com/zh-TW/referral/register?from=referral&clacCode=MHEQPVWR",
     linkLabel: "🔗 前往 Bitget 註冊",
     code: "MHEQPVWR",
-    codeLabel: "Bitget 邀請碼"
-  },
-  {
-    platform: "bitget",
-    platformLabel: "Bitget · PoolX 質押空投",
-    status: "hot",
-    statusLabel: "🔥 進行中",
-    title: "🔒 PoolX 鎖 ETH 領 62 萬顆 NES",
-    desc: "Bitget PoolX 新上架 Nesa(NES)，鎖 ETH 進去就能瓜分 62 萬顆 NES 空投，操作簡單",
-    stats: [
-      { label: "空投總量", value: "620,000 NES", color: "highlight" },
-      { label: "質押幣種", value: "ETH", color: "" },
-      { label: "額度", value: "先到先得", color: "" }
-    ],
-    benefits: [
-      { icon: "🔒", text: "App → 理財 → PoolX → 找到 NES → 鎖倉 ETH，即可參加瓜分 **620,000 NES**" },
-      { icon: "⏳", text: "官方未公告明確截止日期，屬於**額度制**，額度發完就結束" },
-      { icon: "💡", text: "不用手動操作交易，鎖倉期間躺著等發放" },
-      { icon: "⚠️", text: "鎖倉期間資金無法動用，參加前建議進 App 確認目前倒數與規則細節" }
-    ],
-    deadline: "",
-    junNote: "這種鎖倉領空投的活動我一直很愛，操作單純。因為官方沒寫死截止日，我會建議想參加的人自己進 App 確認一下目前額度和倒數，不要拖太久 🌸\n\n⚠️ 純分享，投資請自行評估風險，鎖倉期間資金無法動用。",
-    link: "https://www.bitget.com/zh-TW/referral/register?from=referral&clacCode=V0K17SD8",
-    linkLabel: "🔗 前往 Bitget PoolX",
-    code: "V0K17SD8",
     codeLabel: "Bitget 邀請碼"
   },
   {
@@ -390,31 +306,6 @@ window.ACTIVITIES = [
     codeLabel: "MEXC 邀請碼"
   },
   {
-    platform: "mexc",
-    platformLabel: "MEXC · Up/Down 預測市場",
-    status: "ended",
-    statusLabel: "⚪ 已結束",
-    title: "Up/Down 猜漲跌：官方稱總值 100 萬美元獎池（已結束）",
-    desc: "預測 BTC 在 5 分鐘或 15 分鐘後上漲或下跌；屬短週期預測市場，不是一般現貨交易（已結束）",
-    stats: [
-      { label: "官方總獎池", value: "總值 100 萬美元（已結束）", color: "highlight" },
-      { label: "活動時間", value: "7/24–8/9（UTC；已過期）", color: "" },
-      { label: "預測週期", value: "5 分鐘 / 15 分鐘", color: "" }
-    ],
-    benefits: [
-      { icon: "📍", text: "MEXC 官方資料顯示目前先支援 **BTC**；ETH、SPCX 與黃金（XAU）預計後續加入" },
-      { icon: "⏱️", text: "每輪會自動開始與結算，並以綜合即時指數及時間加權平均價格判定結果" },
-      { icon: "🎁", text: "新戶首筆單次交易至少 **30 USDT**，以及每日交易量、正報酬排行與累計交易量任務，可能依規則取得體驗金、體驗金券或其他獎勵；**體驗金不等於可直接提領的現金 USDT**，每日名額與條件以官方活動頁為準" },
-      { icon: "⚠️", text: "這是高風險的**短線預測**玩法，判斷錯誤可能損失投入本金；不要為了活動池硬刷交易量" }
-    ],
-    deadline: "截止：2026/08/09 23:59（UTC）",
-    junNote: "這個玩法看起來比一般合約簡單，但『只猜漲或跌』不代表風險比較低。5 分鐘、15 分鐘的價格很難預測，連續參加也會累積損失與交易成本。\n\n⚠️ 不要把它當成穩賺遊戲，也不要為了官方所稱總值 100 萬美元的獎池重壓或硬刷量；部分獎勵是體驗金／券，總獎池不代表個人一定拿得到。部分資訊含 MEXC 邀請碼 / 分潤，純分享不構成投資建議。",
-    link: "https://www.mexc.com/campaigns/CryptoEventsCarnivalWeek",
-    linkLabel: "🔗 查看 MEXC Up/Down 官方活動",
-    code: "3uXZE",
-    codeLabel: "MEXC 邀請碼"
-  },
-  {
     platform: "bingx",
     platformLabel: "BingX",
     status: "ongoing",
@@ -429,130 +320,5 @@ window.ACTIVITIES = [
     linkLabel: "🔗 前往 BingX",
     code: "22KLUM",
     codeLabel: "BingX 邀請碼"
-  },
-
-  {
-    platform: "bingx",
-    platformLabel: "BingX · 全球資本嘉年華",
-    status: "hot",
-    statusLabel: "🔥 200萬美元多資產競賽",
-    title: "全球資本嘉年華：200萬美元多資產競賽大賽",
-    desc: "BingX 推出全球資本嘉年華（Global Capital Gala），總獎池高達 200萬美元，涵蓋多種資產與交易任務，適合有交易基礎的用戶優先參考",
-    stats: [
-      { label: "總獎池", value: "200萬美元", color: "highlight" },
-      { label: "性質", value: "多資產交易競賽", color: "" }
-    ],
-    benefits: [
-      { icon: "💰", text: "依活動規則完成指定交易任務，可參與瓜分 **200萬美元** 獎池；具體名額與分配以官方活動頁為準" },
-      { icon: "🌍", text: "活動曾以「Global Capital Gala」名稱出現，同一場次活動；圖片紀錄也標示「200萬美元多資產競賽大賽」" },
-      { icon: "⚠️", text: "交易競賽涉及交易量、排名與資格條件；總獎池不等於人人可得，請先看懂規則再決定是否參與；不要為了獎金硬刷交易量" }
-    ],
-    deadline: "",
-    junNote: "這是 BingX 的大型多資產活動，圖片那邊看到的「200萬美元多資產競賽大賽」應該就是這一場；紀錄裡也有寫「Global Capital Gala 是同一活動」。\\n\\n⚠️ 交易競賽天性偏高頻，新手別為了獎金硬刷量，資格、計算方式與發放規則請以 BingX 官方活動頁為準，純分享不構成投資建議。",
-    link: "https://bingx.com",
-    linkLabel: "🔗 前往 BingX 查看活動",
-    code: "22KLUM",
-    codeLabel: "BingX 邀請碼"
-  },
-
-  {
-    platform: "mexc",
-    platformLabel: "MEXC · 0808 股票季",
-    status: "hot",
-    statusLabel: "🔥 股票季活動",
-    title: "MEXC 0808 股票季活動",
-    desc: "MEXC 0808 股票季活動，圖片來源清單有收錄，適合本來就想看股票季活動的人先進官頁確認任務與規則",
-    stats: [
-      { label: "活動名稱", value: "0808 股票季", color: "highlight" },
-      { label: "來源", value: "圖片活動來源清單", color: "" }
-    ],
-    benefits: [
-      { icon: "📈", text: "0808 股票季系列活動，圖片來源清單有收錄，確切任務與獎勵請進 MEXC 官方活動頁確認" },
-      { icon: "⚠️", text: "股票季活動常涉及入金、交易任務與資格條件，總獎池或標示不等於個人可得，請先看規則" }
-    ],
-    deadline: "",
-    junNote: "這張也是圖片清單更新的，標題寫「0808 股票季」，沒有確切截止日或任務細節，所以先放簡版。之後確認官方訊息再補。\\n\\n⚠️ 活動類消息變動快，請以 MEXC 官方活動頁為準，非投資建議。",
-    link: "https://www.mexc.com",
-    linkLabel: "🔗 前往 MEXC 查看活動",
-    code: "3uXZE",
-    codeLabel: "MEXC 邀請碼"
-  },
-
-  {
-    platform: "mexc",
-    platformLabel: "MEXC · DAPPOS",
-    status: "unverified",
-    statusLabel: "📋 活動狀態待確認",
-    title: "MEXC DAPPOS 活動（狀態待確認）",
-    desc: "MEXC DAPPOS 歷史圖片紀錄；目前是否仍開放、確切期限與規則尚未核實，請勿直接據此入金或交易",
-    stats: [
-      { label: "狀態", value: "目前期限待官方確認", color: "" },
-      { label: "來源", value: "圖片活動來源清單", color: "" }
-    ],
-    benefits: [
-      { icon: "💧", text: "DAPPOS 歷史圖片活動紀錄，不代表目前仍開放；需先向官方確認期限、資格與規則" },
-      { icon: "⚠️", text: "此卡片係根據圖片紀錄先行整理，活動細節與獎勵以 MEXC 官方頁為準；若官方已結束，請以實際為準" }
-    ],
-    deadline: "",
-    junNote: "這張先保留歷史圖片紀錄，尚未核實現在是否仍可參加，不沿用當時的倒數標籤。請先確認官方活動頁，不要因這張卡硬入金。\\n\\n⚠️ 空投類活動常有資格、任務與發放細節，請以 MEXC 官方活動頁為準，非投資建議。",
-    link: "https://www.mexc.com",
-    linkLabel: "🔗 前往 MEXC 查看活動",
-    code: "3uXZE",
-    codeLabel: "MEXC 邀請碼"
-  },
-  {
-    platform: "mexc",
-    platformLabel: "MEXC · SHEIN IPO Express",
-    status: "ended",
-    statusLabel: "⚪ 已結束",
-    title: "MEXC IPO Express：SHEIN 歷史圖片紀錄（已結束）",
-    desc: "依既有圖片紀錄截止 2026/08/31，本卡已結束、不再招募。以下保留歷史資料，認購條件與所稱上市資訊未經本次官方核驗，不代表事實已確認",
-    stats: [
-      { label: "總額度", value: "$1,000,000", color: "highlight" },
-      { label: "認購價範圍", value: "HKD 47.60-49.50／股（約 $6.07-$6.32）", color: "" },
-      { label: "個人限額", value: "100 - 10,000 USDT", color: "" },
-      { label: "截止", value: "2026/08/31 10:00 UTC（台北時間 8/31 18:00）", color: "highlight" },
-      { label: "上市", value: "2026/09/01 香港交易所", color: "" }
-    ],
-    benefits: [
-      { icon: "🎯", text: "MEXC IPO Express 通道申購 SHEIN 新股快線，總額度 **$1,000,000**，額度分三個檔位，先搶先贏" },
-      { icon: "💰", text: "個人認購額度 **100 - 10,000 USDT**，認購價範圍 HKD 47.60-49.50／股（約美元 $6.07-$6.32）" },
-      { icon: "📦", text: "以 **USDT 認購**，完成後取得**鏡像積分（Mirror Points）**，非直接持有 SHEIN 股票／股權" },
-      { icon: "⏰", text: "截止 **2026/08/31 10:00 UTC**（台北時間 8/31 18:00）；SHEIN 香港上市時間為 9/1（圖片 8/29 標示）" },
-      { icon: "⚠️", text: "鏡像積分性質、配額機制、資格與地區限制請以 MEXC 官方活動頁為準；**投資有風險，請自行評估，非投資建議**" }
-    ],
-    deadline: "已結束：2026/08/31 10:00 UTC（台北時間 8/31 18:00；依既有圖片紀錄）",
-    junNote: "這張是從 2026/08/28 與 8/29 兩張圖片整理出來的 MEXC SHEIN IPO Express 活動。重點是總額度 $100萬、個人限額 100-10,000 USDT、用 USDT 認購後取得等於鏡像積分（不是直接持股）、先搶先贏。\\n\\n⚠️ 這類新股快線／鏡像積分產品風險不小，認購價只是區間賣示，實際配給與積分規則請以官方活動頁為準；不是保證獲利，也不要為了額度硬入金。部分連結可能含 MEXC 邀請碼 / 分潤，純分享不構成投資建議。",
-    link: "https://www.mexc.com",
-    linkLabel: "🔗 前往 MEXC 查看 IPO Express 活動",
-    code: "3uXZE",
-    codeLabel: "MEXC 邀請碼"
-  },
-  {
-    platform: "bitget",
-    platformLabel: "Bitget · KCGI 2026",
-    status: "hot",
-    statusLabel: "🔥 9/22 台北 23:59 截止",
-    title: "KCGI 2026 王者盃：跨市場交易賽，總池最高 3,000,000 USDT",
-    desc: "加密合約、TradFi 永續合約與代幣化美股 rToken 同場；總獎池隨合資格參賽人數解鎖，不是每人都能拿到獎金",
-    stats: [
-      { label: "總池上限", value: "3,000,000 USDT", color: "highlight" },
-      { label: "正賽（台北）", value: "2026/09/09–09/22", color: "" },
-      { label: "報名餘額門檻", value: "100 USDT", color: "" }
-    ],
-    benefits: [
-      { icon: "📅", text: "正賽：台北時間 **2026/09/09 00:00–2026/09/22 23:59**（UTC+8）；報名同樣於 9/22 23:59 截止。8/30 早鳥已結束，不再列為可領福利" },
-      { icon: "👤", text: "須主動報名，帳戶餘額至少 **100 USDT**，活動結束前完成 **KYC**；組隊／加入隊伍另需至少 100 USDT 合約資產，團隊至少 10 人" },
-      { icon: "📊", text: "獎池分配須達至少 **30,000 USDT 有效合約交易量**並符合排名與結算規則；僅出現在榜上不代表有獎。不要為了獎勵硬刷交易量或硬入金" },
-      { icon: "🎁", text: "排行榜獎勵以 USDT 發放；寶箱可能含實物、代幣券、合約體驗金或倉位加碼券，券／體驗金屬**非現金**獎勵，不能視同可提領現金" },
-      { icon: "🔍", text: "子帳號、做市商、PRO、經紀商及機構帳戶不符資格；受限制地區不能參加。刷量、對敲、多帳號及自動化作弊可被取消資格" },
-      { icon: "⚠️", text: "合約涉及**槓桿、爆倉、滑價**與本金損失，rToken 也有產品與價格風險；不要為了獎池去承擔原本不會承擔的風險" }
-    ],
-    deadline: "截止：2026/09/22 23:59（台北時間 UTC+8；UTC 15:59）",
-    junNote: "官方公告發布於 2026/08/25，本次直接核對正賽日期、報名與領獎門檻後才加入。這是交易競賽，不是免費領錢；新手先看規則，不適合就跳過。\n\n⚠️ 下方是官方完整規則頁；邀請碼 V0K17SD8 可能涉及返佣／分潤，是否使用由你決定。投資有風險，非投資建議。",
-    link: "https://www.bitget.com/support/articles/12560603893290",
-    linkLabel: "🔗 查看 KCGI 2026 官方完整規則",
-    code: "V0K17SD8",
-    codeLabel: "Bitget 邀請碼（可能含分潤）"
-  },
+  }
 ];
