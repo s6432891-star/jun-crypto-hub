@@ -8,8 +8,9 @@
    小語法：
    - benefits 好處清單裡，想把金額/重點變粉紅色，用 **兩個星號** 包起來。
    - junNote（Jun 說）想換行，直接按 Enter 換行即可。
-   最後更新：2026-11-12（台北時間）
+   最後更新：2026-11-13（台北時間）
    本次更新：
+   - 11/13 Gate 複查：USD1 卡改為待確認並移除過時 15%（9/23 起改閒錢寶）；股票事件合約補 10 檔標的；Launchpool 補第 385 期 KOR；Gate 連結改官方網域 gate.com
    - 11/12 晚間排程：新增 MEXC RealStocks 財報季（至 11/21 12:00 UTC）
    - 新增：Bitget 雙 11 嘉年華（至 11/23）、Bitget 理財嘉年華（至 12/9）、Bitget IPO Prime 申購活動、Bybit WSOT 2026（至 12/2）、Bybit P2P 超級優惠（至 2027/3/30）、Gate 股票事件合約挑戰賽（至 11/18）
    - 更新：Bybit USD1 持有收益（加碼月只到 11/15，移除舊的 7.29% 年化數字）；Gate Launchpool/HODLer 移除過時的 7 月數據
@@ -162,7 +163,7 @@ window.ACTIVITIES = [
     status: "hot",
     statusLabel: "🔥 進行中",
     title: "股票事件合約新增 NVDA 等 10 檔，5 萬 USDT 挑戰賽",
-    desc: "Gate 事件合約新增 NVDA、AAPL 等 10 檔股票標的，11/11–11/18 限時 5 萬 USDT 交易活動；新用戶首單可領體驗券",
+    desc: "Gate 事件合約 11/9 新增 NVDA、AAPL、GOOGL、MSFT、AMZN、TSM、SPCX、META、AVGO、TSLA 共 10 檔美股，支援 5／15 分鐘看漲看跌、無槓桿、無保證金；11/11–11/18 限時 5 萬 USDT 交易活動，App 需 v8.36.0 以上",
     stats: [
       { label: "獎池", value: "50,000 USDT", color: "highlight" },
       { label: "活動期間", value: "11/11 18:00 – 11/18 18:00", color: "" },
@@ -175,7 +176,7 @@ window.ACTIVITIES = [
     ],
     deadline: "2026/11/18 18:00（UTC+8）",
     junNote: "這個我自己的看法是：新用戶就把它當成「先領 5.5U 體驗券，感受一下事件合約怎麼運作」就好，其他需要大量交易量的獎項不用跟 🌸\n\n⚠️ 純分享，不構成投資建議；事件合約與槓桿有高風險，只拿閒置資金。",
-    link: "https://www.gate.io",
+    link: "https://www.gate.com",
     linkLabel: "🔗 前往 Gate 事件合約",
     code: "VFVFVW9AVG",
     codeLabel: "Gate 邀請碼"
@@ -364,23 +365,23 @@ window.ACTIVITIES = [
     platformLabel: "Gate · USD1 理財",
     status: "soon",
     statusLabel: "⚠️ 待確認",
-    title: "持有 USD1 即享 15% 預估年化",
-    desc: "在 Gate 資產帳戶持有 USD1，系統每小時快照計算收益，次日發放到資產帳戶",
+    title: "USD1 持幣生息可能已結束，改看閒錢寶",
+    desc: "Gate 9/23 起把 USD1 加進閒錢寶，並說明 USD1 持幣生息即將結束；我查不到 11 月仍在發放的公告，先標待確認",
     stats: [
-      { label: "預估年化", value: "15%", color: "highlight" },
-      { label: "最低持有", value: "≥ 1 USD1", color: "" },
-      { label: "快照", value: "每日 24 次", color: "" }
+      { label: "閒錢寶 USD1（9/23 數字）", value: "約 6.8%", color: "highlight" },
+      { label: "合約量達標加成", value: "最高 8.16%", color: "" },
+      { label: "最低門檻", value: "無需申購／鎖倉", color: "" }
     ],
     benefits: [
-      { icon: "💵", text: "持有 USD1 即可計算收益，**無需申購、無需鎖倉**" },
-      { icon: "⏱️", text: "系統每小時快照，每天 24 次，收益次日發放" },
-      { icon: "📌", text: "APR 約每日 14:00（UTC+8）更新，顯示為預估值" },
-      { icon: "⚠️", text: "USD1 仍有穩定幣、監管、智能合約與市場波動風險" }
+      { icon: "💵", text: "USD1 放在現貨或合約帳戶，一鍵開啟閒錢寶就會自動生息，**資金仍可交易**" },
+      { icon: "📌", text: "加成需 30 天合約交易量 **≥ 150,000 USD1**，最高 **8.16%**；一般用戶看基礎年化就好" },
+      { icon: "🕒", text: "以上是 **9 月底的公開數字**，年化會浮動，實際請看 Gate 理財頁當天顯示" },
+      { icon: "⚠️", text: "之前寫過的 15%、20% 是 6 月高點，**已經過時**；USD1 仍有穩定幣、監管與市場風險，不是保證收益" }
     ],
     deadline: "",
-    junNote: "⚠️ 這張的期限／內容我這次沒有查到 11 月的官方資料，先標「待確認」（不代表已結束），實際請以官方活動頁為準。\n\n這個比較像懶人型穩定幣收益，只要在 Gate 帳戶持有 USD1 就會計算，不用鎖倉。但 15% 是預估年化，不是保證收益，USD1 本身也有穩定幣、監管和市場波動風險，適合先小額研究。",
-    link: "https://www.gate.io",
-    linkLabel: "🔗 前往 Gate 查看 USD1",
+    junNote: "⚠️ 這張我這次沒有查到 11 月的官方資料，先標「待確認」（不代表一定結束），實際請以 Gate 官方理財頁為準。\n\n之前那個 15% 是 6 月的數字，不要再照著衝。想放穩定幣的話，先看當天顯示的年化，資金小額就好 🌸\n\n⚠️ 純分享，不構成投資建議；連結含邀請碼 / 分潤。",
+    link: "https://www.gate.com",
+    linkLabel: "🔗 前往 Gate 查看閒錢寶",
     code: "VFVFVW9AVG",
     codeLabel: "Gate 邀請碼"
   },
@@ -393,17 +394,17 @@ window.ACTIVITIES = [
     desc: "帳戶持有 GT 就自動有資格參加 HODLer Airdrop，Launchpool 質押主流幣也能拿新項目代幣",
     stats: [
       { label: "HODLer 門檻", value: "持有 ≥ 1 GT", color: "highlight" },
-      { label: "Launchpool", value: "質押賺新幣", color: "" }
+      { label: "Launchpool 第 385 期", value: "KOR（11/4–12/4）", color: "" }
     ],
     benefits: [
       { icon: "💎", text: "只要帳戶持有 **1 顆 GT** 以上，就自動有資格參加 HODLer Airdrop，不用鎖倉、不用手動申購" },
-      { icon: "🌊", text: "Launchpool 則是質押主流幣（如 USDT、GT）快速挖新項目代幣，隨存隨取" },
+      { icon: "🌊", text: "Launchpool 第 385 期是 **KOR Protocol**：11/4 22:00 – 12/4 22:00（UTC+8），可質押 USDT、GT 或 KOR，共 **3,600 萬 KOR** 依質押比例每小時發放" },
       { icon: "📊", text: "每一期的項目、獎池與質押年化都不同，以 Gate 公告與活動頁為準" },
       { icon: "⚠️", text: "這是長期機制、沒有明確截止日，但新項目代幣本身漲跌波動大" }
     ],
     deadline: "",
     junNote: "這個真的很適合不想每天盯盤的人，設定好放著就好，不用急著今天做 🌸\n\n⚠️ 純分享，投資有風險，GT 與新項目代幣都有價格波動，自行評估。",
-    link: "https://www.gate.io",
+    link: "https://www.gate.com",
     linkLabel: "🔗 前往 Gate Launchpool / HODLer",
     code: "VFVFVW9AVG",
     codeLabel: "Gate 邀請碼"
