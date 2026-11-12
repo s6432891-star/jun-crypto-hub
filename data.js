@@ -10,6 +10,7 @@
    - junNote（Jun 說）想換行，直接按 Enter 換行即可。
    最後更新：2026-11-12（台北時間）
    本次更新：
+   - 11/12 晚間排程：新增 MEXC RealStocks 財報季（至 11/21 12:00 UTC）
    - 新增：Bitget 雙 11 嘉年華（至 11/23）、Bitget 理財嘉年華（至 12/9）、Bitget IPO Prime 申購活動、Bybit WSOT 2026（至 12/2）、Bybit P2P 超級優惠（至 2027/3/30）、Gate 股票事件合約挑戰賽（至 11/18）
    - 更新：Bybit USD1 持有收益（加碼月只到 11/15，移除舊的 7.29% 年化數字）；Gate Launchpool/HODLer 移除過時的 7 月數據
    - 標「待確認」（查不到 11 月官方資料，不代表已結束）：Bybit 新人禮、Bitget 新用戶 BTC 空投、Bitget 網格、Gate USD1 15%、MEXC 邀請 $120、MEXC Pre-IPO 期貨
@@ -32,6 +33,31 @@ window.SITE = {
    platform：bitget-wallet / bitget / gate / bybit / mexc / bingx / general
    stats / benefits 不需要就寫 []；code / deadline 沒有就留 "" */
 window.ACTIVITIES = [
+  {
+    platform: "mexc",
+    platformLabel: "MEXC · RealStocks 財報季",
+    status: "hot",
+    statusLabel: "🔥 進行中",
+    title: "RealStocks 財報季：比報酬率不比本金，第一名 $10,000",
+    desc: "美股代幣 RealStocks 報酬率排行榜，交易滿 $100 就能上榜；新用戶首次入金滿 $100 另送 $10 股票獎勵（前 2,000 名）",
+    stats: [
+      { label: "第一名", value: "$10,000 股票", color: "highlight" },
+      { label: "活動期間", value: "11/4 12:00 – 11/21 12:00 UTC", color: "" },
+      { label: "新手禮", value: "$10 股票（前 2,000 名）", color: "highlight" }
+    ],
+    benefits: [
+      { icon: "1️⃣", text: "新用戶（從未入金過）活動期間首次入金滿 **$100**，送 **$10 股票獎勵**，限前 2,000 名" },
+      { icon: "2️⃣", text: "報名後 RealStocks 交易滿 **$100** 即可上榜，依 PNL 報酬率排名：第 1 名 **$10,000**、第 2 名 $5,000、第 3 名 $3,000，前 50 名有獎" },
+      { icon: "3️⃣", text: "邀請好友（報名且交易滿 $100）可分 **$2,000** 邀請獎池" },
+      { icon: "⚠️", text: "歷史報酬率也會計入排名；地區限制與完整規則以官方活動頁為準" }
+    ],
+    deadline: "2026/11/21 12:00 UTC",
+    junNote: "這個我喜歡的點是比「報酬率」不是比誰錢多，小資金也有機會 🌸 但要注意它會把你之前的歷史報酬率一起算，不是歸零重比，別為了衝排名硬加碼。\n\n⚠️ 美股代幣一樣有波動，只拿閒置資金，自行評估；純分享不構成投資建議。",
+    link: "https://www.mexc.com/register?inviteCode=3uXZE",
+    linkLabel: "🔗 前往 MEXC RealStocks 財報季",
+    code: "3uXZE",
+    codeLabel: "MEXC 邀請碼"
+  },
   {
     platform: "bitget",
     platformLabel: "Bitget · 雙 11 嘉年華",
