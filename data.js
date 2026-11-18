@@ -8,8 +8,10 @@
    小語法：
    - benefits 好處清單裡，想把金額/重點變粉紅色，用 **兩個星號** 包起來。
    - junNote（Jun 說）想換行，直接按 Enter 換行即可。
-   最後更新：2026-11-13（台北時間）
+   最後更新：2026-11-18（台北時間）
    本次更新：
+   - 11/18 排程：新增 Bybit ByPick 第二季（至 12/11，官方新聞稿 11/13）；移除已過期的 Bitget Anthropic IPO Prime（公開輪 11/17）、Gate 股票事件合約挑戰賽（11/18 18:00 UTC+8 截止）
+   - 11/17 排程：移除已過期的 Bybit USD1 持有收益（加碼月 11/15 截止）；WSOT 戰隊加入截止 11/19 10:00 UTC（官方新聞稿）
    - 11/13 Gate 複查：USD1 卡改為待確認並移除過時 15%（9/23 起改閒錢寶）；股票事件合約補 10 檔標的；Launchpool 補第 385 期 KOR；Gate 連結改官方網域 gate.com
    - 11/12 晚間排程：新增 MEXC RealStocks 財報季（至 11/21 12:00 UTC）
    - 新增：Bitget 雙 11 嘉年華（至 11/23）、Bitget 理財嘉年華（至 12/9）、Bitget IPO Prime 申購活動、Bybit WSOT 2026（至 12/2）、Bybit P2P 超級優惠（至 2027/3/30）、Gate 股票事件合約挑戰賽（至 11/18）
@@ -109,30 +111,6 @@ window.ACTIVITIES = [
     codeLabel: "Bitget 邀請碼"
   },
   {
-    platform: "bitget",
-    platformLabel: "Bitget · IPO Prime",
-    status: "hot",
-    statusLabel: "🔥 進行中",
-    title: "Anthropic IPO Prime 申購，新用戶 10 萬 USDT 獎池",
-    desc: "新用戶註冊並完成驗證後，可參與 Anthropic 的 IPO Prime 申購活動，並有 rToken 獎勵；分 VIP 輪與公開輪",
-    stats: [
-      { label: "獎池", value: "100,000 USDT", color: "highlight" },
-      { label: "公開輪", value: "11/10 – 11/17", color: "" }
-    ],
-    benefits: [
-      { icon: "🗓️", text: "VIP 輪原訂 11/5–11/9，申購期限已延到 **11/11**；公開輪 **11/10–11/17**（日期可能調整）" },
-      { icon: "🎁", text: "獎勵以 Anthropic rToken 發放，依入金與申購狀況計算" },
-      { icon: "📌", text: "rToken 是代幣化的對應憑證，**不等於持有公司股權**，申購規則、額度與入金門檻請以活動頁為準" },
-      { icon: "⚠️", text: "Pre-IPO 類商品波動可能很大，也可能分配不到，先搞懂規則再決定要不要參與" }
-    ],
-    deadline: "公開輪 2026/11/17（日期可能調整）",
-    junNote: "這類 IPO 申購活動我會建議先看懂它是怎麼分配、rToken 到底代表什麼，再決定要不要碰，不要因為名字響亮就直接投入 🌸\n\nBitget 9 月曾發生熱錢包事故，提款已分階段恢復，實際狀態請以官方公告為準。\n\n⚠️ 純分享，不構成投資建議；連結含邀請碼 / 分潤。",
-    link: "https://www.bitget.com/zh-TW/referral/register?from=referral&clacCode=V0K17SD8",
-    linkLabel: "🔗 前往 Bitget IPO Prime",
-    code: "V0K17SD8",
-    codeLabel: "Bitget 邀請碼"
-  },
-  {
     platform: "bybit",
     platformLabel: "Bybit · WSOT 2026",
     status: "hot",
@@ -145,7 +123,7 @@ window.ACTIVITIES = [
       { label: "報名", value: "免最低資產", color: "highlight" }
     ],
     benefits: [
-      { icon: "📝", text: "到 bybit.com/wsot2026 註冊，可個人參賽，也可組隊或加入戰隊" },
+      { icon: "📝", text: "到 bybit.com/wsot2026 註冊，可個人參賽，也可組隊或加入戰隊（戰隊創建已截止，加入既有戰隊到 11/19 10:00 UTC）" },
       { icon: "🎯", text: "預熱任務從參賽首日起，完成交易任務即可解鎖對應獎勵" },
       { icon: "📈", text: "排行榜資格：統一交易帳戶持有至少 **100 USDT 滿 5 分鐘**；現貨成交量榜 11/5–11/26，最多 400 人分最高 **100 萬 USDT**" },
       { icon: "⚠️", text: "獎池是**上限**，不保證全部發出；排名要靠累積交易量，不建議新手為了排名硬衝" }
@@ -158,28 +136,29 @@ window.ACTIVITIES = [
     codeLabel: "Bybit 邀請碼"
   },
   {
-    platform: "gate",
-    platformLabel: "Gate · 股票事件合約",
+    platform: "bybit",
+    platformLabel: "Bybit · ByPick 第二季",
     status: "hot",
     statusLabel: "🔥 進行中",
-    title: "股票事件合約新增 NVDA 等 10 檔，5 萬 USDT 挑戰賽",
-    desc: "Gate 事件合約 11/9 新增 NVDA、AAPL、GOOGL、MSFT、AMZN、TSM、SPCX、META、AVGO、TSLA 共 10 檔美股，支援 5／15 分鐘看漲看跌、無槓桿、無保證金；11/11–11/18 限時 5 萬 USDT 交易活動，App 需 v8.36.0 以上",
+    title: "ByPick 第二季：不用下注真錢猜事件，總獎池 10 萬 USDT",
+    desc: "Bybit App 內的免費預測活動，用活動點數（cp）猜加密、運動、電競、財經事件結果，不需投入資金；猜對依當下賠率拿點數，衝排行榜換 USDT",
     stats: [
-      { label: "獎池", value: "50,000 USDT", color: "highlight" },
-      { label: "活動期間", value: "11/11 18:00 – 11/18 18:00", color: "" },
-      { label: "新用戶首單", value: "5.5 USDT 體驗券", color: "highlight" }
+      { label: "總獎池", value: "100,000 USDT", color: "highlight" },
+      { label: "活動期間", value: "即日起 – 12/11", color: "" },
+      { label: "報名送", value: "200 cp", color: "highlight" }
     ],
     benefits: [
-      { icon: "🆕", text: "新用戶首單淨買入 **≥ 20 USDT**，前 **1,000 名**可領 5.5 USDT **體驗券**（不是現金）" },
-      { icon: "📊", text: "交易量 ≥ 30,000 USDT 可共分 **10,000 USDT**；交易量 ≥ 150,000 USDT 且排前 10，最高固定獎 **3,000 USDT**" },
-      { icon: "⚠️", text: "事件合約風險很高、可能全部虧損；排名獎要大量交易量，**不建議新手為了活動硬衝**" }
+      { icon: "🎟️", text: "報名送 **200 cp**；點數低於 200 時，每天可補回 200 一次" },
+      { icon: "🏆", text: "賽季排行榜前 **3,000 名**分 **70,000 USDT**；每週排行榜各 **7,500 USDT**（只算猜對拿到的點數）" },
+      { icon: "➕", text: "每日簽到、達成里程碑、交易任務、邀請好友也能加點" },
+      { icon: "⚠️", text: "cp 沒有金錢價值、**不能提領或轉讓**，要擠進排行榜才換得到 USDT；條款與適用地區以 Bybit 官方公告為準" }
     ],
-    deadline: "2026/11/18 18:00（UTC+8）",
-    junNote: "這個我自己的看法是：新用戶就把它當成「先領 5.5U 體驗券，感受一下事件合約怎麼運作」就好，其他需要大量交易量的獎項不用跟 🌸\n\n⚠️ 純分享，不構成投資建議；事件合約與槓桿有高風險，只拿閒置資金。",
-    link: "https://www.gate.com",
-    linkLabel: "🔗 前往 Gate 事件合約",
-    code: "VFVFVW9AVG",
-    codeLabel: "Gate 邀請碼"
+    deadline: "2026/12/11",
+    junNote: "這個我覺得是少數真的不用拿錢出來的活動，就當每天花一分鐘猜一下比賽、順便簽到 🌸 交易任務那塊看自己，新手不要為了點數去硬碰合約。\n\n⚠️ 純分享，不構成投資建議；連結含邀請碼 / 分潤。",
+    link: "https://partner.bybit.com/b/BYJUN",
+    linkLabel: "🔗 前往 Bybit 註冊",
+    code: "BYJUN",
+    codeLabel: "Bybit 邀請碼"
   },
   {
     platform: "mexc",
@@ -245,31 +224,6 @@ window.ACTIVITIES = [
     junNote: "福利中心每天都有新任務，有些是循環的，進去看一下會有驚喜，USDT 理財 555% 年化那個加息券很香 🌷",
     link: "https://partner.bybit.com/b/BYJUN",
     linkLabel: "🔗 前往 Bybit 福利中心",
-    code: "BYJUN",
-    codeLabel: "Bybit 邀請碼"
-  },
-  {
-    platform: "bybit",
-    platformLabel: "Bybit · USD1 理財",
-    status: "soon",
-    statusLabel: "⏳ 11/15 截止",
-    title: "持有 USD1，賺 WLFI 收益（加碼月）",
-    desc: "持有 USD1 穩定幣可每日累積 WLFI 獎勵，無需質押、無需鎖倉；這次是延長的加碼月，只到 11/15",
-    stats: [
-      { label: "加碼月獎池", value: "2,700 萬 WLFI", color: "highlight" },
-      { label: "活動期間", value: "10/17 – 11/15", color: "" },
-      { label: "結算", value: "每日累積", color: "" }
-    ],
-    benefits: [
-      { icon: "1️⃣", text: "在 Bybit 帳戶持有 USD1 並符合活動資格，**不用質押、不用鎖倉**" },
-      { icon: "2️⃣", text: "系統每小時快照餘額，每天累積 WLFI 獎勵" },
-      { icon: "3️⃣", text: "另有 USD1 持有榜，每日更新前 50 名" },
-      { icon: "⚠️", text: "年化會隨總參與量與 WLFI 價格浮動，**不是保證收益**；詳細資格以官方活動頁為準" }
-    ],
-    deadline: "2026/11/15",
-    junNote: "這個 USD1 持有活動原本預告 9 月那期是最後一期，後來官方又加碼延長了一個月，現在到 11 月 15 日。過了之後有沒有再延，請以 Bybit 官方公告為準。\n\n⚠️ 穩定幣和 WLFI 都有市場與平台風險，先小額研究，不要為了收益重倉。",
-    link: "https://partner.bybit.com/b/BYJUN",
-    linkLabel: "🔗 前往 Bybit 查看 USD1 理財",
     code: "BYJUN",
     codeLabel: "Bybit 邀請碼"
   },
