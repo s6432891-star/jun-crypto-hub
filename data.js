@@ -8,8 +8,9 @@
    小語法：
    - benefits 好處清單裡，想把金額/重點變粉紅色，用 **兩個星號** 包起來。
    - junNote（Jun 說）想換行，直接按 Enter 換行即可。
-   最後更新：2026-11-18（台北時間）
+   最後更新：2026-11-19（台北時間）
    本次更新：
+   - 11/19 排程：新增 MEXC Airdrop+ ETH 派對（總獎池 70,000 USDT，11/16 13:00 – 11/26 13:00 UTC，官方公告）；本次無過期卡片
    - 11/18 排程：新增 Bybit ByPick 第二季（至 12/11，官方新聞稿 11/13）；移除已過期的 Bitget Anthropic IPO Prime（公開輪 11/17）、Gate 股票事件合約挑戰賽（11/18 18:00 UTC+8 截止）
    - 11/17 排程：移除已過期的 Bybit USD1 持有收益（加碼月 11/15 截止）；WSOT 戰隊加入截止 11/19 10:00 UTC（官方新聞稿）
    - 11/13 Gate 複查：USD1 卡改為待確認並移除過時 15%（9/23 起改閒錢寶）；股票事件合約補 10 檔標的；Launchpool 補第 385 期 KOR；Gate 連結改官方網域 gate.com
@@ -36,6 +37,32 @@ window.SITE = {
    platform：bitget-wallet / bitget / gate / bybit / mexc / bingx / general
    stats / benefits 不需要就寫 []；code / deadline 沒有就留 "" */
 window.ACTIVITIES = [
+  {
+    platform: "mexc",
+    platformLabel: "MEXC · Airdrop+ ETH 派對",
+    status: "hot",
+    statusLabel: "🔥 進行中",
+    title: "ETH 派對：總獎池 70,000 USDT，大部分給新人",
+    desc: "MEXC Airdrop+ 以太坊主題活動，新用戶入金瓜分、現貨挑戰、新人合約體驗金、邀請好友四塊獎池，11/26 13:00 UTC 截止",
+    stats: [
+      { label: "總獎池", value: "70,000 USDT", color: "highlight" },
+      { label: "活動期間", value: "11/16 13:00 – 11/26 13:00 UTC", color: "" },
+      { label: "新人入金", value: "瓜分 49,000 USDT", color: "highlight" }
+    ],
+    benefits: [
+      { icon: "1️⃣", text: "新用戶專屬：入金瓜分 **49,000 USDT**" },
+      { icon: "2️⃣", text: "全體用戶：現貨交易挑戰瓜分 **5,000 USDT**" },
+      { icon: "3️⃣", text: "新用戶專屬：合約交易挑戰瓜分 **10,000 USDT 合約體驗金**（體驗金不是現金）" },
+      { icon: "4️⃣", text: "全體用戶：邀請新用戶瓜分 **6,000 USDT**" },
+      { icon: "⚠️", text: "公告沒寫清楚入金門檻、每人上限與新用戶定義，報名前請先看活動頁細則；地區限制以官方為準" }
+    ],
+    deadline: "2026/11/26 13:00 UTC",
+    junNote: "這次大部分獎池是給新人的，本來就想開 MEXC 的可以順便參加 🌸 但瓜分型活動人越多分越少，合約那塊是體驗金不是現金，新手千萬別為了體驗金去開高槓桿。\n\n⚠️ 只拿閒置資金，自行評估；純分享不構成投資建議。",
+    link: "https://www.mexc.com/register?inviteCode=3uXZE",
+    linkLabel: "🔗 前往 MEXC 註冊參加 ETH 派對",
+    code: "3uXZE",
+    codeLabel: "MEXC 邀請碼"
+  },
   {
     platform: "mexc",
     platformLabel: "MEXC · RealStocks 財報季",
