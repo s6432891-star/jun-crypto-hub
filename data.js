@@ -8,8 +8,9 @@
    小語法：
    - benefits 好處清單裡，想把金額/重點變粉紅色，用 **兩個星號** 包起來。
    - junNote（Jun 說）想換行，直接按 Enter 換行即可。
-   最後更新：2026-11-19（台北時間）
+   最後更新：2026-11-20（台北時間）
    本次更新：
+   - 11/20 排程：新增 BingX ANTHROPIC IPO Gala 交易賽（合約量排名，獎池最高 500,000 USDT Bonus，至 11/27 10:00 UTC，官方活動頁倒數）；本次無過期卡片
    - 11/19 排程：新增 MEXC Airdrop+ ETH 派對（總獎池 70,000 USDT，11/16 13:00 – 11/26 13:00 UTC，官方公告）；本次無過期卡片
    - 11/18 排程：新增 Bybit ByPick 第二季（至 12/11，官方新聞稿 11/13）；移除已過期的 Bitget Anthropic IPO Prime（公開輪 11/17）、Gate 股票事件合約挑戰賽（11/18 18:00 UTC+8 截止）
    - 11/17 排程：移除已過期的 Bybit USD1 持有收益（加碼月 11/15 截止）；WSOT 戰隊加入截止 11/19 10:00 UTC（官方新聞稿）
@@ -37,6 +38,31 @@ window.SITE = {
    platform：bitget-wallet / bitget / gate / bybit / mexc / bingx / general
    stats / benefits 不需要就寫 []；code / deadline 沒有就留 "" */
 window.ACTIVITIES = [
+  {
+    platform: "bingx",
+    platformLabel: "BingX · ANTHROPIC IPO 交易賽",
+    status: "hot",
+    statusLabel: "🔥 進行中",
+    title: "Anthropic 剛上市就開賽：獎池最高 50 萬 USDT 體驗金",
+    desc: "BingX 美股永續合約交易量排名賽，獎池隨全場交易量變大，第一名分 30%，約 11/27 10:00 UTC 截止",
+    stats: [
+      { label: "獎池上限", value: "500,000 USDT Bonus", color: "highlight" },
+      { label: "上榜門檻", value: "合約量 ≥ 2,000 USDT", color: "" },
+      { label: "截止", value: "11/27 10:00 UTC", color: "highlight" }
+    ],
+    benefits: [
+      { icon: "📈", text: "全場交易量 5M → 獎池 **1 萬 U**；10M → **3 萬 U**；50M → **5 萬 U**；500M+ → **50 萬 U**" },
+      { icon: "🏆", text: "第一名分 **30%**（每人最高 15 萬 U）、第二名 8%、第三名 5%，前 500 名都有分" },
+      { icon: "📊", text: "只算 ANTHROPIC、NVDA、OpenAI 等 22 檔美股永續合約的交易量" },
+      { icon: "⚠️", text: "獎勵是 **USDT Bonus（合約體驗金）不是現金**；全場量沒達 5M 獎池就是 0，細則以活動頁為準" }
+    ],
+    deadline: "2026/11/27 10:00 UTC",
+    junNote: "Anthropic 一上市交易所就辦比賽，速度真的很快 😂 但這是拚合約交易量的排名賽，獎勵還是體驗金不是現金，我自己只會在旁邊看熱鬧 🌸\n\n⚠️ 合約槓桿風險很高，新手不要為了排名硬衝，只拿閒置資金，自行評估；純分享不構成投資建議。",
+    link: "https://bingx.com/invite/22KLUM",
+    linkLabel: "🔗 前往 BingX 看交易賽",
+    code: "22KLUM",
+    codeLabel: "BingX 邀請碼"
+  },
   {
     platform: "mexc",
     platformLabel: "MEXC · Airdrop+ ETH 派對",
