@@ -8,8 +8,9 @@
    小語法：
    - benefits 好處清單裡，想把金額/重點變粉紅色，用 **兩個星號** 包起來。
    - junNote（Jun 說）想換行，直接按 Enter 換行即可。
-   最後更新：2026-11-20（台北時間）
+   最後更新：2026-11-21（台北時間）
    本次更新：
+   - 11/21 排程：新增 Bitget PoolX Real Token (RT1)（鎖 ETH 分 27,000,000 RT1，11/19 10:00 – 11/23 10:00 UTC，官方公告 11/18）；本次無過期卡片（MEXC RealStocks 今天 12:00 UTC 才截止，下次排程移除）
    - 11/20 排程：新增 BingX ANTHROPIC IPO Gala 交易賽（合約量排名，獎池最高 500,000 USDT Bonus，至 11/27 10:00 UTC，官方活動頁倒數）；本次無過期卡片
    - 11/19 排程：新增 MEXC Airdrop+ ETH 派對（總獎池 70,000 USDT，11/16 13:00 – 11/26 13:00 UTC，官方公告）；本次無過期卡片
    - 11/18 排程：新增 Bybit ByPick 第二季（至 12/11，官方新聞稿 11/13）；移除已過期的 Bitget Anthropic IPO Prime（公開輪 11/17）、Gate 股票事件合約挑戰賽（11/18 18:00 UTC+8 截止）
@@ -38,6 +39,31 @@ window.SITE = {
    platform：bitget-wallet / bitget / gate / bybit / mexc / bingx / general
    stats / benefits 不需要就寫 []；code / deadline 沒有就留 "" */
 window.ACTIVITIES = [
+  {
+    platform: "bitget",
+    platformLabel: "Bitget · PoolX 鎖倉空投",
+    status: "hot",
+    statusLabel: "🔥 進行中",
+    title: "ETH 放著也是放：鎖幾天分 2,700 萬顆 RT1",
+    desc: "Bitget PoolX 新池 Real Token (RT1)，鎖 ETH 照比例分空投，11/23 10:00 UTC 截止，到期 ETH 退回",
+    stats: [
+      { label: "總空投", value: "27,000,000 RT1", color: "highlight" },
+      { label: "最低鎖倉", value: "0.002 ETH", color: "" },
+      { label: "截止", value: "11/23 10:00 UTC", color: "highlight" }
+    ],
+    benefits: [
+      { icon: "🔒", text: "鎖 ETH 就能分，不用買新幣也不用交易，池子上限 **1,500 ETH**" },
+      { icon: "📈", text: "過去 15 天本來就有持有 ETH 的，有效鎖倉量最高 **加倍計算**（長期持有加成）" },
+      { icon: "🪂", text: "空投 = 你的有效鎖倉 ÷ 全池有效鎖倉 × **27,000,000 RT1**，結束後 5 分鐘內發到現貨帳戶" },
+      { icon: "⚠️", text: "需完成 KYC，子帳戶/機構不能參加；分到多少看總鎖倉量，RT1 價格不保證" }
+    ],
+    deadline: "2026/11/23 10:00 UTC",
+    junNote: "PoolX 我一直覺得是比較適合懶人的玩法 🌸 幣鎖進去幾天、時間到就還你，順便分空投。\n\n⚠️ 但鎖倉期間 ETH 照樣會漲會跌，RT1 上線後價格也不保證，只拿閒置的 ETH 玩就好，自行評估；純分享不構成投資建議。",
+    link: "https://www.bitget.com/zh-TW/referral/register?from=referral&clacCode=V0K17SD8",
+    linkLabel: "🔗 前往 Bitget PoolX",
+    code: "V0K17SD8",
+    codeLabel: "Bitget 邀請碼"
+  },
   {
     platform: "bingx",
     platformLabel: "BingX · ANTHROPIC IPO 交易賽",
